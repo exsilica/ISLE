@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+    <url>
+     <loc>/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/about/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/user-docs/docs-edit/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/user-docs/docs-styleguide/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/user-docs/mkdocs-requirements/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/user-docs/getting-started-with-isle/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/contribute/contribute/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/contribute/committers/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/ansible/install-ansible/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ansible/ansible-commands/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ansible/ansible-isle-playbooks/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ansible/ansible-scripts-customize/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/ansible/ansible-resources/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/host/host-requirements/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/host-storage-requirements/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/host-maintenance/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/host-deploy-ansible/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/host-docker-deploy-ansible/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/security-fail2ban/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/security-iptables/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/security-csf/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/host-network-ports/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/host/host-environmental-vars/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docker/intro-to-docker/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/docker-commands/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/intro-to-docker-compose/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/docker-compose-commands/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/containers-deploy/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/containers-deploy/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/docker-resources/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/docker/docker-build-images/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/docker-update-build-images/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/docker/docker-tagging-policy/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/containers/intro-to-docker-containers/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-specifications/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-deploy/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/container-network-ports/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-environmental-vars/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-access/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-archive/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-remove/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-users-passwords/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-apache/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-certbot/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-fedora/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-gsearch/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-mysql/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-solr/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/containers/supported-software-versions/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/islandora-modules/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/islandora-modules/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/supported-software-repositories/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/containers/containers-ssl/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/data/docker-volumes-paths/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/docker-volumes-preexistingdata/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/config-paths/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/locations-logs/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/locations-indicies/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/locations-databases/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/locations-triplestores/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/data/config-tools-commands/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/logs-customize/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/logs-tomcat/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/drupal-site/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/drupal-multisite/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/ssl-apache-manual/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/ssl-apache-certbot/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/ssl-tomcat-manual/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/data/ssl-tomcat-certbot/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/migration/intro-to-git/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/migration/git-migration-workflow/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/migration/pre-existing-customization/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/migration/pre-existing-datastores/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/migration/upgration/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/migration/migration-tools-scripts/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/migration/data-migration/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/platforms/sandbox/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/platforms/staging/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/platforms/production/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/platforms/workflow/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/tests/travis-ci/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tests/docker-build-test-process/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/tests/docker-build-tests/</loc>
+     <lastmod>2017-10-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+</urlset>
