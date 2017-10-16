@@ -41,464 +41,109 @@
             "title": "About"
         }, 
         {
-            "location": "/user-docs/docs-edit/", 
-            "text": "How to edit ISLE Documentation\n\n\nThanks in advance for contributions to the ISLE Documentation.\n\n\nThe Islandora Community, the ISLE Team and its stakeholders greatly appreciates all contributor's time and efforts in creating, editing, revising and growing this collected documentation.\n\n\nThe ISLE Team asks that all potential contributors please familiarize themselves with the \nDocumentation and Style Guide\n and its requirements \nPRIOR\n to committing documentation changes.\n\n\nThere are two different ways one can edit or create documentation for the ISLE project.\n\n\nMethod 1: Edit page on Github.com\n\n\n\n\nOpen a web browser and navigate to the ISLE project \nrepository\n on Github.com\n\n\nClick on the \ndocs\n directory\n\n\nMore to follow soon.\n\n\n\n\nMethod 2: Edit page via Mkdocs workflow\n\n\n\n\nComing soon.\n\n\nFor now follow \nthis install guide\n\n\nTo deploy follow \nthis", 
-            "title": "How to edit ISLE documentation"
+            "location": "/1_system_process_overview/summary/", 
+            "text": "1.1 Executive summary / outcomes", 
+            "title": "1.1 - Executive summary"
         }, 
         {
-            "location": "/user-docs/docs-edit/#how-to-edit-isle-documentation", 
-            "text": "Thanks in advance for contributions to the ISLE Documentation.  The Islandora Community, the ISLE Team and its stakeholders greatly appreciates all contributor's time and efforts in creating, editing, revising and growing this collected documentation.  The ISLE Team asks that all potential contributors please familiarize themselves with the  Documentation and Style Guide  and its requirements  PRIOR  to committing documentation changes.  There are two different ways one can edit or create documentation for the ISLE project.", 
-            "title": "How to edit ISLE Documentation"
-        }, 
-        {
-            "location": "/user-docs/docs-edit/#method-1-edit-page-on-githubcom", 
-            "text": "Open a web browser and navigate to the ISLE project  repository  on Github.com  Click on the  docs  directory  More to follow soon.", 
-            "title": "Method 1: Edit page on Github.com"
-        }, 
-        {
-            "location": "/user-docs/docs-edit/#method-2-edit-page-via-mkdocs-workflow", 
-            "text": "Coming soon.  For now follow  this install guide  To deploy follow  this", 
-            "title": "Method 2: Edit page via Mkdocs workflow"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/", 
-            "text": "ISLE Documentation Style Guide and Requirements\n\n\nThe ISLE Team asks that all potential contributors please familiarize themselves with this guide and its requirements \nPRIOR\n to committing documentation changes.\n\n\nThis document and project has been created to provide the ISLE project team and larger Islandora community with:\n\n\n\n\n\n\nMarkdown resources, on-boarding material and tools\n\n\n\n\n\n\nHow Markdown can be used for Documentation of ISLE Projects and additional efforts\n\n\n\n\n\n\nHow \nMkdocs\n is used for the creation of static Documentation pages from Markdown files.\n\n\n\n\n\n\nDocumentation Requirements\n\n\n\n\n\n\nAll documentation will be kept within the \ndocs\n directory within the Github.com hosted git repository.\n\n\n\n\n\n\nMarkdown (.md) files are to be used for all documentation.\n\n\n\n\n\n\nAny other type of submitted file type e.g. \n.txt,.pdf,.doc,.rtf\n will not be accepted.\n\n\n\n\n\n\nMkdocs\n is to be used for the generation of static documentation pages to be hosted on Github pages or locally.\n\n\n\n\n\n\nDocumentation Style\n\n\n\n\nHow-to(s) should be written for technical and non-technical audiences alike with clear fully tested steps, explanations and outcomes.\n\n\nAssumptions of prior technical knowledge should be avoided. If additional explanations potentially exceed an appropriate file length or context, the ISLE team recommends creating a \nReferences\n section with topical URLs providing additional documentation for further reading by endusers.\n\n\nAvoid gender specific references e.g. \nhe, she, her, him\n, personification or casual first person perspective e.g. \nyou\n. Use gender-neutral terms like \"\nenduser, one, they, a person\n\" etc.\n\n\nPlease follow the \nFile Layout\n \nsection\n of the \nMkdocs\n documentation when creating new documentation sections.\n\n\n\n\nWhat is Markdown?\n\n\n\n\n\n\nMarkdown is a text to HTML conversion tool.\n\n\n\n\n\n\nThe ISLE team prefers to use the \"\nGitHub Flavored Markdown\n\" syntax.\n\n\n\n\n\n\nMarkdown was created by John Gruber of \nDaring Fireball\n fame\n\n\n\n\n\n\nWhat is Markdown?\n\n\n\n\n\n\nMarkdown Requirements\n\n\n\n\nA text editor like \nAtom\n, Textedit or Notepad.\n\n\nSaving files with the \n.md\n extension\n\n\n\n\nMarkdown Syntax\n\n\n\n\n\n\nMastering Markdown offical Github guide\n\n\n\n\n\n\nMarkdown Syntax (official Github cheat sheet)\n\n\n\n\n\n\nMarkdown cheat sheet\n\n\n\n\n\n\nMarkdown Style\n\n\n\n\n\n\nA great starter \nTemplate\n\n\n\n\n\n\nGood example of \u201chow to\u201d use a README.md. (Not all sections germane. \nExample\n\n\n\n\n\n\nMore elaborate though clean example from \nNetflix", 
-            "title": "Documentation Style Guide"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/#isle-documentation-style-guide-and-requirements", 
-            "text": "The ISLE Team asks that all potential contributors please familiarize themselves with this guide and its requirements  PRIOR  to committing documentation changes.  This document and project has been created to provide the ISLE project team and larger Islandora community with:    Markdown resources, on-boarding material and tools    How Markdown can be used for Documentation of ISLE Projects and additional efforts    How  Mkdocs  is used for the creation of static Documentation pages from Markdown files.", 
-            "title": "ISLE Documentation Style Guide and Requirements"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/#documentation-requirements", 
-            "text": "All documentation will be kept within the  docs  directory within the Github.com hosted git repository.    Markdown (.md) files are to be used for all documentation.    Any other type of submitted file type e.g.  .txt,.pdf,.doc,.rtf  will not be accepted.    Mkdocs  is to be used for the generation of static documentation pages to be hosted on Github pages or locally.", 
-            "title": "Documentation Requirements"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/#documentation-style", 
-            "text": "How-to(s) should be written for technical and non-technical audiences alike with clear fully tested steps, explanations and outcomes.  Assumptions of prior technical knowledge should be avoided. If additional explanations potentially exceed an appropriate file length or context, the ISLE team recommends creating a  References  section with topical URLs providing additional documentation for further reading by endusers.  Avoid gender specific references e.g.  he, she, her, him , personification or casual first person perspective e.g.  you . Use gender-neutral terms like \" enduser, one, they, a person \" etc.  Please follow the  File Layout   section  of the  Mkdocs  documentation when creating new documentation sections.", 
-            "title": "Documentation Style"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/#what-is-markdown", 
-            "text": "Markdown is a text to HTML conversion tool.    The ISLE team prefers to use the \" GitHub Flavored Markdown \" syntax.    Markdown was created by John Gruber of  Daring Fireball  fame    What is Markdown?", 
-            "title": "What is Markdown?"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/#markdown-requirements", 
-            "text": "A text editor like  Atom , Textedit or Notepad.  Saving files with the  .md  extension", 
-            "title": "Markdown Requirements"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/#markdown-syntax", 
-            "text": "Mastering Markdown offical Github guide    Markdown Syntax (official Github cheat sheet)    Markdown cheat sheet", 
-            "title": "Markdown Syntax"
-        }, 
-        {
-            "location": "/user-docs/docs-styleguide/#markdown-style", 
-            "text": "A great starter  Template    Good example of \u201chow to\u201d use a README.md. (Not all sections germane.  Example    More elaborate though clean example from  Netflix", 
-            "title": "Markdown Style"
-        }, 
-        {
-            "location": "/user-docs/mkdocs-requirements/", 
-            "text": "Mkdocs Requirements", 
-            "title": "Mkdocs Requirements"
-        }, 
-        {
-            "location": "/user-docs/mkdocs-requirements/#mkdocs-requirements", 
-            "text": "", 
-            "title": "Mkdocs Requirements"
-        }, 
-        {
-            "location": "/user-docs/getting-started-with-isle/", 
-            "text": "", 
-            "title": "Getting Started with ISLE"
-        }, 
-        {
-            "location": "/contribute/contribute/", 
-            "text": "", 
-            "title": "How to contribute"
-        }, 
-        {
-            "location": "/contribute/committers/", 
-            "text": "", 
-            "title": "Committers"
-        }, 
-        {
-            "location": "/ansible/install-ansible/", 
-            "text": "", 
-            "title": "Installation - Ansible"
-        }, 
-        {
-            "location": "/ansible/ansible-commands/", 
-            "text": "", 
-            "title": "Ansible commands"
-        }, 
-        {
-            "location": "/ansible/ansible-isle-playbooks/", 
-            "text": "", 
-            "title": "ISLE Ansible playbooks"
-        }, 
-        {
-            "location": "/ansible/ansible-scripts-customize/", 
-            "text": "", 
-            "title": "How to customize the Ansible scripts"
-        }, 
-        {
-            "location": "/ansible/ansible-resources/", 
-            "text": "", 
-            "title": "Ansible Resources"
-        }, 
-        {
-            "location": "/host/host-requirements/", 
-            "text": "", 
-            "title": "Host Requirements"
-        }, 
-        {
-            "location": "/host/host-storage-requirements/", 
-            "text": "", 
-            "title": "Storage Requirements"
-        }, 
-        {
-            "location": "/host/host-maintenance/", 
-            "text": "", 
-            "title": "Host Maintenance"
-        }, 
-        {
-            "location": "/host/host-deploy-ansible/", 
-            "text": "", 
-            "title": "How to deploy a Host Server for Docker using Ansible"
-        }, 
-        {
-            "location": "/host/host-docker-deploy-ansible/", 
-            "text": "", 
-            "title": "How to deploy Docker & Docker Compose using Ansible"
-        }, 
-        {
-            "location": "/host/security-fail2ban/", 
-            "text": "", 
-            "title": "How to configure fail2ban"
-        }, 
-        {
-            "location": "/host/security-iptables/", 
-            "text": "", 
-            "title": "How to configure iptables"
-        }, 
-        {
-            "location": "/host/security-csf/", 
-            "text": "", 
-            "title": "How to configure CSF firewall"
-        }, 
-        {
-            "location": "/host/host-network-ports/", 
-            "text": "", 
-            "title": "Network Ports Used"
-        }, 
-        {
-            "location": "/host/host-environmental-vars/", 
-            "text": "", 
-            "title": "Host Environmental Variables"
-        }, 
-        {
-            "location": "/docker/intro-to-docker/", 
-            "text": "", 
-            "title": "Introduction to Docker"
-        }, 
-        {
-            "location": "/docker/docker-commands/", 
-            "text": "", 
-            "title": "Docker Commands"
-        }, 
-        {
-            "location": "/docker/intro-to-docker-compose/", 
-            "text": "", 
-            "title": "Introduction to Docker Compose"
-        }, 
-        {
-            "location": "/docker/docker-compose-commands/", 
-            "text": "", 
-            "title": "Docker Compose Commands"
-        }, 
-        {
-            "location": "/docker/containers-deploy/", 
-            "text": "", 
-            "title": "How to customize Docker Compose files"
-        }, 
-        {
-            "location": "/docker/containers-deploy/", 
-            "text": "", 
-            "title": "How to customize Dockerfiles"
-        }, 
-        {
-            "location": "/docker/docker-resources/", 
-            "text": "", 
-            "title": "Docker Resources"
-        }, 
-        {
-            "location": "/docker/docker-build-images/", 
+            "location": "/1_system_process_overview/mvpspecs/", 
             "text": "", 
-            "title": "Docker Build Images"
+            "title": "1.2 - MVP specs"
         }, 
         {
-            "location": "/docker/docker-update-build-images/", 
-            "text": "", 
-            "title": "How to update Docker build images"
-        }, 
-        {
-            "location": "/docker/docker-tagging-policy/", 
-            "text": "", 
-            "title": "Docker Tagging Policy"
-        }, 
-        {
-            "location": "/containers/intro-to-docker-containers/", 
-            "text": "", 
-            "title": "Introduction to Docker Containers"
-        }, 
-        {
-            "location": "/containers/containers-specifications/", 
-            "text": "", 
-            "title": "Container specifications"
-        }, 
-        {
-            "location": "/containers/containers-deploy/", 
-            "text": "", 
-            "title": "How to run Docker containers with Docker Compose"
-        }, 
-        {
-            "location": "/containers/container-network-ports/", 
-            "text": "", 
-            "title": "Container Network Ports Exposed"
-        }, 
-        {
-            "location": "/containers/containers-environmental-vars/", 
-            "text": "", 
-            "title": "Container Environmental Variables"
-        }, 
-        {
-            "location": "/containers/containers-access/", 
-            "text": "", 
-            "title": "How to access Docker containers"
-        }, 
-        {
-            "location": "/containers/containers-archive/", 
-            "text": "", 
-            "title": "How to archive Docker containers"
-        }, 
-        {
-            "location": "/containers/containers-remove/", 
-            "text": "", 
-            "title": "How to remove Docker containers"
-        }, 
-        {
-            "location": "/containers/containers-users-passwords/", 
-            "text": "", 
-            "title": "Default users and passwords"
-        }, 
-        {
-            "location": "/containers/containers-apache/", 
-            "text": "", 
-            "title": "Containers - Apache"
-        }, 
-        {
-            "location": "/containers/containers-certbot/", 
-            "text": "", 
-            "title": "Containers - Certbot"
-        }, 
-        {
-            "location": "/containers/containers-fedora/", 
-            "text": "", 
-            "title": "Containers - Fedora"
-        }, 
-        {
-            "location": "/containers/containers-gsearch/", 
-            "text": "", 
-            "title": "Containers - Gsearch"
-        }, 
-        {
-            "location": "/containers/containers-mysql/", 
-            "text": "", 
-            "title": "Containers - MySQL"
-        }, 
-        {
-            "location": "/containers/containers-solr/", 
-            "text": "", 
-            "title": "Containers - Solr"
-        }, 
-        {
-            "location": "/containers/supported-software-versions/", 
-            "text": "", 
-            "title": "Software Version List"
-        }, 
-        {
-            "location": "/containers/islandora-modules/", 
-            "text": "", 
-            "title": "Islandora Modules"
-        }, 
-        {
-            "location": "/containers/islandora-modules/", 
-            "text": "", 
-            "title": "Drupal Modules"
-        }, 
-        {
-            "location": "/containers/supported-software-repositories/", 
-            "text": "", 
-            "title": "Software Repositories"
-        }, 
-        {
-            "location": "/containers/containers-ssl/", 
-            "text": "", 
-            "title": "SSL"
-        }, 
-        {
-            "location": "/data/docker-volumes-paths/", 
-            "text": "", 
-            "title": "Docker Container Volumes locations"
-        }, 
-        {
-            "location": "/data/docker-volumes-preexistingdata/", 
-            "text": "", 
-            "title": "How to mount Docker Volumes to pre-existing data"
-        }, 
-        {
-            "location": "/data/config-paths/", 
-            "text": "", 
-            "title": "Configuration files locations"
-        }, 
-        {
-            "location": "/data/locations-logs/", 
-            "text": "", 
-            "title": "Log files"
+            "location": "/1_system_process_overview/1_3_system_overview/systemoverview/", 
+            "text": "1.3 System Overview", 
+            "title": "1.3 - System overview"
         }, 
         {
-            "location": "/data/locations-indicies/", 
+            "location": "/1_system_process_overview/1_3_system_overview/supported-specification-matrix-table/", 
             "text": "", 
-            "title": "Indices"
+            "title": "1.3 - Supported Specification Matrix table"
         }, 
         {
-            "location": "/data/locations-databases/", 
+            "location": "/1_system_process_overview/1_4_testing/sampledata/", 
             "text": "", 
-            "title": "Databases"
+            "title": "1.4 - Testing - \"Sample Data\""
         }, 
         {
-            "location": "/data/locations-triplestores/", 
+            "location": "/1_system_process_overview/1_4_testing/travis-ci/", 
             "text": "", 
-            "title": "Triplestores"
+            "title": "1.4 - Testing - Travis CI"
         }, 
         {
-            "location": "/data/config-tools-commands/", 
+            "location": "/1_system_process_overview/alphas/", 
             "text": "", 
-            "title": "Configuration tools and commands"
+            "title": "1.5 - Alphas"
         }, 
         {
-            "location": "/data/logs-customize/", 
+            "location": "/2_enduser_guide/host-requirements/", 
             "text": "", 
-            "title": "Logs - How to configure logs"
+            "title": "2.1 - Host System Requirements"
         }, 
         {
-            "location": "/data/logs-tomcat/", 
+            "location": "/2_enduser_guide/usage-guide/", 
             "text": "", 
-            "title": "Logs - Tomcat - How to configure logs"
+            "title": "2.2 - Usage Guide"
         }, 
         {
-            "location": "/data/drupal-site/", 
-            "text": "", 
-            "title": "How to configure a Drupal site"
-        }, 
-        {
-            "location": "/data/drupal-multisite/", 
-            "text": "", 
-            "title": "How to configure a Drupal multi-site"
-        }, 
-        {
-            "location": "/data/ssl-apache-manual/", 
-            "text": "", 
-            "title": "SSL - Apache - How to manually configure SSL certificates"
-        }, 
-        {
-            "location": "/data/ssl-apache-certbot/", 
-            "text": "", 
-            "title": "SSL - Apache - How to configure SSL certificates using Certbot and Lets Encrypt"
-        }, 
-        {
-            "location": "/data/ssl-tomcat-manual/", 
-            "text": "", 
-            "title": "SSL - Tomcat - How to manually configure SSL certificates"
+            "location": "/2_enduser_guide/2_3_containers/containers-inventory/", 
+            "text": "Container Inventory\n\n\n\n\nMySQL\n\n\nApache\n\n    a. capable of running multi-site\n\n\nFedora", 
+            "title": "2.3 Container Inventory"
         }, 
         {
-            "location": "/data/ssl-tomcat-certbot/", 
-            "text": "", 
-            "title": "SSL - Tomcat - How to configure SSL certificates using Certbot and Lets Encrypt"
-        }, 
-        {
-            "location": "/migration/intro-to-git/", 
-            "text": "", 
-            "title": "Introduction to Git"
-        }, 
-        {
-            "location": "/migration/git-migration-workflow/", 
-            "text": "", 
-            "title": "Container Migration Workflow using Git"
-        }, 
-        {
-            "location": "/migration/pre-existing-customization/", 
-            "text": "", 
-            "title": "How to migrate Customized settings, configurations and data from pre-existing sytems"
-        }, 
-        {
-            "location": "/migration/pre-existing-datastores/", 
-            "text": "", 
-            "title": "How to attach pre-existing datastores to new containers"
+            "location": "/2_enduser_guide/2_3_containers/containers-inventory/#container-inventory", 
+            "text": "MySQL  Apache \n    a. capable of running multi-site  Fedora", 
+            "title": "Container Inventory"
         }, 
         {
-            "location": "/migration/upgration/", 
+            "location": "/2_enduser_guide/2_3_containers/apache/containers-apache/", 
             "text": "", 
-            "title": "Data Upgration Process"
+            "title": "2.3 Container - Apache"
         }, 
         {
-            "location": "/migration/migration-tools-scripts/", 
+            "location": "/2_enduser_guide/2_4_customize/customization-points/", 
             "text": "", 
-            "title": "Migration Tools and scripts"
+            "title": "2.4 - ISLE Customization Points"
         }, 
         {
-            "location": "/migration/data-migration/", 
+            "location": "/2_enduser_guide/2_5_container_selection/container-selection/", 
             "text": "", 
-            "title": "How to migrate data from existing systems"
+            "title": "2.5 - ISLE Container Selection + Docker Compose Usage"
         }, 
         {
-            "location": "/platforms/sandbox/", 
+            "location": "/2_enduser_guide/2_6_data_management/mountpoints/", 
             "text": "", 
-            "title": "Sandbox"
+            "title": "2.6 - Mount Points"
         }, 
         {
-            "location": "/platforms/staging/", 
+            "location": "/2_enduser_guide/2_6_data_management/migrations/", 
             "text": "", 
-            "title": "Staging"
+            "title": "2.6 - Migrations"
         }, 
         {
-            "location": "/platforms/production/", 
+            "location": "/2_enduser_guide/2_6_data_management/upgrations/", 
             "text": "", 
-            "title": "Production"
+            "title": "2.6 - Upgrations"
         }, 
         {
-            "location": "/platforms/workflow/", 
+            "location": "/2_enduser_guide/2_7_managing_multiple_environments/git-structure/", 
             "text": "", 
-            "title": "Workflow Process across Platforms"
+            "title": "2.7 - Recommended Git structure"
         }, 
         {
-            "location": "/tests/travis-ci/", 
+            "location": "/2_enduser_guide/2_7_managing_multiple_environments/data-replications/", 
             "text": "", 
-            "title": "Introduction to Travis CI"
+            "title": "2.7 - Data Replications and Movement"
         }, 
         {
-            "location": "/tests/docker-build-test-process/", 
+            "location": "/2_enduser_guide/2_7_managing_multiple_environments/container-movement/", 
             "text": "", 
-            "title": "Docker Build Testing process"
+            "title": "2.7 - Container Movement"
         }, 
         {
-            "location": "/tests/docker-build-tests/", 
+            "location": "/3_dev_guide/contributing-to-docs/", 
             "text": "", 
-            "title": "Docker Build Tests List"
+            "title": "3.1 - Contributing to Docs"
         }
     ]
 }
