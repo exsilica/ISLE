@@ -57,8 +57,13 @@
         }, 
         {
             "location": "/1_system_process_overview/1_3_system_overview/supported-specification-matrix-table/", 
-            "text": "", 
+            "text": "Software / Service\n\n\nLegacy Versions\n\n\nStable / Newest Version\n\n\n\n\n\n\n\n\n\n\nTomcat\n\n\n7\n\n\n8.x\n\n\n\n\n\n\nOracle Java\n\n\nJDK 7\n\n\nJDK 8.x\n\n\n\n\n\n\nOpenJDK\n\n\nJDK 7\n\n\nJDK 8.x\n\n\n\n\n\n\nFedora\n\n\n3.7.1 or 3.8\n\n\n3.8.1\n\n\n\n\n\n\nDrupal filter\n\n\n3.7.1 or 3.8\n\n\n3.8.1\n\n\n\n\n\n\nGsearch\n\n\n2.7.1 or HEAD (2.8.1)\n\n\nDiscovery Garden Patched (2.8.x)\n\n\n\n\n\n\nDGI GSearch Extensions\n\n\n0.1.1\n\n\n0.1.3\n\n\n\n\n\n\nGsearch Transforms (XSLTs)\n\n\nrequires Solr 4.2 or 4.6.1, GSearch 2.71 or HEAD (2.8.x) \n DG Basic Solr\n\n\nrequires Solr 4.10, GSearch DG Patched (2.8.x) \n DG Basic Solr Config\n\n\n\n\n\n\nSolr\n\n\n4.2\n\n\n4.6.1\n\n\n\n\n\n\nDjatoka\n\n\n1.1\n\n\n1.1\n\n\n\n\n\n\nApache\n\n\n2.2\n\n\n2.4\n\n\n\n\n\n\nPHP\n\n\n5.5\n\n\n5.6\n\n\n\n\n\n\nDrupal\n\n\n7.4x\n\n\n7.56\n\n\n\n\n\n\nIslandora\n\n\n7.x\n\n\nHEAD\n\n\n\n\n\n\nMySQL\n\n\n5.5\n\n\n5.6", 
             "title": "1.3 - Supported Specification Matrix table"
+        }, 
+        {
+            "location": "/1_system_process_overview/1_3_system_overview/release-process/", 
+            "text": "", 
+            "title": "1.3 - Release Process"
         }, 
         {
             "location": "/1_system_process_overview/1_4_testing/sampledata/", 
@@ -76,34 +81,224 @@
             "title": "1.5 - Alphas"
         }, 
         {
-            "location": "/2_enduser_guide/host-requirements/", 
+            "location": "/2_enduser_guide/2_1_host_requirements/reqs-basic/", 
             "text": "", 
-            "title": "2.1 - Host System Requirements"
+            "title": "2.1 - Basic Host Requirements"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_1_host_requirements/reqs-laptops/", 
+            "text": "", 
+            "title": "2.1 - Local Laptop Requirements"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_1_host_requirements/reqs-cloud/", 
+            "text": "", 
+            "title": "2.1 - Cloud (AWS) Hosting Requirements"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_1_host_requirements/reqs-onsite/", 
+            "text": "", 
+            "title": "2.1 - Onsite - Institutional datacenter Requirements"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_1_host_requirements/reqs-multi-environments/", 
+            "text": "", 
+            "title": "2.1 - Multi-Environment Requirements"
         }, 
         {
             "location": "/2_enduser_guide/usage-guide/", 
             "text": "", 
-            "title": "2.2 - Usage Guide"
+            "title": "2.2 - Overview"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-ansible-usage/", 
+            "text": "", 
+            "title": "2.2 - Ansible Usage"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-ansible-quick-start/", 
+            "text": "", 
+            "title": "2.2 - Ansible Quick Start Guide"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-laptop-setup/", 
+            "text": "", 
+            "title": "2.2 - Laptop Setup"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-cloud-setup/", 
+            "text": "", 
+            "title": "2.2 - Cloud (AWS) Setup"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-onsite-setup/", 
+            "text": "", 
+            "title": "2.2 - Onsite - Institutional datacenter setup"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-multi-environments-setup/", 
+            "text": "", 
+            "title": "2.2 - Multi-Environment setup"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-security/", 
+            "text": "", 
+            "title": "2.2 - Basic Security"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-coms-ports/", 
+            "text": "", 
+            "title": "2.2 - Communication and Ports"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-firewall/", 
+            "text": "", 
+            "title": "2.2 - Basic Firewall Setup"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_2_usage_guide/usage-hosts-packages/", 
+            "text": "", 
+            "title": "2.2 - Packages"
         }, 
         {
             "location": "/2_enduser_guide/2_3_containers/containers-inventory/", 
-            "text": "Container Inventory\n\n\n\n\nMySQL\n\n\nApache\n\n    a. capable of running multi-site\n\n\nFedora", 
+            "text": "Container Inventory\n\n\n\n\nMySQL\n\n    a. has the Drupal site (tbd name) database\n\n    b. has the fedora3 database  \n\n\nApache\n\n    a. capable of running multi-sites  \n\n\nFedora\n\n    a. single repository\n\n    b. has Djatoka dependency\n\n    c. Runs Tomcat service  \n\n\nGsearch\n\n    a. Discovery Garden \"patched version\"\n\n    b. Runs Tomcat service\n\n    c. Uses Discovery Garden Islandora Transforms (XSLTs)\n\n    d. Uses Discovery Garden Search Extensions  \n\n\nSolr\n\n    a. Uses Discovery Garden basic-solr-config\n\n    b. Runs Tomcat service  \n\n\nCertbot\n\n    a. Runs Let's Encrypt", 
             "title": "2.3 Container Inventory"
         }, 
         {
             "location": "/2_enduser_guide/2_3_containers/containers-inventory/#container-inventory", 
-            "text": "MySQL  Apache \n    a. capable of running multi-site  Fedora", 
+            "text": "MySQL \n    a. has the Drupal site (tbd name) database \n    b. has the fedora3 database    Apache \n    a. capable of running multi-sites    Fedora \n    a. single repository \n    b. has Djatoka dependency \n    c. Runs Tomcat service    Gsearch \n    a. Discovery Garden \"patched version\" \n    b. Runs Tomcat service \n    c. Uses Discovery Garden Islandora Transforms (XSLTs) \n    d. Uses Discovery Garden Search Extensions    Solr \n    a. Uses Discovery Garden basic-solr-config \n    b. Runs Tomcat service    Certbot \n    a. Runs Let's Encrypt", 
             "title": "Container Inventory"
         }, 
         {
-            "location": "/2_enduser_guide/2_3_containers/apache/containers-apache/", 
+            "location": "/2_enduser_guide/2_3_containers/containers-apache/", 
             "text": "", 
             "title": "2.3 Container - Apache"
         }, 
         {
+            "location": "/2_enduser_guide/2_3_containers/containers-mysql/", 
+            "text": "", 
+            "title": "2.3 Container - MySQL"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_3_containers/containers-fedora/", 
+            "text": "", 
+            "title": "2.3 Container - Fedora"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_3_containers/containers-gsearch/", 
+            "text": "", 
+            "title": "2.3 Container - Gsearch"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_3_containers/containers-solr/", 
+            "text": "", 
+            "title": "2.3 Container - Solr"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_3_containers/containers-certbot/", 
+            "text": "", 
+            "title": "2.3 Container - Certbot"
+        }, 
+        {
             "location": "/2_enduser_guide/2_4_customize/customization-points/", 
             "text": "", 
-            "title": "2.4 - ISLE Customization Points"
+            "title": "2.4 - ISLE Customization Overview"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-directories/", 
+            "text": "", 
+            "title": "2.4 - Directories"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-yaml-files/", 
+            "text": "", 
+            "title": "2.4 - YAML files"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-drupal-applications/", 
+            "text": "", 
+            "title": "2.4 - Drupal Application"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-xacml-policies/", 
+            "text": "", 
+            "title": "2.4 - XACML policies"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-xslts/", 
+            "text": "", 
+            "title": "2.4 - XSLTs"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-drupal-modules/", 
+            "text": "", 
+            "title": "2.4 - Drupal Modules"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-compile-processes/", 
+            "text": "", 
+            "title": "2.4 - Compile Processes"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-repositories/", 
+            "text": "", 
+            "title": "2.4 - Repositories"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-download-files/", 
+            "text": "", 
+            "title": "2.4 - Configuration files overview"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-apache-files/", 
+            "text": "", 
+            "title": "2.4 - Apache"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-djatoka-files/", 
+            "text": "", 
+            "title": "2.4 - Djatoka"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-fedora-files/", 
+            "text": "", 
+            "title": "2.4 - Fedora"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-gsearch-files/", 
+            "text": "", 
+            "title": "2.4 - Gsearch"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-logrotate-files/", 
+            "text": "", 
+            "title": "2.4 - Logrotate"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-mysql-files/", 
+            "text": "", 
+            "title": "2.4 - MySQL"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-php-files/", 
+            "text": "", 
+            "title": "2.4 - PHP"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-solr-files/", 
+            "text": "", 
+            "title": "2.4 - Solr"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-topmcat-files/", 
+            "text": "", 
+            "title": "2.4 - Tomcat"
+        }, 
+        {
+            "location": "/2_enduser_guide/2_4_customize/customization-security/", 
+            "text": "", 
+            "title": "2.4 - Security modifications"
         }, 
         {
             "location": "/2_enduser_guide/2_5_container_selection/container-selection/", 
@@ -141,9 +336,44 @@
             "title": "2.7 - Container Movement"
         }, 
         {
-            "location": "/3_dev_guide/contributing-to-docs/", 
+            "location": "/3_dev_guide/dev-contributing-to-docs/", 
             "text": "", 
             "title": "3.1 - Contributing to Docs"
+        }, 
+        {
+            "location": "/3_dev_guide/3_2_overview_ansible/dev-modify-ansible-scripts/", 
+            "text": "", 
+            "title": "3.2 - Considerations for future modification of ansible scripts"
+        }, 
+        {
+            "location": "/3_dev_guide/3_3_docker_compose/dev-overview-docker/", 
+            "text": "", 
+            "title": "3.3 - Overview of Docker and Docker Compose"
+        }, 
+        {
+            "location": "/3_dev_guide/3_3_docker_compose/dev-inventory/", 
+            "text": "", 
+            "title": "3.3 - Inventory and description of customization elements"
+        }, 
+        {
+            "location": "/3_dev_guide/3_3_docker_compose/dev-docker-compose-dockerfile/", 
+            "text": "", 
+            "title": "3.3 - Explanation of Docker Compose and Dockerfile"
+        }, 
+        {
+            "location": "/3_dev_guide/dev-docker-hub/", 
+            "text": "", 
+            "title": "3.4 - Overview of Docker Hub System"
+        }, 
+        {
+            "location": "/4_nongit/demos/", 
+            "text": "", 
+            "title": "4.1 - Demos"
+        }, 
+        {
+            "location": "/4_nongit/video-examples/", 
+            "text": "", 
+            "title": "4.2 - Video Examples"
         }
     ]
 }
