@@ -200,9 +200,69 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        1.1 - Executive summary
+      </label>
+    
     <a href="./" title="1.1 - Executive summary" class="md-nav__link md-nav__link--active">
       1.1 - Executive summary
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" title="Project Overview" class="md-nav__link">
+    Project Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-islandora-enterprise-isle" title="What is Islandora Enterprise (ISLE)?" class="md-nav__link">
+    What is Islandora Enterprise (ISLE)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" title="How does it work?" class="md-nav__link">
+    How does it work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-it-needed" title="Why is it needed?" class="md-nav__link">
+    Why is it needed?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-objective" title="High Level Objective" class="md-nav__link">
+    High Level Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isle-functional-definition" title="ISLE Functional Definition" class="md-nav__link">
+    ISLE Functional Definition
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1943,6 +2003,55 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" title="Project Overview" class="md-nav__link">
+    Project Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-islandora-enterprise-isle" title="What is Islandora Enterprise (ISLE)?" class="md-nav__link">
+    What is Islandora Enterprise (ISLE)?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" title="How does it work?" class="md-nav__link">
+    How does it work?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-is-it-needed" title="Why is it needed?" class="md-nav__link">
+    Why is it needed?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-objective" title="High Level Objective" class="md-nav__link">
+    High Level Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#isle-functional-definition" title="ISLE Functional Definition" class="md-nav__link">
+    ISLE Functional Definition
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1956,7 +2065,34 @@
                 
                   <h1>1.1 - Executive summary</h1>
                 
-                <p>1.1 Executive summary / outcomes</p>
+                <h3 id="project-overview">Project Overview</h3>
+<p>ISLE public repository: https://github.com/Islandora-Collaboration-Group/ISLE</p>
+<h3 id="what-is-islandora-enterprise-isle">What is Islandora Enterprise (ISLE)?</h3>
+<p>Islandora Enterprise (ISLE) is a new project in development that will address one of the most significant pain-points in Islandora: installation and maintenance.</p>
+<h3 id="how-does-it-work">How does it work?</h3>
+<p>ISLE separates an institution’s customizations from core code, and moves that core code into containers that are easily updated, simplifying and largely automating the process of installation and updates/maintenance of Islandora. ISLE also bundles together the best shared modules into a common, production-ready and security-hardened platform.</p>
+<h3 id="why-is-it-needed">Why is it needed?</h3>
+<p>Islandora is a powerful digital repository comprised of more than 80 different open-source software libraries. This complex ecosystem makes Islandora difficult and expensive to install, maintain and customize. ISLE lowers the barrier to entry for new schools while allowing existing institutions to reallocate funds towards development or ingestion instead of maintenance.</p>
+<h3 id="high-level-objective">High Level Objective</h3>
+<p>To deliver a secure and production-ready Islandora stack (“ISLE”) that reduces the involved support time and effort for installation, maintenance and customization.</p>
+<h3 id="isle-functional-definition">ISLE Functional Definition</h3>
+<p>By ISLE, it is meant a system that will:  </p>
+<ul>
+<li>Function as both an initial installer and maintenance updater for Islandora stacks with up-to-date components suitable for use as staging, development or production environments, as well as for use on personal computers for development work.</li>
+<li>Consist of a public, tagged set of Docker containers.</li>
+<li>Include use of an orchestration tool such as Docker Composer.</li>
+<li>Allow for the replacement of older containers with newer versions.</li>
+<li>Be updated to include new component security patch releases within one calendar month.</li>
+<li>Support institution-specific customizations (XSLTs/Islandora Transforms, Solr, schemas, config.xml, MODS configurations/forms, XACML policies) able to persist through container upgrades and replacements.<ul>
+<li>These will be stored in a git repository and a mechanism will be provided to reintegrate with the installed Docker containers as part of an upgrade.</li>
+</ul>
+</li>
+<li>Support for either institutional hosting or Amazon Web Services (AWS) for the Docker host server.</li>
+<li>Support data store flexibility on institutional hosting or an AWS cloud environment.</li>
+<li>Encompass critical security patches, and full stack software updates, plus dependencies for commonly installed features and all available solution packs.</li>
+<li>Include an integrated ISLE/Islandora test suite (expected to utilize TravisCI) to be utilized, developed in conjunction with the Islandora Foundation and the current Islandora release managers</li>
+<li>Include documentation that covers end usage, a how-to guide to set up an initial ISLE installation, a how-to guide for an established installation to upgrade containers to the latest versions, and a functional description of mechanics, administrative system management and the process for future ISLE development</li>
+</ul>
                 
                   
                 

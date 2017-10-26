@@ -794,9 +794,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stub" title="[STUB]" class="md-nav__link">
-    [STUB]
+  <a href="#docker-image-commands" title="Docker image commands" class="md-nav__link">
+    Docker image commands
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-list-docker-images" title="How to list Docker images" class="md-nav__link">
+    How to list Docker images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-remove-docker-images" title="How to remove Docker images" class="md-nav__link">
+    How to remove Docker images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-container-commands" title="Docker container commands" class="md-nav__link">
+    Docker container commands
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-list-docker-containers" title="How to list Docker containers" class="md-nav__link">
+    How to list Docker containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-start-or-stop-docker-containers-using-docker-compose" title="How to start or stop Docker containers using Docker-Compose" class="md-nav__link">
+    How to start or stop Docker containers using Docker-Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-running-docker-containers" title="How to access running Docker containers" class="md-nav__link">
+    How to access running Docker containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-remove-docker-containers" title="How to remove Docker containers" class="md-nav__link">
+    How to remove Docker containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1978,9 +2039,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#stub" title="[STUB]" class="md-nav__link">
-    [STUB]
+  <a href="#docker-image-commands" title="Docker image commands" class="md-nav__link">
+    Docker image commands
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-list-docker-images" title="How to list Docker images" class="md-nav__link">
+    How to list Docker images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-remove-docker-images" title="How to remove Docker images" class="md-nav__link">
+    How to remove Docker images
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-container-commands" title="Docker container commands" class="md-nav__link">
+    Docker container commands
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-list-docker-containers" title="How to list Docker containers" class="md-nav__link">
+    How to list Docker containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-start-or-stop-docker-containers-using-docker-compose" title="How to start or stop Docker containers using Docker-Compose" class="md-nav__link">
+    How to start or stop Docker containers using Docker-Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-access-running-docker-containers" title="How to access running Docker containers" class="md-nav__link">
+    How to access running Docker containers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-remove-docker-containers" title="How to remove Docker containers" class="md-nav__link">
+    How to remove Docker containers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2001,12 +2123,40 @@
                 
                   <h1>2.3 - Docker Commands</h1>
                 
-                <h3 id="stub">[STUB]</h3>
+                <h2 id="docker-image-commands">Docker image commands</h2>
+<h3 id="how-to-list-docker-images">How to list Docker images</h3>
+<p>To list Docker images: <code>docker image ls</code></p>
+<h3 id="how-to-remove-docker-images">How to remove Docker images</h3>
+<p>To remove a Docker container: <code>docker image rm -f &lt;image name&gt;</code></p>
+<hr />
+<h2 id="docker-container-commands">Docker container commands</h2>
+<h3 id="how-to-list-docker-containers">How to list Docker containers</h3>
+<p>To check if containers are running in Docker:</p>
 <ul>
-<li>How to access Docker containers</li>
-<li>How to archive Docker containers</li>
-<li>How to remove Docker containers</li>
+<li>Open up a command line terminal on the host machine and enter: <code>docker ps -a</code></li>
 </ul>
+<p>Output should display like:</p>
+<p><strong>Example:</strong>  </p>
+<p>(use screenshot?)</p>
+<h3 id="how-to-start-or-stop-docker-containers-using-docker-compose">How to start or stop Docker containers using Docker-Compose</h3>
+<p>To execute the next two commands, you'll need to <code>cd</code> into the root of project directory where the <code>docker-compose.yml</code> file is within a command line terminal.</p>
+<ul>
+<li>
+<p>To stop all containers at once: <code>docker-compose stop</code></p>
+</li>
+<li>
+<p>To start all containers at once: (once built) <code>docker-compose up</code></p>
+</li>
+</ul>
+<hr />
+<h3 id="how-to-access-running-docker-containers">How to access running Docker containers</h3>
+<p>To shell into a container properly without shutting it down:</p>
+<p><strong>Example:</strong><br />
+<code>docker exec -it isle-islandora-web bash</code></p>
+<p>In some cases, one may need to use <code>Cntrl-D</code> to exit the container without shutting it down.</p>
+<hr />
+<h3 id="how-to-remove-docker-containers">How to remove Docker containers</h3>
+<p>To remove a Docker container: <code>docker rm -f &lt;container name&gt;</code></p>
                 
                   
                 

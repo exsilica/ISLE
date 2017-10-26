@@ -825,9 +825,76 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        2.3 - Container - MySQL
+      </label>
+    
     <a href="./" title="2.3 - Container - MySQL" class="md-nav__link md-nav__link--active">
       2.3 - Container - MySQL
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-service-description" title="Docker Compose service description" class="md-nav__link">
+    Docker Compose service description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-commands" title="Docker Compose commands:" class="md-nav__link">
+    Docker Compose commands:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-name" title="Image Name" class="md-nav__link">
+    Image Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-names" title="Container name(s)" class="md-nav__link">
+    Container name(s)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databases" title="Databases" class="md-nav__link">
+    Databases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" title="Ports" class="md-nav__link">
+    Ports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" title="Notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -1949,6 +2016,62 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-service-description" title="Docker Compose service description" class="md-nav__link">
+    Docker Compose service description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-compose-commands" title="Docker Compose commands:" class="md-nav__link">
+    Docker Compose commands:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-name" title="Image Name" class="md-nav__link">
+    Image Name
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-names" title="Container name(s)" class="md-nav__link">
+    Container name(s)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#databases" title="Databases" class="md-nav__link">
+    Databases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ports" title="Ports" class="md-nav__link">
+    Ports
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" title="Notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1962,7 +2085,92 @@
                 
                   <h1>2.3 - Container - MySQL</h1>
                 
-                
+                <p>The MySQL container will be using the following versions:</p>
+<ul>
+<li><a href="https://hub.docker.com/_/mysql/">Latest (5.6) - Dockerhub</a></li>
+<li>
+<p><a href="https://github.com/docker-library/mysql/blob/d8e7c8b6c0ba854fd5ea8257b79a2b3377f668ae/5.6/Dockerfile">Latest (5.6) - Github Repository</a></p>
+</li>
+<li>
+<p><a href="https://hub.docker.com/_/mysql/">Legacy (5.5) - Dockerhub</a></p>
+</li>
+<li><a href="https://github.com/docker-library/mysql/blob/41cfbdd89323a1230342038757b5b8f7f2f36b74/5.5/Dockerfile">Legacy (5.5) - Github Repository</a></li>
+</ul>
+<hr />
+<h3 id="docker-compose-service-description">Docker Compose service description</h3>
+<p>This container will only create an empty MySQL <code>fedora3</code> database (upon launch) using the Docker <code>environment</code> setting (displayed above). The Drupal site and/or multi-site databases will need to be created post launch.</p>
+<p><strong> Please note: This container must be created and launched first, prior to all other containers.</strong></p>
+<p>Within the docker-compose.yml file, found at the root of the ISLE project Github repository, this container is described / controlled as follows:</p>
+<blockquote>
+<p>db:<br />
+    build: ./mysql<br />
+    image: mysql:5.6<br />
+    environment:<br />
+      - MYSQL_ROOT_PASSWORD=islemysqlrootpw2017<br />
+      - MYSQL_DATABASE=fedora3<br />
+      - MYSQL_USER=fedora_admin<br />
+      - MYSQL_PASSWORD=islefeddb2017<br />
+    ports:<br />
+      - "3306:3306"<br />
+    volumes:<br />
+      - ./data/mysql:/var/lib/mysql<br />
+    container_name: isle-islandora-db  </p>
+</blockquote>
+<h3 id="docker-compose-commands">Docker Compose commands:</h3>
+<ul>
+<li>To build only this container (no others): <code>docker-compose build db</code>  </li>
+<li>To create only this container (no others): <code>docker-compose create db</code></li>
+<li>To start only this container (no others): <code>docker-compose up -d db</code>  </li>
+</ul>
+<h3 id="image-name">Image Name</h3>
+<ul>
+<li>Latest <code>mysql:5.6 (db)</code></li>
+<li>Legacy <code>mysql:5.5.55 (db)</code></li>
+</ul>
+<h3 id="container-names">Container name(s)</h3>
+<p><code>isle-db</code></p>
+<h3 id="databases">Databases</h3>
+<ul>
+<li><code>fedora3</code> Fedora database created by build process (empty)</li>
+<li><code>islesite</code> Drupal site database created by build process (empty, default)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Password</th>
+<th align="center">Database</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>root</td>
+<td>islemysqlrootpw2017</td>
+<td align="center">ALL</td>
+<td>has access to all databases with all db privileges</td>
+</tr>
+<tr>
+<td>fedora_admin</td>
+<td>islefeddb2017</td>
+<td align="center">fedora3</td>
+<td>has access to only the <code>fedora3</code> Fedora database. No grant privileges.</td>
+</tr>
+<tr>
+<td>islandora_user</td>
+<td>islandoraisledb2017</td>
+<td align="center">isle_site</td>
+<td>has access to only the <code>islesite</code> Drupal site database. No grant privileges.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ports">Ports</h3>
+<p>Port 3306 on the MySQL container is mapped to 3306 on Host</p>
+<h3 id="notes">Notes</h3>
+<p><em>Please only review this if building containers manually:</em>  </p>
+<p>The <code>docker-entrypoint.sh</code> file contained within the <code>mysql</code> folder next to the Dockerfile needs to have <code>755</code> file permissions prior to the build.  </p>
+<p><strong>Example:</strong><br />
+Run <code>chmod 755 docker-entrypoint.sh</code> to fix PRIOR to the build.</p>
                 
                   
                 
