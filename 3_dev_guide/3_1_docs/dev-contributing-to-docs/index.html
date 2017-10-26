@@ -1656,8 +1656,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#method-2-edit-page-via-mkdocs-workflow" title="Method 2: Edit page via Mkdocs workflow" class="md-nav__link">
-    Method 2: Edit page via Mkdocs workflow
+  <a href="#method-2-edit-page-via-local-mkdocs-workflow" title="Method 2: Edit page via local Mkdocs workflow" class="md-nav__link">
+    Method 2: Edit page via local Mkdocs workflow
   </a>
   
 </li>
@@ -1992,8 +1992,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#method-2-edit-page-via-mkdocs-workflow" title="Method 2: Edit page via Mkdocs workflow" class="md-nav__link">
-    Method 2: Edit page via Mkdocs workflow
+  <a href="#method-2-edit-page-via-local-mkdocs-workflow" title="Method 2: Edit page via local Mkdocs workflow" class="md-nav__link">
+    Method 2: Edit page via local Mkdocs workflow
   </a>
   
 </li>
@@ -2018,18 +2018,39 @@
 <p>The Islandora Community, the ISLE Team and its stakeholders greatly appreciates all contributor's time and efforts in creating, editing, revising and growing this collected documentation.</p>
 <p>The ISLE Team asks that all potential contributors please familiarize themselves with the <a href="../dev-docs-styleguide/">Documentation and Style Guide</a> and its requirements <strong>PRIOR</strong> to committing documentation changes.</p>
 <p>There are two different ways one can edit or create documentation for the ISLE project.</p>
+<p><strong>Please note:</strong> One will need to have signed up for a Github.com account <a href="https://github.com/join?source=header-home">here</a> prior to attempting either of these two methods.</p>
 <h4 id="method-1-edit-page-on-githubcom">Method 1: Edit page on Github.com</h4>
-<ul>
+<ol>
 <li>Open a web browser and navigate to the ISLE project <a href="https://github.com/Islandora-Collaboration-Group/ISLE/">repository</a> on Github.com</li>
 <li>Click on the <code>docs</code> directory</li>
-<li>More to follow soon.</li>
-</ul>
-<h4 id="method-2-edit-page-via-mkdocs-workflow">Method 2: Edit page via Mkdocs workflow</h4>
-<ul>
-<li>Coming soon.</li>
-<li>For now follow <a href="http://www.mkdocs.org/#other-commands-and-options">this install guide</a></li>
-<li>To deploy follow <a href="http://www.mkdocs.org/user-guide/deploying-your-docs/">this</a></li>
-</ul>
+<li>Navigate to and click on the desired <code>.md</code> file (documentation page) for editing</li>
+<li>Locate and click on the <code>pencil</code> icon on the right hand side of the page. (To the right of Raw | Blame | History etc)</li>
+<li>The page should now be ready for editing and the <code>Edit file</code> tab should display at the top. Make changes as needed.</li>
+<li>To save changes for review by the ISLE project team, simply scroll down to the bottom of the page to the <code>Commit Changes</code> section.</li>
+<li>Within the first empty field, enter a comment like <code>Edited filename.md with changes to ...</code> (The key is one sentence with a very minimal description)</li>
+<li>Within the second empty field, if needed enter a more verbose list of comments with changes.</li>
+<li>Click the second radio button <code>Create a new branch for this commit and start a pull request.</code> <strong>DO NOT CLICK THE 1ST BUTTON PLEASE!</strong></li>
+<li>Upon clicking the second radio button, there should be a new field created with an entry e.g. <code>githubusername-patch-1</code></li>
+<li>Click the green <code>Propose file change</code> button</li>
+<li>A new page opens with the title <code>Open a pull request</code>. The previous information from the new branch process should now populate the new fields</li>
+<li>Click the green <code>Create pull request</code> and now the documentation changes have been submitted for review.</li>
+<li>Assigned ISLE  project members will review, approve or comment on the pull request as time allows.</li>
+</ol>
+<hr />
+<h4 id="method-2-edit-page-via-local-mkdocs-workflow">Method 2: Edit page via local Mkdocs workflow</h4>
+<ol>
+<li>Please follow the <a href="../dev-mkdocs-requirements">Documentation Requirements</a> page to install Mkdocs and the appropriate <code>material</code> theme</li>
+<li>Open up a terminal and navigate to the ILSE project directory e.g. <code>cd ~/ISLE</code></li>
+<li>To start Mkdocs: <code>mkdocs serve</code></li>
+<li>One can view the static pages by opening a browser and navigating to <code>http://127.0.0.1:8000</code></li>
+<li>Checkout a new branch in git e.g. <code>git checkout -b new_branch</code></li>
+<li>Edit the appropriate Markdown (.md) file within the <code>docs</code> directory and save the edited file. Changes are almost immediate, the page should refresh. Should errors occur and the page does not display check the terminal output for issues.</li>
+<li>Once ready to push changes to the ISLE repository:  <code>git add edited-documentation-page.md</code>  </li>
+<li><code>git commit -m "Your description of changes, why and affected files if possible"</code>  </li>
+<li><code>git push origin new_branch</code>  </li>
+<li>Manually create a pull request on the Github page for the ISLE <a href="https://github.com/Islandora-Collaboration-Group/ISLE/">repository</a>  </li>
+<li>Assigned ISLE  project members will review, approve or comment on the pull request as time allows.</li>
+</ol>
                 
                   
                 
