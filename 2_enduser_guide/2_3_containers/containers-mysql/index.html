@@ -884,6 +884,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#volumes" title="Volumes" class="md-nav__link">
+    Volumes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" title="Notes" class="md-nav__link">
     Notes
   </a>
@@ -2062,6 +2069,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#volumes" title="Volumes" class="md-nav__link">
+    Volumes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes" title="Notes" class="md-nav__link">
     Notes
   </a>
@@ -2102,19 +2116,20 @@
 <p><strong> Please note: This container must be created and launched first, prior to all other containers.</strong></p>
 <p>Within the docker-compose.yml file, found at the root of the ISLE project Github repository, this container is described / controlled as follows:</p>
 <blockquote>
-<p>db:<br />
-    build: ./mysql<br />
-    image: mysql:5.6<br />
-    environment:<br />
-      - MYSQL_ROOT_PASSWORD=islemysqlrootpw2017<br />
-      - MYSQL_DATABASE=fedora3<br />
-      - MYSQL_USER=fedora_admin<br />
-      - MYSQL_PASSWORD=islefeddb2017<br />
-    ports:<br />
-      - "3306:3306"<br />
-    volumes:<br />
-      - ./data/mysql:/var/lib/mysql<br />
-    container_name: isle-islandora-db  </p>
+<p>db:
+  build: ./mysql
+  image: isle-db:latest
+  environment:
+    - MYSQL_ROOT_PASSWORD=islemysqlrootpw2017
+    - MYSQL_DATABASE=fedora3
+    - MYSQL_USER=fedora_admin
+    - MYSQL_PASSWORD=islefeddb2017
+  ports:
+    - "3306:3306"
+  volumes:
+    - ./data/mysql:/var/lib/mysql
+    - ./mysql/initscripts:/docker-entrypoint-initdb.d
+  container_name: isle-db</p>
 </blockquote>
 <h3 id="docker-compose-commands">Docker Compose commands:</h3>
 <ul>
@@ -2134,6 +2149,35 @@
 <li><code>fedora3</code> Fedora database created by build process (empty)</li>
 <li><code>islesite</code> Drupal site database created by build process (empty, default)</li>
 </ul>
+<p>Per the guidelines of the official MySQl Docker image <a href="https://hub.docker.com/_/mysql/">README</a>, section <code>Initializing a fresh instance</code>:</p>
+<blockquote>
+<p><em>"When a container is started for the first time, a new database with the specified name will be created and initialized with the provided configuration variables. Furthermore, it will execute files with extensions .sh, .sql and .sql.gz that are found in /docker-entrypoint-initdb.d. Files will be executed in alphabetical order. You can easily populate your mysql services by mounting a SQL dump into that directory and provide custom images with contributed data. SQL files will be imported by default to the database specified by the MYSQL_DATABASE variable."</em>"</p>
+</blockquote>
+<p>By default, the <code>docker-compose.yml</code> script creates the <code>fedora3</code> database by setting environmental variables in the <code>environment</code> section of the <code>db</code> service.</p>
+<p>The second database <code>isle_site</code> is created when the mount process <code>./mysql/initscripts:/docker-entrypoint-initdb.d</code> occurs upon container launch.</p>
+<p>Within this project directory, there is a directory <code>initscripts</code> which contains a SQL script <code>siteinit.sql</code></p>
+<pre><code>├── README.md
+├── data
+├── docker-compose.yml
+├── docs
+├── fedora
+├── mkdocs.yml
+├── mysql
+│   ├── Dockerfile
+│   ├── docker-entrypoint.sh
+│   └── initscripts
+│       └── siteinit.sql
+├── site
+└── web
+</code></pre>
+
+<p>The default contents of this script are:</p>
+<p><strong>Example</strong></p>
+<p><code>CREATE DATABASE isle_site CHARACTER SET utf8 COLLATE utf8_general_ci;</code><br />
+<code>CREATE USER islandora_user@'127.0.0.1' IDENTIFIED BY 'islandoraisledb2017';</code><br />
+<code>GRANT SELECT, INSERT, UPDATE ON islandora_docker.* TO 'islandora_user'@'127.0.0.1'";</code>  </p>
+<p>This script can be modified to create more databases upon container launch.</p>
+<hr />
 <table>
 <thead>
 <tr>
@@ -2166,6 +2210,15 @@
 </table>
 <h3 id="ports">Ports</h3>
 <p>Port 3306 on the MySQL container is mapped to 3306 on Host</p>
+<h3 id="volumes">Volumes</h3>
+<ul>
+<li><code>./data/mysql:/var/lib/mysql</code></li>
+</ul>
+<p>This volume is created to allow MySQL databases to persist. All MySQL data is stored here. The container can be turned off, destroyed or upgraded and this data will remain.</p>
+<ul>
+<li><code>./mysql/initscripts:/docker-entrypoint-initdb.d</code></li>
+</ul>
+<p>This volume is created to allow for the creation of additional databases beyond the initial <code>fedora3</code> creation. A default empty Drupal site database is also supplied using a SQL script file called <code>siteinit.sql</code> found within the <code>initscripts</code> directory. By mounting this directory directly into the container's <code>docker-entrypoint-initdb.d</code> directory, the MySQL service is able to run the SQL script automatically upon container launch.</p>
 <h3 id="notes">Notes</h3>
 <p><em>Please only review this if building containers manually:</em>  </p>
 <p>The <code>docker-entrypoint.sh</code> file contained within the <code>mysql</code> folder next to the Dockerfile needs to have <code>755</code> file permissions prior to the build.  </p>
