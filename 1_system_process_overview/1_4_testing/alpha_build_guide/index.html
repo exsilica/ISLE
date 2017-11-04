@@ -2210,14 +2210,31 @@
 <li>
 <p>This current alpha has been build and tested on <strong>Docker For Mac</strong> only. (11/2017)</p>
 <ul>
-<li>Please install the <a href="https://download.docker.com/mac/stable/Docker.dmg">latest version</a> from the <a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">Docker store</a>  </li>
+<li>Please install the <a href="https://download.docker.com/mac/stable/Docker.dmg">latest version</a> from the <a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">Docker store</a></li>
 </ul>
+</li>
+<li>
+<p>Git will need to be installed prior as well.</p>
+<ul>
+<li>Open a terminal and enter: <code>git --version</code></li>
+<li>This will trigger the <code>Install Command Line Developer Tools</code> prompt, click on the blue <code>Accept / Yes</code> button for the license agreement</li>
+<li>The package will take 1-2 minutes to download. Click the <code>Done</code> button once finished.</li>
+</ul>
+</li>
+<li>
+<p>Git LFS will also need to be installed due to issue with large binary files</p>
+</li>
+<li>Install following instructions <a href="https://git-lfs.github.com/">here</a></li>
+<li><code>brew install git-lfs</code> (if you have <a href="https://brew.sh/">homebrew</a> installed) or download the .tar.gz file from the website above</li>
+<li>Once installed, open a terminal and enter <code>git lfs install</code></li>
+<li>
+<p>This should allow one to download the full binary files</p>
 </li>
 <li>
 <p>This alpha build uses <code>islandora-docker.com</code> as the test domain along with the Docker Compose service names e.g. <code>db, fedora, web</code> etc.</p>
 <ul>
 <li>To ensure this domain resolves properly, one will need to edit their local <code>/etc/hosts</code> file.</li>
-<li>Open up a terminal and enter: <code>vi /etc/hosts</code></li>
+<li>Open up a terminal and enter: <code>sudo vi /etc/hosts</code></li>
 <li>Add the following:<blockquote>
 <p>127.0.0.1       localhost islandora-docker.com fedora web fedora.islandora-docker.com web.islandora-docker.com</p>
 </blockquote>
@@ -2228,7 +2245,8 @@
 <p>Clone the ISLE repository</p>
 <ul>
 <li>Open a terminal and enter: <code>git clone https://github.com/Islandora-Collaboration-Group/ISLE</code></li>
-<li><code>cd /yourpathto/ISLE</code> </li>
+<li><code>cd /yourpathto/ISLE</code></li>
+<li>This process will take 3 - 5 minutes depending on internet bandwidth</li>
 </ul>
 </li>
 </ul>
