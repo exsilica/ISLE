@@ -18,7 +18,7 @@
     
     
       
-        <title>1.4. -Testing - Alpha Build Guide - Islandora Enterprise (ISLE)</title>
+        <title>1.4. -Testing - Alpha Build Guide - Mac OSX - Islandora Enterprise (ISLE)</title>
       
     
     
@@ -88,7 +88,7 @@
                 </span>
               
             
-            1.4. -Testing - Alpha Build Guide
+            1.4. -Testing - Alpha Build Guide - Mac OSX
           
         </span>
       </div>
@@ -349,6 +349,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-nav__link">
+      1.4. -Testing - Alpha Build Guide - Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -358,11 +370,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        1.4. -Testing - Alpha Build Guide
+        1.4. -Testing - Alpha Build Guide - Mac OSX
       </label>
     
-    <a href="./" title="1.4. -Testing - Alpha Build Guide" class="md-nav__link md-nav__link--active">
-      1.4. -Testing - Alpha Build Guide
+    <a href="./" title="1.4. -Testing - Alpha Build Guide - Mac OSX" class="md-nav__link md-nav__link--active">
+      1.4. -Testing - Alpha Build Guide - Mac OSX
     </a>
     
       
@@ -2203,7 +2215,7 @@
               
                 
                 
-                  <h1>1.4. -Testing - Alpha Build Guide</h1>
+                  <h1>1.4. -Testing - Alpha Build Guide - Mac OSX</h1>
                 
                 <h3 id="alpha-build-pre-requisites">Alpha Build Pre-Requisites</h3>
 <ul>
@@ -2217,18 +2229,9 @@
 <p>Git will need to be installed prior as well.</p>
 <ul>
 <li>Open a terminal and enter: <code>git --version</code></li>
-<li>This will trigger the <code>Install Command Line Developer Tools</code> prompt, click on the blue <code>Accept / Yes</code> button for the license agreement</li>
+<li>This will trigger the <code>Install Command Line Developer Tools</code> prompt, click on the blue <code>Install</code> button for the license agreement; then click the white <code>Agree</code> button.</li>
 <li>The package will take 1-2 minutes to download. Click the <code>Done</code> button once finished.</li>
 </ul>
-</li>
-<li>
-<p>Git LFS will also need to be installed due to issue with large binary files</p>
-</li>
-<li>Install following instructions <a href="https://git-lfs.github.com/">here</a></li>
-<li><code>brew install git-lfs</code> (if you have <a href="https://brew.sh/">homebrew</a> installed) or download the .tar.gz file from the website above</li>
-<li>Once installed, open a terminal and enter <code>git lfs install</code></li>
-<li>
-<p>This should allow one to download the full binary files</p>
 </li>
 <li>
 <p>This alpha build uses <code>islandora-docker.com</code> as the test domain along with the Docker Compose service names e.g. <code>db, fedora, web</code> etc.</p>
@@ -2273,8 +2276,19 @@
 </ul>
 <h4 id="4-web-container-45-60-mins">4. Web container (45 - 60 mins)</h4>
 <ul>
-<li><code>docker-compose build web</code>  </li>
-<li><code>docker-compose up -d web</code>  <ul>
+<li>
+<p><code>docker-compose build web</code></p>
+</li>
+<li>
+<p>Edit the <code>docker-compose.yml</code> file to ensure the following lines look like this: <br />
+    &gt; # - ./customize/web/site/linux_settings.php:/var/www/html/sites/default/settings.php</p>
+<ul>
+<li>./customize/web/site/macosx_settings.php:/var/www/html/sites/default/settings.php  </li>
+</ul>
+</li>
+<li>
+<p><code>docker-compose up -d web</code>  </p>
+<ul>
 <li><strong>Please note:</strong> <em>This container on occasion has failed to start initially for as of yet unlogged and unknown reasons.</em><ul>
 <li>One can check if the container is running: <code>docker ps</code> (shows only running containers)  </li>
 <li>One can check if the container stopped running or "exited": <code>docker ps -a</code> (shows all containers running or not)  </li>
@@ -2284,44 +2298,22 @@
 </li>
 </ul>
 <h4 id="5-install-script-on-web-container-45-60-mins">5. Install script on Web container (45 - 60 mins)</h4>
-<p>The following manual steps will be folded into the web build process.</p>
 <ul>
 <li>
-<p>Run the drush.sh script manually on the web container  </p>
+<p>Run the following shell scripts manually on the web container  </p>
 <ul>
 <li><code>docker exec -it isle-web bash</code></li>
 <li><code>cd /tmp</code></li>
-<li><code>chmod 777 drush.sh</code></li>
-<li><code>./drush.sh</code></li>
-</ul>
-</li>
-<li>
-<p>Fix open-seadragon issue</p>
-<ul>
-<li><code>cd /var/www/html/sites/all/libraries</code></li>
-<li><code>wget https://github.com/openseadragon/openseadragon/releases/download/v2.2.1/openseadragon-bin-2.2.1.zip</code></li>
-<li><code>unzip https://github.com/openseadragon/openseadragon/releases/download/v2.2.1/openseadragon-bin-2.2.1.zip</code></li>
-<li><code>mv openseadragon-bin-2.2.1 openseadragon</code></li>
-<li><code>cd /var/www/html/sites/all/modules</code></li>
-<li><code>drush -u 1 en islandora_openseadragon</code></li>
-<li>The following message will appear:<blockquote>
-<p>The following extensions will be enabled: islandora_openseadragon<br />
-    Do you really want to continue? (y/n): y</p>
-</blockquote>
-</li>
-<li>Hit <code>y</code> to continue</li>
-<li>The following message should appear:<blockquote>
-<p>islandora_openseadragon was enabled successfully. [ok]</p>
-</blockquote>
-</li>
-<li>Enter: <code>drush openseadragon-plugin</code></li>
+<li><code>chmod 777 *.sh</code></li>
+<li><code>./make_site.sh</code></li>
+<li><code>./install_site.sh</code></li>
 </ul>
 </li>
 <li>
 <p>Once finished <code>cntrl-D</code> or type <code>exit</code> to get out of the web container &amp; QC the resulting setup</p>
 </li>
 </ul>
-<p><strong>Please note:</strong> The cronjob setting in the <code>drush.sh</code> script is commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
+<p><strong>Please note:</strong> The cronjob setting in the <code>install_site.sh</code> script is commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
 <h4 id="total-build-process-takes-25-4-hours-depending-on-system-and-internet-speeds">Total build process takes 2.5 - 4 hours (depending on system and internet speeds)</h4>
 <hr />
 <h3 id="fast-facts">Fast Facts</h3>
@@ -2666,7 +2658,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../1_3_system_overview/release-process/" title="1.3 - Release Process" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2675,7 +2667,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1.3 - Release Process
+                1.4. -Testing - Alpha Build Guide - Linux
               </span>
             </div>
           </a>
