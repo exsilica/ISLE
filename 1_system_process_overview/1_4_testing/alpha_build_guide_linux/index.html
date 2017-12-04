@@ -2497,7 +2497,7 @@
 <h4 id="install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-ubuntu-1604-lts">Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on Ubuntu 16.04 LTS</h4>
 <ul>
 <li>Open a terminal and ssh back into the Ubuntu Host Server/VM as the <code>islandora</code> user and perform the following:  </li>
-<li><code>sudo curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-</code>uname -s<code>-</code>uname -m<code>-o /usr/local/bin/docker-compose</code>  </li>
+<li><code>sudo curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</code></li>
 <li><code>sudo chmod +x /usr/local/bin/docker-compose</code>  </li>
 </ul>
 <h4 id="clone-isle-repository">Clone ISLE repository</h4>

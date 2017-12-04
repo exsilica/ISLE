@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/about/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,13 +21,13 @@
         
     <url>
      <loc>/1_system_process_overview/summary/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/1_system_process_overview/mvpspecs/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -45,7 +45,7 @@
         
     <url>
      <loc>/1_system_process_overview/alphas/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -79,7 +79,7 @@
         
     <url>
      <loc>/2_enduser_guide/2_5_container_selection/container-selection/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -101,19 +101,19 @@
         
     <url>
      <loc>/3_dev_guide/3_1_docs/dev-contributing-to-docs/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/3_dev_guide/3_1_docs/dev-docs-styleguide/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/3_dev_guide/3_1_docs/dev-mkdocs-requirements/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -141,13 +141,13 @@
         
     <url>
      <loc>/4_nongit/demos/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/4_nongit/video-examples/</loc>
-     <lastmod>2017-12-01</lastmod>
+     <lastmod>2017-12-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
