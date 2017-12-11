@@ -351,6 +351,54 @@
 
 
   <li class="md-nav__item">
+    <a href="../alpha_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
+      1.4. -Testing - Alpha Quickstart Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link">
+      1.4. -Testing - Host Server Build - Centos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_server_setup_ubuntu/" title="1.4. -Testing - Host Server Build - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Server Build - Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
+      1.4. -Testing - Host Server Build - MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-nav__link">
       1.4. -Testing - Alpha Build Guide - Linux
     </a>
@@ -386,15 +434,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpha-build-pre-requisites" title="Alpha Build Pre-Requisites" class="md-nav__link">
-    Alpha Build Pre-Requisites
+  <a href="#alpha-manual-build-macos" title="Alpha Manual Build - MacOS" class="md-nav__link">
+    Alpha Manual Build - MacOS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-process" title="Build process" class="md-nav__link">
-    Build process
+  <a href="#alpha-manual-build-pre-requisites" title="Alpha Manual Build Pre-Requisites" class="md-nav__link">
+    Alpha Manual Build Pre-Requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alpha-manual-build-macos_1" title="Alpha Manual Build MacOS" class="md-nav__link">
+    Alpha Manual Build MacOS
   </a>
   
     <nav class="md-nav">
@@ -2098,15 +2153,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpha-build-pre-requisites" title="Alpha Build Pre-Requisites" class="md-nav__link">
-    Alpha Build Pre-Requisites
+  <a href="#alpha-manual-build-macos" title="Alpha Manual Build - MacOS" class="md-nav__link">
+    Alpha Manual Build - MacOS
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-process" title="Build process" class="md-nav__link">
-    Build process
+  <a href="#alpha-manual-build-pre-requisites" title="Alpha Manual Build Pre-Requisites" class="md-nav__link">
+    Alpha Manual Build Pre-Requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alpha-manual-build-macos_1" title="Alpha Manual Build MacOS" class="md-nav__link">
+    Alpha Manual Build MacOS
   </a>
   
     <nav class="md-nav">
@@ -2217,44 +2279,38 @@
                 
                   <h1>1.4. -Testing - Alpha Build Guide - Mac OSX</h1>
                 
-                <h3 id="alpha-build-pre-requisites">Alpha Build Pre-Requisites</h3>
+                <h3 id="alpha-manual-build-macos">Alpha Manual Build - MacOS</h3>
+<p>Please note this an alternative method of building the Docker images and the slower of the two processes.</p>
+<p>Please refer to the Alpha Quickstart <a href="../alpha_quickstart/">Guide</a> for the <strong>faster</strong> version.</p>
+<h3 id="alpha-manual-build-pre-requisites">Alpha Manual Build Pre-Requisites</h3>
 <ul>
 <li>
-<p>This current alpha has been build and tested on <strong>Docker For Mac</strong> only. (11/2017)</p>
+<p>The Host Server has already been setup and is running. If one has not setup the Host server please follow one of the following links below and then return to this document please.</p>
 <ul>
-<li>Please install the <a href="https://download.docker.com/mac/stable/Docker.dmg">latest version</a> from the <a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">Docker store</a></li>
-</ul>
+<li>
+<p>Host Server setup for <a href="../host_server_setup_centos/"><strong>CentOS 7</strong></a></p>
 </li>
 <li>
-<p>Git will need to be installed prior as well.</p>
-<ul>
-<li>Open a terminal and enter: <code>git --version</code></li>
-<li>This will trigger the <code>Install Command Line Developer Tools</code> prompt, click on the blue <code>Install</code> button for the license agreement; then click the white <code>Agree</code> button.</li>
-<li>The package will take 1-2 minutes to download. Click the <code>Done</code> button once finished.</li>
-</ul>
+<p>Host Server setup for <a href="../host_server_setup_ubuntu/"><strong>Ubuntu 16.04 LTS</strong></a></p>
 </li>
 <li>
-<p>This alpha build uses <code>islandora-docker.com</code> as the test domain along with the Docker Compose service names e.g. <code>mysql, fedora, apache</code> etc.</p>
-<ul>
-<li>To ensure this domain resolves properly, one will need to edit their local <code>/etc/hosts</code> file.</li>
-<li>Open up a terminal and enter: <code>sudo vi /etc/hosts</code></li>
-<li>Add the following:<blockquote>
-<p>127.0.0.1       localhost islandora-docker.com fedora apache fedora.islandora-docker.com apache.islandora-docker.com</p>
-</blockquote>
+<p>Host Server setup for <a href="../host_server_setup_macos/"><strong>Mac OS</strong></a></p>
 </li>
 </ul>
 </li>
 <li>
-<p>Clone the ISLE repository</p>
+<p>By default the <code>Docker-Compose.yml</code> file is configured for Linux Host Servers.</p>
 <ul>
-<li>Open a terminal and enter: <code>git clone https://github.com/Islandora-Collaboration-Group/ISLE</code></li>
-<li><code>cd /yourpathto/ISLE</code></li>
-<li>This process will take 3 - 5 minutes depending on internet bandwidth</li>
+<li>If one is using a <strong>Mac OS</strong> Host server, then edit the <code>docker-compose.yml</code> file to ensure the following lines look like this:   </li>
 </ul>
 </li>
 </ul>
+<pre><code>    # - ./customize/apache/site/linux_settings.php:/var/www/html/sites/default/settings.php
+      - ./customize/apache/site/macosx_settings.php:/var/www/html/sites/default/settings.php  
+</code></pre>
+
 <hr />
-<h3 id="build-process">Build process</h3>
+<h3 id="alpha-manual-build-macos_1">Alpha Manual Build MacOS</h3>
 <p><strong>Please note:</strong> <em>The first container (MySQL, isle-mysql, mysql) has to be built and running PRIOR to all others (including fedora &amp; apache) due to a race condition (fedora starts prior to mysql being ready to accept connections). This improper state will be fixed at a later point in the project.</em>  </p>
 <ul>
 <li><strong>DO NOT RUN</strong> <code>docker-compose up -d</code> during the initial build process as this will build and run all containers at the same time which will trigger the above mentioned race condition and subsequent chain of service failures.</li>
@@ -2280,15 +2336,15 @@
 <p><code>docker-compose build apache</code></p>
 </li>
 <li>
-<p>Edit the <code>docker-compose.yml</code> file to ensure the following lines look like this: <br />
-    &gt; # - ./customize/apache/site/linux_settings.php:/var/www/html/sites/default/settings.php</p>
-<ul>
-<li>./customize/apache/site/macosx_settings.php:/var/www/html/sites/default/settings.php  </li>
-</ul>
+<p>Edit the <code>docker-compose.yml</code> file to ensure the following lines look like this:   </p>
 </li>
-<li>
-<p><code>docker-compose up -d apache</code>  </p>
+</ul>
+<pre><code>    # - ./customize/apache/site/linux_settings.php:/var/www/html/sites/default/settings.php
+    - ./customize/apache/site/macosx_settings.php:/var/www/html/sites/default/settings.php  
+</code></pre>
+
 <ul>
+<li><code>docker-compose up -d apache</code>  <ul>
 <li><strong>Please note:</strong> <em>This container on occasion has failed to start initially for as of yet unlogged and unknown reasons.</em><ul>
 <li>One can check if the container is running: <code>docker ps</code> (shows only running containers)  </li>
 <li>One can check if the container stopped running or "exited": <code>docker ps -a</code> (shows all containers running or not)  </li>
@@ -2313,7 +2369,7 @@
 <p>Once finished <code>cntrl-D</code> or type <code>exit</code> to get out of the apache container &amp; QC the resulting setup</p>
 </li>
 </ul>
-<p><strong>Please note:</strong> The cronjob setting in the <code>install_site.sh</code> script is commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
+<p><strong>Please note:</strong> The cronjob setting in the <code>install_site.sh</code> script is commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly manually.</p>
 <h4 id="total-build-process-takes-25-4-hours-depending-on-system-and-internet-speeds">Total build process takes 2.5 - 4 hours (depending on system and internet speeds)</h4>
 <hr />
 <h3 id="fast-facts">Fast Facts</h3>

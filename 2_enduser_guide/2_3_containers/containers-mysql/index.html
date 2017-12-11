@@ -347,6 +347,54 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../1_system_process_overview/1_4_testing/alpha_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
+      1.4. -Testing - Alpha Quickstart Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../1_system_process_overview/1_4_testing/host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link">
+      1.4. -Testing - Host Server Build - Centos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../1_system_process_overview/1_4_testing/host_server_setup_ubuntu/" title="1.4. -Testing - Host Server Build - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Server Build - Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../1_system_process_overview/1_4_testing/host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
+      1.4. -Testing - Host Server Build - MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../1_system_process_overview/1_4_testing/alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-nav__link">
       1.4. -Testing - Alpha Build Guide - Linux
     </a>
@@ -873,8 +921,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-commands" title="Docker Compose commands:" class="md-nav__link">
-    Docker Compose commands:
+  <a href="#method-1-docker-compose-commands-for-standard-use-of-pulling-dockerhub-image-and-running-containers-via-docker-compose" title="Method 1: Docker Compose commands for standard use of pulling Dockerhub image and running containers via Docker Compose" class="md-nav__link">
+    Method 1: Docker Compose commands for standard use of pulling Dockerhub image and running containers via Docker Compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-2-docker-compose-commands-for-building-image-and-running-containers-manually" title="Method 2: Docker Compose commands for building image and running containers manually" class="md-nav__link">
+    Method 2: Docker Compose commands for building image and running containers manually
   </a>
   
 </li>
@@ -910,13 +965,6 @@
         <li class="md-nav__item">
   <a href="#volumes" title="Volumes" class="md-nav__link">
     Volumes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
-    Notes
   </a>
   
 </li>
@@ -2058,8 +2106,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-compose-commands" title="Docker Compose commands:" class="md-nav__link">
-    Docker Compose commands:
+  <a href="#method-1-docker-compose-commands-for-standard-use-of-pulling-dockerhub-image-and-running-containers-via-docker-compose" title="Method 1: Docker Compose commands for standard use of pulling Dockerhub image and running containers via Docker Compose" class="md-nav__link">
+    Method 1: Docker Compose commands for standard use of pulling Dockerhub image and running containers via Docker Compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-2-docker-compose-commands-for-building-image-and-running-containers-manually" title="Method 2: Docker Compose commands for building image and running containers manually" class="md-nav__link">
+    Method 2: Docker Compose commands for building image and running containers manually
   </a>
   
 </li>
@@ -2099,13 +2154,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#notes" title="Notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-      
       
       
     </ul>
@@ -2140,9 +2188,9 @@
 <p><strong> Please note: This container must be created and launched first, prior to all other containers.</strong></p>
 <p>Within the docker-compose.yml file, found at the root of the ISLE project Github repository, this container is described / controlled as follows:</p>
 <blockquote>
-<p>db:
+<p>mysql:
   build: ./mysql
-  image: isle-db:latest
+  image: isle-mysql:latest
   environment:
     - MYSQL_ROOT_PASSWORD=islemysqlrootpw2017
     - MYSQL_DATABASE=fedora3
@@ -2153,34 +2201,37 @@
   volumes:
     - ./data/mysql:/var/lib/mysql
     - ./mysql/initscripts:/docker-entrypoint-initdb.d
-  container_name: isle-db</p>
+  container_name: isle-mysql</p>
 </blockquote>
-<h3 id="docker-compose-commands">Docker Compose commands:</h3>
+<h3 id="method-1-docker-compose-commands-for-standard-use-of-pulling-dockerhub-image-and-running-containers-via-docker-compose">Method 1: Docker Compose commands for standard use of pulling Dockerhub image and running containers via Docker Compose</h3>
+<h3 id="method-2-docker-compose-commands-for-building-image-and-running-containers-manually">Method 2: Docker Compose commands for building image and running containers manually</h3>
 <ul>
-<li>To build only this container (no others): <code>docker-compose build db</code>  </li>
-<li>To create only this container (no others): <code>docker-compose create db</code></li>
-<li>To start only this container (no others): <code>docker-compose up -d db</code>  </li>
+<li>To build only this container (no others): <code>docker-compose build mysql</code>  </li>
+<li>To create only this container (no others): <code>docker-compose create mysql</code></li>
+<li>To start only this container (no others): <code>docker-compose up -d mysql</code>  </li>
 </ul>
 <h3 id="image-name">Image Name</h3>
 <ul>
-<li>Latest <code>mysql:5.6 (db)</code></li>
-<li>Legacy <code>mysql:5.5.55 (db)</code></li>
+<li>Latest <code>mysql:5.6</code></li>
+<li>https://hub.docker.com/r/islandoracollabgroup/isle-mysql/</li>
 </ul>
 <h3 id="container-names">Container name(s)</h3>
-<p><code>isle-db</code></p>
+<p><code>isle-mysql</code></p>
 <h3 id="databases">Databases</h3>
 <ul>
 <li><code>fedora3</code> Fedora database created by build process (empty)</li>
-<li><code>isle_site</code> Drupal site database created by build process (empty, default)</li>
+<li><code>islandora_docker</code> Drupal site database created by build process (empty, default)</li>
 </ul>
 <p>Per the guidelines of the official MySQl Docker image <a href="https://hub.docker.com/_/mysql/">README</a>, section <code>Initializing a fresh instance</code>:</p>
 <blockquote>
 <p><em>"When a container is started for the first time, a new database with the specified name will be created and initialized with the provided configuration variables. Furthermore, it will execute files with extensions .sh, .sql and .sql.gz that are found in /docker-entrypoint-initdb.d. Files will be executed in alphabetical order. You can easily populate your mysql services by mounting a SQL dump into that directory and provide custom images with contributed data. SQL files will be imported by default to the database specified by the MYSQL_DATABASE variable."</em>"</p>
 </blockquote>
-<p>By default, the <code>docker-compose.yml</code> script creates the <code>fedora3</code> database by setting environmental variables in the <code>environment</code> section of the <code>db</code> service.</p>
-<p>The second database <code>isle_site</code> is created when the mount process <code>./mysql/initscripts:/docker-entrypoint-initdb.d</code> occurs upon container launch.</p>
+<p>By default, the <code>docker-compose.yml</code> script creates the <code>fedora3</code> database by setting environmental variables in the <code>environment</code> section of the <code>mysql</code> service.</p>
+<p>The second database <code>islandora_docker</code> is created when the mount process <code>./mysql/initscripts:/docker-entrypoint-initdb.d</code> occurs upon container launch.</p>
 <p>Within this project directory, there is a directory <code>initscripts</code> which contains a SQL script <code>siteinit.sql</code></p>
 <pre><code>├── README.md
+├── apache
+├── customize
 ├── data
 ├── docker-compose.yml
 ├── docs
@@ -2188,11 +2239,10 @@
 ├── mkdocs.yml
 ├── mysql
 │   ├── Dockerfile
-│   ├── docker-entrypoint.sh
 │   └── initscripts
 │       └── siteinit.sql
 ├── site
-└── web
+└── solr
 </code></pre>
 
 <p>The default contents of this script are:</p>
@@ -2216,7 +2266,7 @@
 <td>root</td>
 <td>islemysqlrootpw2017</td>
 <td align="center">ALL</td>
-<td>has access to all databases with all db privileges</td>
+<td>has access to all databases with all privileges</td>
 </tr>
 <tr>
 <td>fedora_admin</td>
@@ -2227,8 +2277,8 @@
 <tr>
 <td>islandora_user</td>
 <td>islandoraisledb2017</td>
-<td align="center">isle_site</td>
-<td>has access to only the <code>isle_site</code> Drupal site database. No grant privileges.</td>
+<td align="center">islandora_docker</td>
+<td>has access to only the <code>islandora_docker</code> Drupal site database. No grant privileges.</td>
 </tr>
 </tbody>
 </table>
@@ -2243,11 +2293,6 @@
 <li><code>./mysql/initscripts:/docker-entrypoint-initdb.d</code></li>
 </ul>
 <p>This volume is created to allow for the creation of additional databases beyond the initial <code>fedora3</code> creation. A default empty Drupal site database is also supplied using a SQL script file called <code>siteinit.sql</code> found within the <code>initscripts</code> directory. By mounting this directory directly into the container's <code>docker-entrypoint-initdb.d</code> directory, the MySQL service is able to run the SQL script automatically upon container launch.</p>
-<h3 id="notes">Notes</h3>
-<p><em>Please only review this if building containers manually:</em>  </p>
-<p>The <code>docker-entrypoint.sh</code> file contained within the <code>mysql</code> folder next to the Dockerfile needs to have <code>755</code> file permissions prior to the build.  </p>
-<p><strong>Example:</strong><br />
-Run <code>chmod 755 docker-entrypoint.sh</code> to fix PRIOR to the build.</p>
                 
                   
                 
