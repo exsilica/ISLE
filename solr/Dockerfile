@@ -1,42 +1,31 @@
 FROM tomcat:8.0-jre8
-
-LABEL org.label-schema.name = "isle-apache" \
-      org.label-schema.description: "ISLE Base Image with sample site isle.localdomain solr Dockerfile for non-production usage."
-      org.label-schema.license": "Apache-2.0" \
-      org.label-schema.vcs-url: "git@github.com:Islandora-Collaboration-Group/ISLE.git" \
-      org.label-schema.vendor": "Islandora Collaboration Group (ICG) - islandora-consortium-group@googlegroups.com" \
-      org.label-schema.schema-version = "1.0"
+LABEL io.github.islandora-collaboration-group.name="isle-solr" \
+      io.github.islandora-collaboration-group.service.name="Apache Solr" \
+      io.github.islandora-collaboration-group.service.version="4.10.4" \
+      io.github.islandora-collaboration-group.tomcat.version="tomcat:8.0-jre8" \
+      io.github.islandora-collaboration-group.vcs-url="git@github.com:Islandora-Collaboration-Group/ISLE.git" \
+      io.github.islandora-collaboration-group.vendor="Islandora Collaboration Group (ICG) - islandora-consortium-group@googlegroups.com" \
+      io.github.islandora-collaboration-group.description="Apache Solr and Dependencies" \
+      io.github.islandora-collaboration-group.license="Apache-2.0" \
+      io.github.islandora-collaboration-group.version="Alpha-2.0.1" 
 
 ###
 # Copy over tomcat files for configuration
-COPY solr/tomcat/tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
-COPY solr/tomcat/server.xml /usr/local/tomcat/conf/server.xml
-COPY solr/tomcat/web.xml /usr/local/tomcat/conf/web.xml
+COPY tomcat/ /usr/local/tomcat/conf/
 
 ###
 # Solr Installation
 #
-
 # Set up environmental variables for tomcat & dependencies installation
-
-ENV JAVA_HOME=/docker-java-home/jre \
-     CATALINA_HOME=/usr/local/tomcat \
-     CATALINA_BASE=/usr/local/tomcat \
-     CLASSPATH=$JAVA_HOME/jre/lib \
-     JRE_HOME=/docker-java-home/jre \
-     JAVA_OPTS="-Djava.awt.headless=true -Xmx1024m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true" \
-     JRE_PATH=$PATH:/docker-java-home/jre/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin \
-     PATH=$PATH:/docker-java-home/jre/bin:/usr/lib/jvm/java-8-openjdk-amd64/jre/bin \
-     PATH=$PATH:/$CATALINA_HOME/bin:$PATH \
-     CATALINA_OPTS="-Djava.net.preferIPv4Stack=true" \
-     LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CATALINA_HOME/lib
+# ENV  JAVA_OPTS="-Djava.awt.headless=true -Xmx1024m -XX:MaxPermSize=256m -XX:+UseConcMarkSweepGC -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses=true" \
+#      CATALINA_OPTS="-Djava.net.preferIPv4Stack=true" \
 
 ###
 # https://github.com/phusion/baseimage-docker/issues/58
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
     && cd /tmp \
     && wget "http://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz" \
-    && tar -xvzf /tmp/solr-4.10.4.tgz \
+    && tar -xzf /tmp/solr-4.10.4.tgz \
     && cp -v /tmp/solr-4.10.4/dist/solr-4.10.4.war /usr/local/tomcat/webapps/solr.war \
     && /usr/bin/unzip -o /usr/local/tomcat/webapps/solr.war -d /usr/local/tomcat/webapps/solr/ \
     && cp -rv /tmp/solr-4.10.4/example/solr/. /usr/local/solr/ \
@@ -45,11 +34,9 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
     && cp -v /tmp/solr-4.10.4/contrib/analysis-extras/lucene-libs/lucene-analyzers-icu-4.10.4.jar /usr/local/tomcat/webapps/solr/WEB-INF/lib/ \
     && rm -rf /tmp/solr-4.10.4
 
-COPY solr/solr/solr.xml /usr/local/tomcat/conf/Catalina/localhost/solr.xml
-COPY solr/solr/log4j.properties /usr/local/tomcat/webapps/solr/WEB-INF/classes/log4j.properties
-COPY solr/solr/solrconfig.xml /usr/local/solr/collection1/conf/solrconfig.xml
-COPY solr/solr/schema.xml /usr/local/solr/collection1/conf/schema.xml
-COPY solr/solr/stopwords.txt /usr/local/solr/collection1/conf/stopwords.txt
+COPY solr/solr.xml /usr/local/tomcat/conf/Catalina/localhost/solr.xml
+COPY solr/log4j.properties /usr/local/tomcat/webapps/solr/WEB-INF/classes/log4j.properties
+COPY collection1/ /usr/local/solr/collection1/conf/
 
-EXPOSE 8080
+EXPOSE 8080 8091
 CMD ["catalina.sh", "run"]

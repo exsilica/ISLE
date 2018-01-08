@@ -1,13 +1,15 @@
 FROM mysql:5.6
-LABEL org.label-schema.name = "isle-mysql" \
-      org.label-schema.description: "ISLE Base Image with sample site isle.localdomain mysql Dockerfile for non-production usage."
-      org.label-schema.license": "Apache-2.0" \
-      org.label-schema.vcs-url: "git@github.com:Islandora-Collaboration-Group/ISLE.git" \
-      org.label-schema.vendor": "Islandora Collaboration Group (ICG) - islandora-consortium-group@googlegroups.com" \
-      org.label-schema.schema-version = "1.0"
+LABEL io.github.islandora-collaboration-group.name="isle-mysql" \
+      io.github.islandora-collaboration-group.service="MySQLd" \
+      io.github.islandora-collaboration-group.service.version="5.6" \
+      io.github.islandora-collaboration-group.vcs-url="git@github.com:Islandora-Collaboration-Group/ISLE.git" \
+      io.github.islandora-collaboration-group.vendor="Islandora Collaboration Group (ICG) - islandora-consortium-group@googlegroups.com" \
+      io.github.islandora-collaboration-group.description="Fedora Repository and Dependencies" \
+      io.github.islandora-collaboration-group.license="Apache-2.0" \
+      io.github.islandora-collaboration-group.version="Alpha-2.0.1" 
 
-COPY mysql/config/my.cnf /etc/alternatives/my.cnf
-COPY mysql/config/init_dbs/ /docker-entrypoint-initdb.d/
+COPY my.cnf /etc/alternatives/my.cnf
+COPY init_dbs/ /docker-entrypoint-initdb.d/
 
 EXPOSE 3306
 CMD ["mysqld"]
