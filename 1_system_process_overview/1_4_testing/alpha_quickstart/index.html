@@ -14,7 +14,7 @@
       
         <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.1">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-1.10.1">
     
     
       
@@ -505,6 +505,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-nav__link">
+      1.4. -Testing - Alpha Migration Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link">
       1.4. -Testing - Host Server Build - Centos
     </a>
@@ -531,6 +543,18 @@
   <li class="md-nav__item">
     <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
       1.4. -Testing - Host Server Build - MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_server_setup_ansible/" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Server Build - Ansible
     </a>
   </li>
 
@@ -2350,9 +2374,9 @@
 </code></pre>
 
 <h3 id="alpha-install-process-same-for-all-host-server-types">Alpha install process (same for all host server types)</h3>
-<p><strong>Please note:</strong> <em>The first container (MySQL, isle-mysql, mysql) has to be running PRIOR to all others (including fedora &amp; apache) due to a race condition (fedora starts prior to mysql being ready to accept connections). This improper state will be fixed at a later point in the project.</em>  </p>
+<p><strong>Please note:</strong> <em>The first container (MySQL, isle-mysql, mysql) has to be running PRIOR to all others (including fedora &amp; apache) due to a race condition (fedora starts prior to mysql being ready to accept connections). This improper state will be fixed at a later point in the project.</em>  <strong>DO NOT RUN</strong> <code>docker-compose up -d</code> during the initial install process as this will download all images and then run all containers at the same time which will trigger this race condition and subsequent chain of service failures.</p>
 <ul>
-<li><strong>DO NOT RUN</strong> <code>docker-compose up -d</code> during the initial install process as this will download all images and then run all containers at the same time which will trigger the above mentioned race condition and subsequent chain of service failures.</li>
+<li><strong>During the initial install process</strong> do the following steps to individually download each image and run each container.</li>
 </ul>
 <h4 id="1-mysql-image-pull-container-launch-10-15-mins">1. MySQL image pull &amp; container launch (10-15 mins)</h4>
 <ul>
@@ -2362,7 +2386,26 @@
 <h4 id="2-fedora-image-pull-container-launch-20-30-mins">2. Fedora image pull &amp; container launch (20 - 30 mins)</h4>
 <ul>
 <li><code>docker pull islandoracollabgroup/isle-fedora</code>  </li>
-<li><code>docker-compose up -d fedora</code>  </li>
+<li>
+<p><code>docker-compose up -d fedora</code>  </p>
+</li>
+<li>
+<p><strong>(Optional but recommended)</strong></p>
+</li>
+<li>After spinning up fedora container, check if the Fedora service is running prior to advancing.</li>
+<li>Navigate to http://fedora:8080/manager/html a popup login prompt should appear.<ul>
+<li>using the supplied username and password at the bottom of this page, enter the appropriate values</li>
+<li>section #### 2. Fedora container, service Tomcat, user is admin</li>
+<li>upon login a large display of running Tomcat applications should display, scroll down to <code>fedora</code></li>
+</ul>
+</li>
+<li>The application state / status should be <code>true</code></li>
+<li>If <code>false</code> appears instead, attempt to restart the fedora service manually.<ul>
+<li>Select the <code>restart</code> button to the right of the status area. </li>
+</ul>
+</li>
+<li>If it still fails, review the mounted fedora logs. The <code>docker-compose.yml</code> file will indicate where the logs are located.</li>
+<li>using a command like <code>tail -n 300 &lt;path to fedora logs&gt;/fedora.log</code> should display enough information to troubleshoot.</li>
 </ul>
 <h4 id="3-solr-image-pull-container-launch-10-20-mins">3. Solr image pull &amp; container launch (10 - 20 mins)</h4>
 <ul>
@@ -2398,8 +2441,9 @@
 </ul>
 </li>
 <li>
-<p>Once finished <code>cntrl-D</code> or type <code>exit</code> to get out of the apache container &amp; QC the resulting setup</p>
+<p>Once finished <code>cntrl-D</code> or type <code>exit</code> to get out of the apache container</p>
 </li>
+<li>Test (QC) the resulting setup by opening a web browser to the URL of your new Islandora Docker server (i.e. http://myname.institution.edu)</li>
 </ul>
 <p><strong>Please note:</strong> The cronjob setting in the <code>install_site.sh</code> script is commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
 <h4 id="total-build-process-takes-45-75-minutes-depending-on-system-and-internet-speeds">Total build process takes 45 - 75 minutes (depending on system and internet speeds)</h4>
@@ -2762,13 +2806,13 @@
           </a>
         
         
-          <a href="../host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                1.4. -Testing - Host Server Build - Centos
+                1.4. -Testing - Alpha Migration Guide
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2802,6 +2846,10 @@
       
       
       <script>app.initialize({url:{base:"../../.."}})</script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
       
     
     

@@ -14,7 +14,7 @@
       
         <link rel="shortcut icon" href="../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.1">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-1.10.1">
     
     
       
@@ -212,9 +212,81 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        1.2 - MVP specs
+      </label>
+    
     <a href="./" title="1.2 - MVP specs" class="md-nav__link md-nav__link--active">
       1.2 - MVP specs
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mvp-specs" title="MVP Specs" class="md-nav__link">
+    MVP Specs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-servers-infrastructure-can-be" title="Host servers infrastructure can be:" class="md-nav__link">
+    Host servers infrastructure can be:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-server-operating-systems" title="Host Server Operating Systems" class="md-nav__link">
+    Host Server Operating Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-server-memory" title="Host Server Memory" class="md-nav__link">
+    Host Server Memory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-server-cpu" title="Host Server CPU" class="md-nav__link">
+    Host Server CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-server-storage" title="Host Server Storage" class="md-nav__link">
+    Host Server Storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -364,6 +436,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../1_4_testing/alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-nav__link">
+      1.4. -Testing - Alpha Migration Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../1_4_testing/host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link">
       1.4. -Testing - Host Server Build - Centos
     </a>
@@ -390,6 +474,18 @@
   <li class="md-nav__item">
     <a href="../1_4_testing/host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
       1.4. -Testing - Host Server Build - MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../1_4_testing/host_server_setup_ansible/" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Server Build - Ansible
     </a>
   </li>
 
@@ -2015,6 +2111,67 @@
   
   
   
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mvp-specs" title="MVP Specs" class="md-nav__link">
+    MVP Specs
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-servers-infrastructure-can-be" title="Host servers infrastructure can be:" class="md-nav__link">
+    Host servers infrastructure can be:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-server-operating-systems" title="Host Server Operating Systems" class="md-nav__link">
+    Host Server Operating Systems
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-server-memory" title="Host Server Memory" class="md-nav__link">
+    Host Server Memory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#host-server-cpu" title="Host Server CPU" class="md-nav__link">
+    Host Server CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-server-storage" title="Host Server Storage" class="md-nav__link">
+    Host Server Storage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2028,7 +2185,41 @@
                 
                   <h1>1.2 - MVP specs</h1>
                 
-                
+                <h3 id="mvp-specs">MVP Specs</h3>
+<p>Currently as this software is in the Alpha stage, we recommend the following for host Servers</p>
+<h4 id="host-servers-infrastructure-can-be">Host servers infrastructure can be:</h4>
+<ul>
+<li>Bare metal (standalone physical server)</li>
+<li>Virtual Machines (VMWare, VSphere, Virtualbox etc)</li>
+</ul>
+<h4 id="host-server-operating-systems">Host Server Operating Systems</h4>
+<ul>
+<li>CentOS 7 (or RHEL equivalent)</li>
+<li>Unbunt 16.04 LTS (or Debian equivalent)</li>
+</ul>
+<h4 id="host-server-memory">Host Server Memory</h4>
+<ul>
+<li><strong>Recommended</strong> - Minimum baseline of 16 GB RAM or higher</li>
+</ul>
+<p><em>If an institution chooses to run more than one ISLE platform (e.g. production, staging and development configurations) all on one host server, increasing RAM is recommended)</em></p>
+<h5 id="host-server-cpu">Host Server CPU</h5>
+<ul>
+<li><strong>Recommended</strong> - Minimum baseline of 2 cores or more</li>
+</ul>
+<h5 id="host-server-storage">Host Server Storage</h5>
+<ul>
+<li><strong>Recommended</strong> - Minimum baseline of 2 - 4 TB for data storage (<em>can be added as separate mounts / volumes</em>)</li>
+<li>
+<p><em>If migrating an existing Islandora Production site, review current production storage and replicate this accordingly</em></p>
+</li>
+<li>
+<p><strong>Recommended</strong> - While <code>ISLE</code> and its configs, images, software etc are typically cloned to <code>/opt/ISLE</code> and controlled from that location some data can be stored in <code>/var/docker</code>.</p>
+</li>
+<li>Please ensure that both the host server's <code>/opt</code> and <code>/var</code> directories are on disks, mounts or storage systems that can accommodate at least 200 GB in size. In some cases, institutions during the Alpha testing of ISLE increased the size of the host server's <code>opt</code> directory by:</li>
+<li>Increasing the overall size of the host server VM beyond 200GB</li>
+<li>Attaching separate storage capacity directly to <code>/opt</code> and <code>/var</code></li>
+<li>Additional documentation will be forthcoming on how mounts, volumes and directories can be setup to avoid shortages and for data growth.</li>
+</ul>
                 
                   
                 
@@ -2102,6 +2293,10 @@
       
       
       <script>app.initialize({url:{base:"../.."}})</script>
+      
+        <script src="../../search/require.js"></script>
+      
+        <script src="../../search/search.js"></script>
       
     
     

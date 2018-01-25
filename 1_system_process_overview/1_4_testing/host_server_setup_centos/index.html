@@ -14,7 +14,7 @@
       
         <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.10.1">
+      <meta name="generator" content="mkdocs-0.17.2, mkdocs-material-1.10.1">
     
     
       
@@ -361,6 +361,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-nav__link">
+      1.4. -Testing - Alpha Migration Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -434,6 +446,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#return-to-quickstart-guide" title="Return to Quickstart Guide" class="md-nav__link">
+    Return to Quickstart Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-with-next-steps-on-14-testing-alpha-quickstart-guide" title="* Continue with next steps on 1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
+    * Continue with next steps on 1.4. -Testing - Alpha Quickstart Guide
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -463,6 +489,18 @@
   <li class="md-nav__item">
     <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
       1.4. -Testing - Host Server Build - MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_server_setup_ansible/" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Server Build - Ansible
     </a>
   </li>
 
@@ -2140,6 +2178,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#return-to-quickstart-guide" title="Return to Quickstart Guide" class="md-nav__link">
+    Return to Quickstart Guide
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-with-next-steps-on-14-testing-alpha-quickstart-guide" title="* Continue with next steps on 1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
+    * Continue with next steps on 1.4. -Testing - Alpha Quickstart Guide
+  </a>
+  
+</li>
+      
       
       
     </ul>
@@ -2160,6 +2212,7 @@
                 <h4 id="centos-7-host-server-setup"><strong>CentOS 7</strong> Host Server Setup</h4>
 <ul>
 <li>This alpha build uses <code>islandora-docker.com</code> as the test domain along with the Docker Compose service names e.g. <code>mysql, fedora, apache</code> etc.<ul>
+<li>If your institution's server uses real DNS, then skip the next step. If not, please proceed with the following:</li>
 <li>To ensure this domain resolves properly, one will need to edit the servers and/or their own local <code>/etc/hosts</code> file.<ul>
 <li>
 <p>Open up a terminal and enter: <code>sudo vi /etc/hosts</code></p>
@@ -2203,12 +2256,15 @@
 </ul>
 <h4 id="create-islandora-user-as-root">Create islandora user (as root)</h4>
 <ul>
-<li><code>adduser islandora</code> (with password isle2017)  </li>
+<li><code>adduser islandora</code></li>
+<li><code>passwd islandora</code></li>
+<li><code>isle2017</code></li>
 <li><code>echo "islandora ALL=(ALL) NOPASSWD: ALL" &gt; /etc/sudoers.d/islandora</code></li>
 <li>Create Docker group <code>groupadd docker</code>  </li>
 <li>Add islandora user to docker group <code>usermod -aG docker islandora</code>  </li>
-<li>Add islandora user to wheel grop <code>sudo usermod -aG wheel islandora</code></li>
-<li>Exit out of the ssh session from the host server as the root user and shell back in as <code>islandora</code></li>
+<li>Add islandora user to wheel group <code>sudo usermod -aG wheel islandora</code></li>
+<li>Exit out of the ssh session from the host server as the root user <code>exit</code></li>
+<li>ssh back in as <code>islandora</code></li>
 <li>Enable the Docker service to start on host server boot<ul>
 <li><code>sudo systemctl enable docker.service</code></li>
 </ul>
@@ -2258,7 +2314,8 @@
 <li><code>sudo chown -Rv islandora:islandora ISLE</code></li>
 <li><code>cd /opt/ISLE</code></li>
 </ul>
-<hr />
+<h4 id="return-to-quickstart-guide">Return to Quickstart Guide</h4>
+<h2 id="continue-with-next-steps-on-14-testing-alpha-quickstart-guide">* Continue with next steps on <a href="../alpha_quickstart/">1.4. -Testing - Alpha Quickstart Guide</a></h2>
                 
                   
                 
@@ -2277,7 +2334,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../alpha_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2286,7 +2343,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1.4. -Testing - Alpha Quickstart Guide
+                1.4. -Testing - Alpha Migration Guide
               </span>
             </div>
           </a>
@@ -2332,6 +2389,10 @@
       
       
       <script>app.initialize({url:{base:"../../.."}})</script>
+      
+        <script src="../../../search/require.js"></script>
+      
+        <script src="../../../search/search.js"></script>
       
     
     
