@@ -417,9 +417,116 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        1.4. -Testing - Host Server Build - Ansible
+      </label>
+    
     <a href="./" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link md-nav__link--active">
       1.4. -Testing - Host Server Build - Ansible
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-host-server-setup" title="Ansible Host Server Setup" class="md-nav__link">
+    Ansible Host Server Setup
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-assumptions" title="Prerequisites / Assumptions" class="md-nav__link">
+    Prerequisites / Assumptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-deploy-script-explanation" title="Ansible Deploy Script Explanation" class="md-nav__link">
+    Ansible Deploy Script Explanation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installs-software-dependencies-tools-including" title="Installs software dependencies &amp; tools including:" class="md-nav__link">
+    Installs software dependencies &amp; tools including:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makes-isle-host-service-changes" title="Makes ISLE Host service changes" class="md-nav__link">
+    Makes ISLE Host service changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adds-users-groups-and-updates-permissions" title="Adds users, groups and updates permissions" class="md-nav__link">
+    Adds users, groups and updates permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installs-additional-software" title="Installs additional software" class="md-nav__link">
+    Installs additional software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-script-directory-structure" title="Ansible script directory structure" class="md-nav__link">
+    Ansible script directory structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ansible-script-to-deploy-to-isle-host" title="Configure Ansible Script to deploy to ISLE Host" class="md-nav__link">
+    Configure Ansible Script to deploy to ISLE Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-server-deploy-or-next-steps" title="Post Server Deploy or next steps" class="md-nav__link">
+    Post Server Deploy or next steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-next-steps-with-14-testing-migration-guide" title="* Continue next steps with 1.4. -Testing - Migration Guide" class="md-nav__link">
+    * Continue next steps with 1.4. -Testing - Migration Guide
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2037,6 +2144,115 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-host-server-setup" title="Ansible Host Server Setup" class="md-nav__link">
+    Ansible Host Server Setup
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-assumptions" title="Prerequisites / Assumptions" class="md-nav__link">
+    Prerequisites / Assumptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-deploy-script-explanation" title="Ansible Deploy Script Explanation" class="md-nav__link">
+    Ansible Deploy Script Explanation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installs-software-dependencies-tools-including" title="Installs software dependencies &amp; tools including:" class="md-nav__link">
+    Installs software dependencies &amp; tools including:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makes-isle-host-service-changes" title="Makes ISLE Host service changes" class="md-nav__link">
+    Makes ISLE Host service changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adds-users-groups-and-updates-permissions" title="Adds users, groups and updates permissions" class="md-nav__link">
+    Adds users, groups and updates permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installs-additional-software" title="Installs additional software" class="md-nav__link">
+    Installs additional software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-script-directory-structure" title="Ansible script directory structure" class="md-nav__link">
+    Ansible script directory structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-ansible-script-to-deploy-to-isle-host" title="Configure Ansible Script to deploy to ISLE Host" class="md-nav__link">
+    Configure Ansible Script to deploy to ISLE Host
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-server-deploy-or-next-steps" title="Post Server Deploy or next steps" class="md-nav__link">
+    Post Server Deploy or next steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-next-steps-with-14-testing-migration-guide" title="* Continue next steps with 1.4. -Testing - Migration Guide" class="md-nav__link">
+    * Continue next steps with 1.4. -Testing - Migration Guide
+  </a>
+  
+</li>
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -2045,7 +2261,285 @@
                 
                   <h1>1.4. -Testing - Host Server Build - Ansible</h1>
                 
-                
+                <h2 id="ansible-host-server-setup">Ansible Host Server Setup</h2>
+<p>Endusers now have the choice of using Ansible to deploy their Docker Host server instead of performing manual commands. The Ansible script and configuration files can be found in the root folder of the ISLE git repo in a directory named <code>ansible</code>.</p>
+<p>Ansible is an free open source automation platform / tool which runs on Linux, Mac or BSD, doesn’t use local or remote agents and is relatively easy to setup. Ansible can help with server configuration management, application deployment, task automation and IT orchestration (<em>running tasks in sequence on several different servers or devices</em>).</p>
+<p>If you are not familiar with the Ansible, it is recommended to start with their documentation.</p>
+<ul>
+<li><a href="https://www.ansible.com/">Ansible website</a></li>
+<li><a href="https://www.ansible.com/overview/how-ansible-works">What is Ansible?</a></li>
+<li><a href="http://docs.ansible.com/ansible/latest/intro.html">Ansible Documentation</a></li>
+</ul>
+<h3 id="prerequisites-assumptions">Prerequisites / Assumptions</h3>
+<ul>
+<li>
+<p>Familiarity or knowledge of Ansible</p>
+</li>
+<li>
+<p>Ansible control workstation, laptop or server that runs MacOs, BSD or Linux (Windows doesn't work yet for this)</p>
+</li>
+<li>
+<p><code>Ansible 2.2+</code> (choice of <a href="http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine">install methods</a>)</p>
+</li>
+<li>
+<p>A previously created ISLE Host Server running either of these operating systems:</p>
+</li>
+<li>Ubuntu 16.04 LTS / Debian Stretch</li>
+<li>
+<p>CentOS 7 / RHEL equivalent  </p>
+</li>
+<li>
+<p>An account with ssh access to the ISLE Host Server</p>
+</li>
+<li>
+<p>An account with passwordless sudo access on the ISLE Host Server</p>
+</li>
+<li>
+<p>The IP of the ISLE Host server</p>
+</li>
+</ul>
+<h3 id="ansible-deploy-script-explanation">Ansible Deploy Script Explanation</h3>
+<p>Within the <code>docker_install.yml</code> Ansible playbook, there are the following roles which perform different actions or cause different events on the ISLE Host server.</p>
+<table>
+<thead>
+<tr>
+<th>Ansible Role</th>
+<th>Action / Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dependencies</code></td>
+<td><em>Installs software dependencies &amp; tools as described above</em></td>
+</tr>
+<tr>
+<td><code>users_groups</code></td>
+<td><em>Adds users, groups and updates permissions as described above</em></td>
+</tr>
+<tr>
+<td><code>docker</code></td>
+<td><em>Installs Docker</em></td>
+</tr>
+<tr>
+<td><code>docker_compose</code></td>
+<td><em>Installs Docker Compose</em></td>
+</tr>
+<tr>
+<td><code>git_clone</code></td>
+<td><em>Clones the current ISLE git repository to <code>/opt/ISLE</code></em></td>
+</tr>
+<tr>
+<td><code>docker_images</code></td>
+<td><em>Pulls down the latest ISLE Docker Images from Dockerhub.com</em></td>
+</tr>
+</tbody>
+</table>
+<p>The Ansible script will deploy the following to the ISLE Host server:</p>
+<h4 id="installs-software-dependencies-tools-including">Installs software dependencies &amp; tools including:</h4>
+<table>
+<thead>
+<tr>
+<th>Ubuntu / Debian</th>
+<th>CentOS / RHEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>software-properties-common</td>
+<td>libselinux-python</td>
+</tr>
+<tr>
+<td>python-software-properties</td>
+<td>libsemanage-python</td>
+</tr>
+<tr>
+<td>--</td>
+<td>yum-utils</td>
+</tr>
+<tr>
+<td>ntp</td>
+<td>ntp</td>
+</tr>
+<tr>
+<td>openssh-client</td>
+<td>openssh-clients</td>
+</tr>
+<tr>
+<td>rsync</td>
+<td>rsync</td>
+</tr>
+<tr>
+<td>curl</td>
+<td>curl</td>
+</tr>
+<tr>
+<td>wget</td>
+<td>wget</td>
+</tr>
+<tr>
+<td>git</td>
+<td>git</td>
+</tr>
+<tr>
+<td>zip</td>
+<td>zip</td>
+</tr>
+<tr>
+<td>unzip</td>
+<td>unzip</td>
+</tr>
+<tr>
+<td>vim</td>
+<td>vim</td>
+</tr>
+<tr>
+<td>nano</td>
+<td>nano</td>
+</tr>
+<tr>
+<td>emacs24-nox</td>
+<td>emacs</td>
+</tr>
+<tr>
+<td>htop</td>
+<td>htop</td>
+</tr>
+<tr>
+<td>apt-transport-https</td>
+<td>--</td>
+</tr>
+<tr>
+<td>ca-certificates</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<h4 id="makes-isle-host-service-changes">Makes ISLE Host service changes</h4>
+<p><strong>Please note:</strong> <em>Any of these services can be re-enabled post installation see appropriate documentation for opening ports on firewalls etc.</em></p>
+<table>
+<thead>
+<tr>
+<th>Ubuntu / Debian</th>
+<th>CentOS / RHEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>enables ntp service</em></td>
+<td><em>enables ntp service</em></td>
+</tr>
+<tr>
+<td><em>disables ufw</em></td>
+<td><em>disables iptables</em></td>
+</tr>
+<tr>
+<td>--</td>
+<td><em>sets selinux to permissive</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="adds-users-groups-and-updates-permissions">Adds users, groups and updates permissions</h4>
+<ul>
+<li>Creates the <code>islandora</code> user</li>
+<li>Along with an appropriate password</li>
+<li>generates a ssh key</li>
+<li>bestows sudo password-less access</li>
+<li>
+<p>Gives the <code>islandora</code> user the ability to run Docker &amp; Docker Compose by adding the account to the Docker group.  </p>
+</li>
+<li>
+<p>Disables <code>root</code> user access via ssh</p>
+</li>
+<li>Disables use of passwords with ssh.</li>
+<li><em>key based access only to the ISLE Host server</em></li>
+</ul>
+<h4 id="installs-additional-software">Installs additional software</h4>
+<ul>
+<li>
+<p>Docker</p>
+</li>
+<li>
+<p>Docker Compose</p>
+</li>
+<li>
+<p>Git clones the ISLE repo to <code>/opt/ISLE</code></p>
+</li>
+<li>
+<p>Pulls down the most recent ISLE images</p>
+</li>
+</ul>
+<h4 id="ansible-script-directory-structure">Ansible script directory structure</h4>
+<pre><code>ansible
+├── docker_install.yml
+├── host_vars
+│   └── isle-prod-project.institution.yml
+├── inventory
+└── roles
+    ├── dependencies
+    │   └── tasks
+    │       ├── debian_ubuntu.yml
+    │       ├── main.yml
+    │       └── rhel_centos.yml
+    ├── docker
+    │   └── tasks
+    │       ├── install.yml
+    │       └── main.yml
+    ├── docker_compose
+    │   └── tasks
+    │       ├── install.yml
+    │       └── main.yml
+    ├── docker_images
+    │   └── tasks
+    │       ├── images_pull.yml
+    │       └── main.yml
+    ├── git_clone
+    │   └── tasks
+    │       ├── git_clone.yml
+    │       └── main.yml
+    └── users_groups
+        ├── files
+        │   └── islandora
+        └── tasks
+            ├── groups.yml
+            ├── main.yml
+            ├── secure.yml
+            ├── ssh.yml
+            └── users.yml
+</code></pre>
+
+<h3 id="configure-ansible-script-to-deploy-to-isle-host">Configure Ansible Script to deploy to ISLE Host</h3>
+<p>To configure the Ansible script to deploy to one's institutional ISLE Host Server, please review and edit the following:</p>
+<ul>
+<li><code>docker_install.yml</code> <em>This is the Ansible playbook</em></li>
+</ul>
+<blockquote>
+<p><strong>TO DO</strong>
+- how to edit the following:
+  - docker_install.yml
+  - inventory file
+  - Changing the isle-prod-project.institution.yml template within the <code>host_vars</code> directory</p>
+<ul>
+<li>testing Ansible connection to the ISLE host server</li>
+<li>
+<p><code>ansible -i inventory isle-host-server -m ping</code></p>
+</li>
+<li>
+<p>running the Ansible script to deploy to the ISLE host server</p>
+</li>
+<li>
+<p><code>ansible-playbook -i inventory docker_install.yml</code></p>
+</li>
+<li>
+<p>Checking if services are running, images are pulled down etc.  </p>
+</li>
+</ul>
+</blockquote>
+<h3 id="post-server-deploy-or-next-steps">Post Server Deploy or next steps</h3>
+<p>Once this script has finished one can:</p>
+<ul>
+<li>Continue next steps with the <a href="../alpha_quickstart/">1.4. -Testing - Alpha Quickstart Guide</a></li>
+</ul>
+<h2 id="continue-next-steps-with-14-testing-migration-guide">* Continue next steps with <a href="../alpha_migration_guide/">1.4. -Testing - Migration Guide</a></h2>
                 
                   
                 
