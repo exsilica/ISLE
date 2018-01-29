@@ -501,6 +501,47 @@
     Configure Ansible Script to deploy to ISLE Host
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansibledocker_installyml" title="ansible/docker_install.yml" class="md-nav__link">
+    ansible/docker_install.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleinventoryyml" title="ansible/inventory.yml" class="md-nav__link">
+    ansible/inventory.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleisle-prod-projectinstitutionyml" title="ansible/isle-prod-project.institution.yml" class="md-nav__link">
+    ansible/isle-prod-project.institution.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-commands-for-deploy" title="Ansible commands for deploy" class="md-nav__link">
+    Ansible commands for deploy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qc-review-checklist-to-ensure-a-successful-deploy-to-the-isle-server" title="QC Review checklist to ensure a successful deploy to the ISLE Server" class="md-nav__link">
+    QC Review checklist to ensure a successful deploy to the ISLE Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2223,6 +2264,47 @@
     Configure Ansible Script to deploy to ISLE Host
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansibledocker_installyml" title="ansible/docker_install.yml" class="md-nav__link">
+    ansible/docker_install.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleinventoryyml" title="ansible/inventory.yml" class="md-nav__link">
+    ansible/inventory.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleisle-prod-projectinstitutionyml" title="ansible/isle-prod-project.institution.yml" class="md-nav__link">
+    ansible/isle-prod-project.institution.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-commands-for-deploy" title="Ansible commands for deploy" class="md-nav__link">
+    Ansible commands for deploy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#qc-review-checklist-to-ensure-a-successful-deploy-to-the-isle-server" title="QC Review checklist to ensure a successful deploy to the ISLE Server" class="md-nav__link">
+    QC Review checklist to ensure a successful deploy to the ISLE Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2276,10 +2358,14 @@
 <p>Familiarity or knowledge of Ansible</p>
 </li>
 <li>
-<p>Ansible control workstation, laptop or server that runs MacOs, BSD or Linux (Windows doesn't work yet for this)</p>
+<p>Ansible control workstation, laptop or server that runs MacOs, BSD or Linux (Windows doesn't work yet for this) with the following:</p>
 </li>
+<li><code>Ansible 2.2+</code> (choice of <a href="http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine">install methods</a>)</li>
+<li><code>openssh</code> (2.2.x+)</li>
+<li><code>git</code> (2.15.1+)</li>
+<li><code>python</code> (2.7+)</li>
 <li>
-<p><code>Ansible 2.2+</code> (choice of <a href="http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine">install methods</a>)</p>
+<p>The <a href="https://github.com/Islandora-Collaboration-Group/ISLE">ISLE project repository</a> cloned to an appropriate location.</p>
 </li>
 <li>
 <p>A previously created ISLE Host Server running either of these operating systems:</p>
@@ -2415,7 +2501,7 @@
 </tbody>
 </table>
 <h4 id="makes-isle-host-service-changes">Makes ISLE Host service changes</h4>
-<p><strong>Please note:</strong> <em>Any of these services can be re-enabled post installation see appropriate documentation for opening ports on firewalls etc.</em></p>
+<p><strong>Please Note:</strong> <em>Any of these services can be re-enabled post installation see appropriate documentation for opening ports on firewalls etc.</em></p>
 <table>
 <thead>
 <tr>
@@ -2508,36 +2594,213 @@
 </code></pre>
 
 <h3 id="configure-ansible-script-to-deploy-to-isle-host">Configure Ansible Script to deploy to ISLE Host</h3>
-<p>To configure the Ansible script to deploy to one's institutional ISLE Host Server, please review and edit the following:</p>
+<p>To configure the Ansible script to deploy to one's institutional ISLE Host Server, please review and edit the following files within the <code>ansible</code> directory.</p>
 <ul>
-<li><code>docker_install.yml</code> <em>This is the Ansible playbook</em></li>
+<li><code>ansible/docker_install.yml</code></li>
+<li><code>ansible/inventory</code></li>
+<li><code>ansible/host_vars/isle-prod-project.institution.yml</code></li>
 </ul>
-<blockquote>
-<p><strong>TO DO</strong>
-- how to edit the following:
-  - docker_install.yml
-  - inventory file
-  - Changing the isle-prod-project.institution.yml template within the <code>host_vars</code> directory</p>
+<p>Basically wherever <code>isle-prod-project.institution</code> appears as a value in these three files, please replace with the appropriate ISLE Host server fully qualified domain name (<strong>fqdn</strong>) e.g. <code>yourislesite.institution.com</code></p>
+<p>One can open up and edit all files in a text editor e.g. Atom, Textedit, Textwrangler etc.</p>
+<h4 id="ansibledocker_installyml">ansible/docker_install.yml</h4>
 <ul>
-<li>testing Ansible connection to the ISLE host server</li>
 <li>
-<p><code>ansible -i inventory isle-host-server -m ping</code></p>
+<p><em>This is the Ansible playbook</em></p>
 </li>
 <li>
-<p>running the Ansible script to deploy to the ISLE host server</p>
-</li>
-<li>
-<p><code>ansible-playbook -i inventory docker_install.yml</code></p>
-</li>
-<li>
-<p>Checking if services are running, images are pulled down etc.  </p>
+<p>At the top of the file remove <code>isle-prod-project.institution</code> and replace with the appropriate <strong>fqdn</strong>.  </p>
 </li>
 </ul>
-</blockquote>
+<h4 id="ansibleinventoryyml">ansible/inventory.yml</h4>
+<ul>
+<li>
+<p><em>List of server(s) to deploy to using Ansible</em></p>
+</li>
+<li>
+<p><strong>Please Note:</strong> There are instructions to this effect within the file itself.</p>
+</li>
+<li>
+<p>On <strong>Line 7:</strong> remove <code>isle-prod-project.institution</code> from in between the brackets and replace with the appropriate <strong>fqdn</strong></p>
+</li>
+<li>
+<p>On <strong>Line 8:</strong> Add the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions to the end of <code>ansible_ssh_user=</code>.</p>
+</li>
+<li>
+<p>Example:
+  <code>ansible_ssh_user=janesmith</code></p>
+</li>
+<li>
+<p>Also on <strong>Line 8:</strong> Add the appropriate path to this ISLE Host Server user accounts public ssh key to the end of <code>ansible_ssh_private_key_file=</code>.</p>
+</li>
+</ul>
+<p><strong>Please Note:</strong> This key is typically found on the local control (Ansible deploy laptop / workstation) system and has been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</p>
+<ul>
+<li>
+<p>Example of inventory using settings for local Ansible deploy laptop:
+  <code>ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub</code></p>
+</li>
+<li>
+<p>Example end result for inventory file with all settings above
+  <code>[yourislesite.institution.com]
+  yourislesite.institution.com ansible_connection=ssh ansible_ssh_user=janesmith ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub</code></p>
+</li>
+</ul>
+<h4 id="ansibleisle-prod-projectinstitutionyml">ansible/isle-prod-project.institution.yml</h4>
+<ul>
+<li>
+<p>Copy this file and rename the copy to with the appropriate <strong>fqdn</strong></p>
+</li>
+<li>
+<p>Example of how <code>host_vars</code> directory should now contain two files
+  <code>ansible/
+  ├── docker_install.yml
+  ├── host_vars
+  │   ├── isle-prod-project.institution.yml
+  │   └── yourislesite.institution.com.yml
+  ├── inventory</code></p>
+</li>
+<li>
+<p><strong>Please Note:</strong> <em>The <strong>fqdn</strong> in the <code>inventory</code> file should match this filename as well.</em></p>
+</li>
+<li>
+<p>Edit the following lines within the newly created file i.e. <code>yourislesite.institution.com.yml</code> and remove the comments (#) as asked</p>
+</li>
+</ul>
+<p>Examples ONLY (<em>Do not enter these literal values</em>)
+  * <strong>Line 9:</strong> <code>ansible_ssh_host: 192.168.1.16</code>
+  * This is the IP address of the ISLE Host server</p>
+<ul>
+<li><strong>Line 10:</strong> <code>ansible_ssh_user: janesmith</code>  </li>
+<li>
+<p>This is the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions.</p>
+</li>
+<li>
+<p><strong>Line 15:</strong> <code>pub_locale: /home/janesmith/.ssh/id_rsa.pub</code></p>
+</li>
+<li>This is the key found on the local control (Ansible deploy laptop / workstation) system which has been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</li>
+</ul>
+<h4 id="ansible-commands-for-deploy">Ansible commands for deploy</h4>
+<p>Test if the Ansible control laptop / workstation can connect to the ISLE Host server by running these commands.</p>
+<ol>
+<li>On the local Ansible control laptop / workstation, open a terminal window and enter the following:</li>
+</ol>
+<p>```
+   cd /path/to/ISLE/repo</p>
+<p>ansible -i inventory isle-host-server -m ping
+   ```</p>
+<p>Example output of above  command (IGNORE THE WARNING)
+   ```
+  [WARNING]: Found both group and host with same name: isle-host-server   </p>
+<p>isle-host-server | SUCCESS =&gt; {
+         "changed": false,
+         "ping": "pong"
+     }
+   ```
+<strong>Please Note:</strong> <em>If SUCCESS doesn't appear as a value or if the wording of the prompt is in RED with "host doesn't exist ...", review all steps above and check the settings. Do not advance until the example output above matches.</em></p>
+<ol>
+<li>To deploy to the ISLE Host Server, run this command.
+  <code>ansible-playbook -i inventory docker_install.yml</code></li>
+</ol>
+<p>Ansible will start displaying output within the terminal. If any turn red and the script terminates, please review the above settings and connectivity to the server. Attempt to rerun the script.</p>
+<h4 id="qc-review-checklist-to-ensure-a-successful-deploy-to-the-isle-server">QC Review checklist to ensure a successful deploy to the ISLE Server</h4>
+<p>Review the following to ensure that the deploy to the Islandora Host server was successful.</p>
+<p>Open a terminal window on the Ansible control laptop /workstation and <code>ssh</code> into the Islandora Host server using the appropriate enduser account setup prior to the deploy.</p>
+<p>Example:
+   <code>`ssh enduser@isle-prod-project.institution`</code></p>
+<ul>
+<li><strong>Docker</strong></li>
+<li>To check where Docker has been installed to, enter:  </li>
+</ul>
+<p><code>which docker</code></p>
+<p>Example output:<br />
+<code>/usr/bin/docker</code></p>
+<ul>
+<li>To check which version of Docker has been installed, enter:</li>
+</ul>
+<p><code>docker --version</code></p>
+<p>Example output:
+   <code>Docker version 17.12.0-ce, build c97c6d6</code></p>
+<ul>
+<li>To check if Docker is running, enter:</li>
+</ul>
+<p><code>service docker status</code>   </p>
+<p>Example output:</p>
+<p><code>Redirecting to /bin/systemctl status docker.service
+   ● docker.service - Docker Application Container Engine
+      Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
+      Active: active (running) since Thu 2018-01-18 14:36:55 EST; 1 weeks 4 days ago
+        Docs: https://docs.docker.com
+    Main PID: 23066 (dockerd)
+      Memory: 55.3M
+   ....</code></p>
+<ul>
+<li>
+<p>To check if the ISLE images have been downloaded on the ISLE Host server, enter:</p>
+<p><code>docker image ls</code></p>
+<p>Example output:<br />
+<code>REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
+ islandoracollabgroup/isle-fedora   alpha2              6e2749ca2c2f        2 weeks ago         2.43GB
+ islandoracollabgroup/isle-apache   alpha2              82fe4ae16932        2 weeks ago         2.18GB
+ islandoracollabgroup/isle-solr     alpha2              7fba26c10433        2 weeks ago         784MB
+ islandoracollabgroup/isle-mysql    alpha2              f34162f1e0f8        2 weeks ago         299MB</code></p>
+</li>
+<li>
+<p><strong>Docker Compose</strong></p>
+</li>
+<li>
+<p>To check where Docker-compose has been installed to, enter:  </p>
+</li>
+</ul>
+<p><code>which docker-compose</code></p>
+<p>Example output:
+   <code>/usr/local/bin/docker-compose</code>
+  * To check which version of Docker-compose has been installed, enter:</p>
+<p><code>docker-compose -version</code></p>
+<p>Example output:
+   <code>docker-compose version 1.17.1, build 6d101fb</code></p>
+<ul>
+<li>
+<p><strong>Islandora user</strong></p>
+</li>
+<li>
+<p>To check if the <code>islandora</code> user has been created, enter:</p>
+</li>
+</ul>
+<p><code>cat /etc/passwd</code>  </p>
+<p>Example output:
+   <code>islandora:x:1002:1002::/home/islandora:/bin/bash</code></p>
+<ul>
+<li>
+<p><strong>ISLE Project directory</strong></p>
+</li>
+<li>
+<p>To check if the ISLE project git repo has been cloned to <code>/opt/ISLE</code>, enter:</p>
+</li>
+</ul>
+<p><code>ls -lh /opt/ISLE</code></p>
+<p>Example output:
+   <code>total 24K
+   drwxr-xr-x. 3 islandora islandora  110 Jan 17 09:17 apache
+   drwxr-xr-x. 5 islandora islandora   84 Jan 23 13:44 config
+   -rwxr-xr-x. 1 islandora islandora 2.0K Jan 18 16:58 docker-compose.yml
+   drwxr-xr-x. 7 islandora islandora  143 Jan 17 09:17 docs
+   drwxr-xr-x. 7 islandora islandora  102 Jan 17 09:17 fedora
+   -rwxr-xr-x. 1 islandora islandora  12K Jan 17 09:17 mkdocs.yml
+   drwxr-xr-x. 3 islandora islandora   54 Jan 17 09:17 mysql
+   -rwxr-xr-x. 1 islandora islandora 4.1K Jan 17 09:17 README.md
+   drwxr-xr-x. 4 islandora islandora   50 Jan 17 09:17 solr</code></p>
 <h3 id="post-server-deploy-or-next-steps">Post Server Deploy or next steps</h3>
 <p>Once this script has finished one can:</p>
 <ul>
-<li>Continue next steps with the <a href="../alpha_quickstart/">1.4. -Testing - Alpha Quickstart Guide</a></li>
+<li>
+<p>Add any appropriate public ssh keys to <code>/home/islandora/.ssh/authorized_keys</code> prior to attempting to ssh to the Islandora Host server as the <code>islandora</code> user.</p>
+</li>
+<li>
+<p>Add the <code>/home/islandora/.ssh/id_rsa.pub</code> key to any git repository contained within the Migration Guide. (Additional instructions appear in that guide if this process is unfamiliar.)</p>
+</li>
+<li>
+<p>Continue next steps with the <a href="../alpha_quickstart/">1.4. -Testing - Alpha Quickstart Guide</a></p>
+</li>
 </ul>
 <h2 id="continue-next-steps-with-14-testing-migration-guide">* Continue next steps with <a href="../alpha_migration_guide/">1.4. -Testing - Migration Guide</a></h2>
                 

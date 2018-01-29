@@ -2334,7 +2334,7 @@
 <li>
 <p>The enduser has the expected fully qualified domain name (fqdn) of the new first Islandora / Drupal website documented and assigned to the appropriate IP in DNS.</p>
 <ul>
-<li><em>Please note: this IP address and fqdn are NOT the of current running Production Islandora site!</em></li>
+<li><em>Please Note: this IP address and fqdn are NOT the of current running Production Islandora site!</em></li>
 </ul>
 </li>
 <li>
@@ -2645,7 +2645,7 @@
 <p>Navigate to the ISLE directory `/opt/ISLE/config/``</p>
 </li>
 <li>
-<p>Create a directory on the ISLE server directory e.g. <code>/opt/ISLE/config/isle-prod-project.institution.edu</code></p>
+<p>Create a directory on the ISLE server directory e.g. <code>/opt/ISLE/config/isle-prod-project.institution</code></p>
 </li>
 <li>
 <p>Instantiate this directory as a git repository</p>
@@ -2661,7 +2661,7 @@
 
 <ul>
 <li>
-<p>Copy the contents of the <code>/opt/ISLE/config/production_template/</code> to this new directory e.g. <code>/opt/ISLE/config/isle-prod-project.institution.edu</code></p>
+<p>Copy the contents of the <code>/opt/ISLE/config/production_template/</code> to this new directory e.g. <code>/opt/ISLE/config/isle-prod-project.institution</code></p>
 </li>
 <li>
 <p>The enduser will need to add the <code>/home/islandora/.ssh/id_rsa.pub</code> as a git ssh deploy key to be able to push pull from the server.</p>
@@ -2671,81 +2671,72 @@
 <h3 id="step-5-copy-in-production-files-on-the-isle-host-server-to-the-new-institutional-docker-config-directory-within-the-isle-project-directory">Step 5: Copy in production files on the Isle Host Server to the new institutional Docker config directory within the ISLE project directory</h3>
 <ul>
 <li>
-<p>Copy in the <code>highlighted</code> files from their locations <code>/pathto/islandora_production_data_storage/</code> to the appropriate directories of <code>/opt/ISLE/config/isle-prod-project.institution.edu</code></p>
+<p>Copy in the <code>highlighted</code> files from their locations <code>/pathto/islandora_production_data_storage/</code> to the appropriate directories of <code>/opt/ISLE/config/isle-prod-project.institution</code></p>
 </li>
 <li>
-<p><strong>Resulting example structure</strong>: <code>/opt/ISLE/config/isle-prod-project.institution.edu</code></p>
+<p><strong>Resulting example structure</strong>: <code>/opt/ISLE/config/isle-prod-project.institution</code></p>
 </li>
 </ul>
-<pre><code>isle-prod-project.institution.edu  
-├── README.md  
-│  
-├── ansible  
-│   ├── docker_install.yml  
-│   ├── host_vars  
-│   │   └── isle-server.institution.edu.yml  
-│   ├── inventory  
-│   └── roles  
-│  
-├── apache  
-│   ├── isle_build_tools  
-│   │   ├── README.md  
-│   │   ├── apache_provision.sh  
-│   │   ├── drupal.drush.make  
-│   │   ├── fix-permissions.sh  
-│   │   ├── install_site.sh  
-│   │   ├── islandora.drush.make  
-│   │   └── make_site.sh  
+<pre><code>isle-prod-project.institution/
+├── apache
 │   ├── php.ini
-│   ├── settings.php  
-│   ├── site.conf  
-│   └── tmpreaper  
-│       └── cron  
-│  
-├── docker-compose.yml  
-│  
-├── fedora  
-│   ├── apache  
-│   │   └── site.conf  
-│   ├── fedora  
-│   │   ├── fedora-users.xml  
-│   │   ├── fedora.fcfg  
-│   │   ├── filter-drupal.xml  
-│   │   ├── log4j.properties  
-│   │   ├── logback.xml  
-│   │   └── repository-policies  
-│   │       ├── default  
-│   │       └── islandora  
-│   ├── gsearch  
-│   │   ├── fedoragsearch.properties  
-│   │   ├── fgsconfig-basic-configForIslandora.properties  
-│   │   ├── fgsconfigObjects.properties  
-│   │   └── repository.properties  
-│   ├── tmpreaper  
-│   │   └── cron  
-│   └── tomcat  
-│       ├── server.xml  
-│       ├── tomcat-users.xml  
-│       └── web.xml  
-│  
-├── mysql  
-│   ├── initscripts  
-│   │   ├── create_drupal_user.sql  
-│   │   ├── create_fedora_user.sql  
-│   │   ├── drupal_site.sql  
-│   │   └── fedora3.sql  
-│   └── my.cnf  
-│   
-└── solr  
-      ├── log4j.properties  
-      ├── schema.xml  
-      ├── solr.xml  
-      ├── solrconfig.xml  
-      ├── stopwords.txt  
-      └── tomcat  
-          ├── server.xml  
-          ├── tomcat-users.xml  
-          └── web.xml  
+│   ├── settings.php
+│   ├── site.conf
+│   └── tmpreaper
+│       └── cron
+├── docker-compose.yml
+├── fedora
+│   ├── apache
+│   │   └── site.conf
+│   ├── fedora
+│   │   ├── fedora-users.xml
+│   │   ├── fedora.fcfg
+│   │   ├── filter-drupal.xml
+│   │   ├── log4j.properties
+│   │   ├── logback.xml
+│   │   └── repository-policies
+│   │       ├── default
+│   │       │   ├── deny-apim-if-not-localhost.xml
+│   │       │   ├── deny-inactive-or-deleted-objects-or-datastreams-if-not-administrator.xml
+│   │       │   ├── deny-reloadPolicies-if-not-localhost.xml
+│   │       │   ├── deny-unallowed-file-resolution.xml
+│   │       │   ├── permit-anything-to-administrator.xml
+│   │       │   ├── permit-apia-unrestricted.xml
+│   │       │   ├── permit-dsstate-check-unrestricted.xml
+│   │       │   ├── permit-oai-unrestricted.xml
+│   │       │   ├── permit-serverStatus-unrestricted.xml
+│   │       │   └── readme.txt
+│   │       └── islandora
+│   │           ├── permit-apim-to-authenticated-user.xml
+│   │           ├── permit-getDatastream-unrestricted.xml
+│   │           ├── permit-getDatastreamHistory-unrestricted.xml
+│   │           └── permit-upload-to-authenticated-user.xml
+│   ├── gsearch
+│   │   ├── fedoragsearch.properties
+│   │   ├── fgsconfig-basic-configForIslandora.properties
+│   │   ├── fgsconfigObjects.properties
+│   │   └── repository.properties
+│   ├── tmpreaper
+│   │   └── cron
+│   └── tomcat
+│       ├── server.xml
+│       ├── tomcat-users.xml
+│       └── web.xml
+├── mysql
+│   ├── create_drupal_user.sql
+│   ├── create_fedora_user.sql
+│   ├── my.cnf
+│   └── production_site_db.sql
+└── solr
+    ├── solr
+    │   ├── schema.xml
+    │   ├── solr.xml
+    │   ├── solrconfig.xml
+    │   └── stopwords.txt
+    └── tomcat
+        ├── server.xml
+        ├── tomcat-users.xml
+        └── web.xml
 </code></pre>
 
 <h3 id="step-6-edit-the-docker-composeyml-file">Step 6: Edit the <code>docker-compose.yml</code> file</h3>
@@ -2772,7 +2763,7 @@
 <p>/pathto/isle_production_data_storage/data/mysql/log:/var/log/mysql</p>
 </li>
 <li>
-<p><strong>Please note:</strong> <em>The docker bind-mount process will automatically create the <code>/data/mysql</code> directories</em></p>
+<p><strong>Please Note:</strong> <em>The docker bind-mount process will automatically create the <code>/data/mysql</code> directories</em></p>
 </li>
 </ul>
 </li>
@@ -2827,7 +2818,7 @@ TO DO : apache service edits
 </ul>
 <h3 id="step-8-spin-up-mysql-container-and-import-production-databases">Step 8: Spin up mysql container and import production databases</h3>
 <ul>
-<li><code>cd /opt/ISLE/config/isle-prod-project.institution.edu</code></li>
+<li><code>cd /opt/ISLE/config/isle-prod-project.institution</code></li>
 <li><code>docker-compose up -d mysql</code></li>
 </ul>
 <pre><code>**TO DO:**  steps and scripts for mysql cli import
@@ -2837,9 +2828,9 @@ TO DO : apache service edits
 
 <h3 id="step-9-spin-up-fedora-container-and-run-reindex-processes">Step 9: Spin up fedora container and run reindex processes</h3>
 <pre><code>**TO DO:**  refine this
-* Staying within `/opt/ISLE/config/isle-prod-project.institution.edu`
+* Staying within `/opt/ISLE/config/isle-prod-project.institution`
 * `docker-compose up -d fedora`
-* check if fedora is running properly e.g. `http://isle-prod-project.institution.edu:8080/manager/html`
+* check if fedora is running properly e.g. `http://isle-prod-project.institution:8080/manager/html`
 * `docker exec -it isle-fedora-institution bash`
 * turn off tomcat `service tomcat stop`
 * reindex Fedora RI `process steps here`
@@ -2849,9 +2840,9 @@ TO DO : apache service edits
 
 <h3 id="step-10-spin-up-solr-container-and-rerun-index-processes">Step 10: Spin up solr container and rerun index processes</h3>
 <pre><code>**TO DO:**  refine this
-* Staying within `/opt/ISLE/config/isle-prod-project.institution.edu`
+* Staying within `/opt/ISLE/config/isle-prod-project.institution`
 * `docker-compose up -d solr`
-* check if solr is running properly e.g. `http://isle-prod-project.institution.edu:8777/manager/html`
+* check if solr is running properly e.g. `http://isle-prod-project.institution:8777/manager/html`
 * `docker exec -it isle-fedora-institution bash` NOTE FEDORA NOT SOLR
 * reindex SOLR `process steps here` Use screen
 * TAKES HOURS DEPENDING ON DATA SIZE
@@ -2859,9 +2850,9 @@ TO DO : apache service edits
 
 <h3 id="step-11-spin-up-apache-container-and-run-provision-script">Step 11: Spin up apache container and run provision script</h3>
 <pre><code>**TO DO:**  refine this
-* Staying within `/opt/ISLE/config/isle-prod-project.institution.edu`
+* Staying within `/opt/ISLE/config/isle-prod-project.institution`
 * `docker-compose up -d apache`
-* check if apache is running properly e.g. `http://isle-prod-project.institution.edu`
+* check if apache is running properly e.g. `http://isle-prod-project.institution`
 * `docker exec -it isle-apache-institution bash`
 * cd /tmp location
 * `/tmp/isle-build-tools/apache-provision.sh` (check if this is appropriate)
