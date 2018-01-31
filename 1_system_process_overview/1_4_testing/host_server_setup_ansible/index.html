@@ -538,6 +538,18 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ansible-commands-to-test-connection" title="Ansible commands to test connection" class="md-nav__link">
+    Ansible commands to test connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ansible-commands-for-deploy" title="Ansible commands for deploy" class="md-nav__link">
     Ansible commands for deploy
   </a>
@@ -545,8 +557,37 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#qc-review-checklist-to-ensure-a-successful-deploy-to-the-isle-server" title="QC Review checklist to ensure a successful deploy to the ISLE Server" class="md-nav__link">
-    QC Review checklist to ensure a successful deploy to the ISLE Server
+  <a href="#qc-review-checklist" title="QC Review checklist" class="md-nav__link">
+    QC Review checklist
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" title="Docker Compose" class="md-nav__link">
+    Docker Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islandora-user" title="Islandora user" class="md-nav__link">
+    Islandora user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isle-project-directory" title="ISLE Project directory" class="md-nav__link">
+    ISLE Project directory
   </a>
   
 </li>
@@ -565,13 +606,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue-next-steps-with-14-testing-migration-guide" title="* Continue next steps with 1.4. -Testing - Migration Guide" class="md-nav__link">
-    * Continue next steps with 1.4. -Testing - Migration Guide
-  </a>
   
 </li>
       
@@ -2301,6 +2335,18 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#ansible-commands-to-test-connection" title="Ansible commands to test connection" class="md-nav__link">
+    Ansible commands to test connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ansible-commands-for-deploy" title="Ansible commands for deploy" class="md-nav__link">
     Ansible commands for deploy
   </a>
@@ -2308,8 +2354,37 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#qc-review-checklist-to-ensure-a-successful-deploy-to-the-isle-server" title="QC Review checklist to ensure a successful deploy to the ISLE Server" class="md-nav__link">
-    QC Review checklist to ensure a successful deploy to the ISLE Server
+  <a href="#qc-review-checklist" title="QC Review checklist" class="md-nav__link">
+    QC Review checklist
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" title="Docker Compose" class="md-nav__link">
+    Docker Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islandora-user" title="Islandora user" class="md-nav__link">
+    Islandora user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isle-project-directory" title="ISLE Project directory" class="md-nav__link">
+    ISLE Project directory
   </a>
   
 </li>
@@ -2328,13 +2403,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue-next-steps-with-14-testing-migration-guide" title="* Continue next steps with 1.4. -Testing - Migration Guide" class="md-nav__link">
-    * Continue next steps with 1.4. -Testing - Migration Guide
-  </a>
   
 </li>
       
@@ -2396,6 +2464,7 @@
 <p>The IP of the ISLE Host server</p>
 </li>
 </ul>
+<hr />
 <h3 id="ansible-deploy-script-explanation">Ansible Deploy Script Explanation</h3>
 <p>Within the <code>docker_install.yml</code> Ansible playbook, there are the following roles which perform different actions or cause different events on the ISLE Host server.</p>
 <table>
@@ -2432,8 +2501,8 @@
 </tr>
 </tbody>
 </table>
-<p>The Ansible script will deploy the following to the ISLE Host server:</p>
 <h4 id="installs-software-dependencies-tools-including">Installs software dependencies &amp; tools including:</h4>
+<p>The Ansible script will deploy the following to the ISLE Host server:</p>
 <table>
 <thead>
 <tr>
@@ -2615,192 +2684,211 @@
 <p>Basically wherever <code>isle-prod-project.institution</code> appears as a value in these three files, please replace with the appropriate ISLE Host server fully qualified domain name (<strong>fqdn</strong>) e.g. <code>yourislesite.institution.com</code></p>
 <p>One can open up and edit all files in a text editor e.g. Atom, Textedit, Textwrangler etc.</p>
 <h4 id="ansibledocker_installyml">ansible/docker_install.yml</h4>
+<p><em>This is the Ansible playbook necessary to deploy software to the ISLE host server.</em></p>
 <ul>
-<li>
-<p><em>This is the Ansible playbook</em></p>
-</li>
-<li>
-<p>At the top of the file remove <code>isle-prod-project.institution</code> and replace with the appropriate <strong>fqdn</strong>.  </p>
-</li>
+<li>At the top of the file remove <code>isle-prod-project.institution</code> and replace with the appropriate <strong>fqdn</strong>.  </li>
 </ul>
 <h4 id="ansibleinventoryyml">ansible/inventory.yml</h4>
+<p><em>This is the possible list of server(s) to deploy to using Ansible and its associated playbook(s).</em></p>
+<p><strong>Please Note:</strong> These instructions below are repeated within the file itself.</p>
 <ul>
 <li>
-<p><em>List of server(s) to deploy to using Ansible</em></p>
+<p>Line 7: remove <code>isle-prod-project.institution</code> from in between the brackets and replace with the appropriate <strong>fqdn</strong></p>
 </li>
 <li>
-<p><strong>Please Note:</strong> There are instructions to this effect within the file itself.</p>
+<p>Line 8: Add the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions to the end of <code>ansible_ssh_user=</code></p>
+<p><strong>Example</strong>: <code>ansible_ssh_user=janesmith</code></p>
 </li>
 <li>
-<p>On <strong>Line 7:</strong> remove <code>isle-prod-project.institution</code> from in between the brackets and replace with the appropriate <strong>fqdn</strong></p>
+<p>Line 8: Add the appropriate path to this ISLE Host Server user accounts public ssh key to the end of <code>ansible_ssh_private_key_file=</code></p>
 </li>
 <li>
-<p>On <strong>Line 8:</strong> Add the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions to the end of <code>ansible_ssh_user=</code>.</p>
-</li>
-<li>
-<p>Example:
-  <code>ansible_ssh_user=janesmith</code></p>
-</li>
-<li>
-<p>Also on <strong>Line 8:</strong> Add the appropriate path to this ISLE Host Server user accounts public ssh key to the end of <code>ansible_ssh_private_key_file=</code>.</p>
+<p><strong>Example</strong> of inventory using settings for local Ansible deploy laptop:</p>
 </li>
 </ul>
-<p><strong>Please Note:</strong> This key is typically found on the local control (Ansible deploy laptop / workstation) system and has been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</p>
+<pre><code>ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub
+</code></pre>
+
+<p><strong>Please Note:</strong> This key is typically found on the local control (Ansible deploy laptop / workstation) system and should have been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</p>
 <ul>
-<li>
-<p>Example of inventory using settings for local Ansible deploy laptop:
-  <code>ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub</code></p>
-</li>
-<li>
-<p>Example end result for inventory file with all settings above
-  <code>[yourislesite.institution.com]
-  yourislesite.institution.com ansible_connection=ssh ansible_ssh_user=janesmith ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub</code></p>
-</li>
+<li><strong>Final Example</strong> end result for inventory file with all settings above</li>
 </ul>
+<pre><code>[yourislesite.institution.com]   
+yourislesite.institution.com ansible_connection=ssh ansible_ssh_user=janesmith ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub
+</code></pre>
+
 <h4 id="ansibleisle-prod-projectinstitutionyml">ansible/isle-prod-project.institution.yml</h4>
 <ul>
 <li>
 <p>Copy this file and rename the copy to with the appropriate <strong>fqdn</strong></p>
 </li>
 <li>
-<p>Example of how <code>host_vars</code> directory should now contain two files
-  <code>ansible/
-  ├── docker_install.yml
-  ├── host_vars
-  │   ├── isle-prod-project.institution.yml
-  │   └── yourislesite.institution.com.yml
-  ├── inventory</code></p>
+<p><strong>Example</strong> of how <code>host_vars</code> directory should now contain two files:  </p>
+</li>
+</ul>
+<pre><code>ansible
+├── docker_install.yml
+├── host_vars
+│   ├── isle-prod-project.institution.yml
+│   └── yourislesite.institution.com.yml
+├── inventory
+└── roles
+</code></pre>
+
+<ul>
+<li>
+<p>Edit the following lines within the newly created file i.e. <code>yourislesite.institution.com.yml</code> and remove the comments (#) as asked</p>
 </li>
 <li>
 <p><strong>Please Note:</strong> <em>The <strong>fqdn</strong> in the <code>inventory</code> file should match this filename as well.</em></p>
 </li>
-<li>
-<p>Edit the following lines within the newly created file i.e. <code>yourislesite.institution.com.yml</code> and remove the comments (#) as asked</p>
-</li>
 </ul>
-<p>Examples ONLY (<em>Do not enter these literal values</em>)
-  * <strong>Line 9:</strong> <code>ansible_ssh_host: 192.168.1.16</code>
-  * This is the IP address of the ISLE Host server</p>
+<p><strong>Examples ONLY</strong> (<em>Do not enter these literal values</em>)  </p>
 <ul>
-<li><strong>Line 10:</strong> <code>ansible_ssh_user: janesmith</code>  </li>
 <li>
-<p>This is the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions.</p>
-</li>
-<li>
-<p><strong>Line 15:</strong> <code>pub_locale: /home/janesmith/.ssh/id_rsa.pub</code></p>
-</li>
-<li>This is the key found on the local control (Ansible deploy laptop / workstation) system which has been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</li>
+<p>Line 9: <code>ansible_ssh_host: 192.168.1.16</code></p>
+<ul>
+<li><em>This is the IP address of the ISLE Host server</em></li>
 </ul>
-<h4 id="ansible-commands-for-deploy">Ansible commands for deploy</h4>
-<p>Test if the Ansible control laptop / workstation can connect to the ISLE Host server by running these commands.</p>
-<ol>
-<li>On the local Ansible control laptop / workstation, open a terminal window and enter the following:</li>
-</ol>
-<p>```
-   cd /path/to/ISLE/repo</p>
-<p>ansible -i inventory isle-host-server -m ping
-   ```</p>
-<p>Example output of above  command (IGNORE THE WARNING)
-   ```
-  [WARNING]: Found both group and host with same name: isle-host-server   </p>
-<p>isle-host-server | SUCCESS =&gt; {
-         "changed": false,
-         "ping": "pong"
-     }
-   ```
-<strong>Please Note:</strong> <em>If SUCCESS doesn't appear as a value or if the wording of the prompt is in RED with "host doesn't exist ...", review all steps above and check the settings. Do not advance until the example output above matches.</em></p>
-<ol>
-<li>To deploy to the ISLE Host Server, run this command.
-  <code>ansible-playbook -i inventory docker_install.yml</code></li>
-</ol>
+</li>
+<li>
+<p>Line 10: <code>ansible_ssh_user: janesmith</code>  </p>
+<ul>
+<li><em>This is the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions.</em></li>
+</ul>
+</li>
+<li>
+<p>Line 15: <code>pub_locale: /home/janesmith/.ssh/id_rsa.pub</code></p>
+<ul>
+<li><em>This is the key found on the local control (Ansible deploy laptop / workstation) system which has been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</em></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="ansible-commands-to-test-connection">Ansible commands to test connection</h4>
+<ul>
+<li>Test if the Ansible control laptop / workstation can connect to the ISLE Host server by running these commands. On the local Ansible control laptop / workstation, open a terminal window and enter the following:</li>
+</ul>
+<pre><code>cd /path/to/ISLE/repo
+
+ansible -i inventory isle-host-server -m ping
+</code></pre>
+
+<ul>
+<li><strong>Example</strong> output of above command (<em>IGNORE THE WARNING</em>)</li>
+</ul>
+<pre><code>[WARNING]: Found both group and host with same name: isle-host-server   
+
+isle-host-server | SUCCESS =&gt; {
+     &quot;changed&quot;: false,
+     &quot;ping&quot;: &quot;pong&quot;
+   }
+</code></pre>
+
+<p><strong>Please Note:</strong> <em>If SUCCESS doesn't appear as a value or if the wording of the prompt is in RED with "host doesn't exist ...", review all steps above and check the settings. Do not advance until the <strong>Example</strong> output above matches.</em>  </p>
+<h3 id="ansible-commands-for-deploy">Ansible commands for deploy</h3>
+<ul>
+<li>
+<p>To deploy to the ISLE Host Server, run this command.</p>
+<p><code>ansible-playbook -i inventory docker_install.yml</code></p>
+</li>
+</ul>
 <p>Ansible will start displaying output within the terminal. If any turn red and the script terminates, please review the above settings and connectivity to the server. Attempt to rerun the script.</p>
-<h4 id="qc-review-checklist-to-ensure-a-successful-deploy-to-the-isle-server">QC Review checklist to ensure a successful deploy to the ISLE Server</h4>
-<p>Review the following to ensure that the deploy to the Islandora Host server was successful.</p>
+<h3 id="qc-review-checklist">QC Review checklist</h3>
+<p>To ensure a successful deploy to the ISLE Server, please review the following to ensure that the deploy to the Islandora Host server was successful.</p>
 <p>Open a terminal window on the Ansible control laptop /workstation and <code>ssh</code> into the Islandora Host server using the appropriate enduser account setup prior to the deploy.</p>
-<p>Example:
-   <code>`ssh enduser@isle-prod-project.institution`</code></p>
+<p><strong>Example</strong>:</p>
+<p><code>ssh enduser@isle-prod-project.institution</code></p>
+<hr />
+<h4 id="docker">Docker</h4>
 <ul>
-<li><strong>Docker</strong></li>
-<li>To check where Docker has been installed to, enter:  </li>
-</ul>
-<p><code>which docker</code></p>
-<p>Example output:<br />
-<code>/usr/bin/docker</code></p>
-<ul>
-<li>To check which version of Docker has been installed, enter:</li>
-</ul>
+<li>
+<p>To check where Docker has been installed to, enter:  </p>
+<p><code>which docker</code>    </p>
+<p><strong>Example</strong> output:      </p>
+<p><code>/usr/bin/docker</code></p>
+</li>
+<li>
+<p>To check which version of Docker has been installed, enter:</p>
 <p><code>docker --version</code></p>
-<p>Example output:
-   <code>Docker version 17.12.0-ce, build c97c6d6</code></p>
-<ul>
-<li>To check if Docker is running, enter:</li>
-</ul>
+<p><strong>Example</strong> output:</p>
+<p><code>Docker version 17.12.0-ce, build c97c6d6</code></p>
+</li>
+<li>
+<p>To check if Docker is running, enter:</p>
 <p><code>service docker status</code>   </p>
-<p>Example output:</p>
-<p><code>Redirecting to /bin/systemctl status docker.service
-   ● docker.service - Docker Application Container Engine
-      Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
-      Active: active (running) since Thu 2018-01-18 14:36:55 EST; 1 weeks 4 days ago
-        Docs: https://docs.docker.com
-    Main PID: 23066 (dockerd)
-      Memory: 55.3M
-   ....</code></p>
+<p><strong>Example</strong> output:</p>
+</li>
+</ul>
+<pre><code>Redirecting to /bin/systemctl status docker.service
+● docker.service - Docker Application Container Engine
+  Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
+  Active: active (running) since Thu 2018-01-18 14:36:55 EST; 1 weeks 4 days ago
+    Docs: https://docs.docker.com
+Main PID: 23066 (dockerd)
+  Memory: 55.3M
+....
+</code></pre>
+
 <ul>
 <li>
 <p>To check if the ISLE images have been downloaded on the ISLE Host server, enter:</p>
 <p><code>docker image ls</code></p>
-<p>Example output:<br />
-<code>REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
- islandoracollabgroup/isle-fedora   alpha2              6e2749ca2c2f        2 weeks ago         2.43GB
- islandoracollabgroup/isle-apache   alpha2              82fe4ae16932        2 weeks ago         2.18GB
- islandoracollabgroup/isle-solr     alpha2              7fba26c10433        2 weeks ago         784MB
- islandoracollabgroup/isle-mysql    alpha2              f34162f1e0f8        2 weeks ago         299MB</code></p>
+<p><strong>Example</strong> output:  </p>
 </li>
-<li>
-<p><strong>Docker Compose</strong></p>
-</li>
+</ul>
+<pre><code>REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
+islandoracollabgroup/isle-fedora   alpha2              6e2749ca2c2f        2 weeks ago         2.43GB
+islandoracollabgroup/isle-apache   alpha2              82fe4ae16932        2 weeks ago         2.18GB
+islandoracollabgroup/isle-solr     alpha2              7fba26c10433        2 weeks ago         784MB
+islandoracollabgroup/isle-mysql    alpha2              f34162f1e0f8        2 weeks ago         299MB
+</code></pre>
+
+<h4 id="docker-compose">Docker Compose</h4>
+<ul>
 <li>
 <p>To check where Docker-compose has been installed to, enter:  </p>
+<p><code>which docker-compose</code></p>
+<p><strong>Example</strong> output:</p>
+<p><code>/usr/local/bin/docker-compose</code></p>
+</li>
+<li>
+<p>To check which version of Docker-compose has been installed, enter:</p>
+<p><code>docker-compose -version</code></p>
+<p><strong>Example</strong> output:</p>
+<p><code>docker-compose version 1.17.1, build 6d101fb</code></p>
 </li>
 </ul>
-<p><code>which docker-compose</code></p>
-<p>Example output:
-   <code>/usr/local/bin/docker-compose</code>
-  * To check which version of Docker-compose has been installed, enter:</p>
-<p><code>docker-compose -version</code></p>
-<p>Example output:
-   <code>docker-compose version 1.17.1, build 6d101fb</code></p>
+<h4 id="islandora-user">Islandora user</h4>
 <ul>
-<li>
-<p><strong>Islandora user</strong></p>
-</li>
 <li>
 <p>To check if the <code>islandora</code> user has been created, enter:</p>
+<p><code>cat /etc/passwd</code>  </p>
+<p><strong>Example</strong> output:</p>
+<p><code>islandora:x:1002:1002::/home/islandora:/bin/bash</code></p>
 </li>
 </ul>
-<p><code>cat /etc/passwd</code>  </p>
-<p>Example output:
-   <code>islandora:x:1002:1002::/home/islandora:/bin/bash</code></p>
+<h4 id="isle-project-directory">ISLE Project directory</h4>
 <ul>
 <li>
-<p><strong>ISLE Project directory</strong></p>
-</li>
-<li>
 <p>To check if the ISLE project git repo has been cloned to <code>/opt/ISLE</code>, enter:</p>
+<p><code>ls -lh /opt/ISLE</code></p>
+<p><strong>Example</strong> output:</p>
 </li>
 </ul>
-<p><code>ls -lh /opt/ISLE</code></p>
-<p>Example output:
-   <code>total 24K
-   drwxr-xr-x. 3 islandora islandora  110 Jan 17 09:17 apache
-   drwxr-xr-x. 5 islandora islandora   84 Jan 23 13:44 config
-   -rwxr-xr-x. 1 islandora islandora 2.0K Jan 18 16:58 docker-compose.yml
-   drwxr-xr-x. 7 islandora islandora  143 Jan 17 09:17 docs
-   drwxr-xr-x. 7 islandora islandora  102 Jan 17 09:17 fedora
-   -rwxr-xr-x. 1 islandora islandora  12K Jan 17 09:17 mkdocs.yml
-   drwxr-xr-x. 3 islandora islandora   54 Jan 17 09:17 mysql
-   -rwxr-xr-x. 1 islandora islandora 4.1K Jan 17 09:17 README.md
-   drwxr-xr-x. 4 islandora islandora   50 Jan 17 09:17 solr</code></p>
+<pre><code>total 24K
+drwxr-xr-x. 3 islandora islandora  110 Jan 17 09:17 apache
+drwxr-xr-x. 5 islandora islandora   84 Jan 23 13:44 config
+-rwxr-xr-x. 1 islandora islandora 2.0K Jan 18 16:58 docker-compose.yml
+drwxr-xr-x. 7 islandora islandora  143 Jan 17 09:17 docs
+drwxr-xr-x. 7 islandora islandora  102 Jan 17 09:17 fedora
+-rwxr-xr-x. 1 islandora islandora  12K Jan 17 09:17 mkdocs.yml
+drwxr-xr-x. 3 islandora islandora   54 Jan 17 09:17 mysql
+-rwxr-xr-x. 1 islandora islandora 4.1K Jan 17 09:17 README.md
+drwxr-xr-x. 4 islandora islandora   50 Jan 17 09:17 solr
+</code></pre>
+
+<hr />
 <h3 id="post-server-deploy-or-next-steps">Post Server Deploy or next steps</h3>
 <p>Once this script has finished one can:</p>
 <ul>
@@ -2813,8 +2901,10 @@
 <li>
 <p>Continue next steps with the <a href="../alpha_quickstart/">1.4. -Testing - Alpha Quickstart Guide</a></p>
 </li>
+<li>
+<p>Continue next steps with <a href="../alpha_migration_guide/">1.4. -Testing - Migration Guide</a></p>
+</li>
 </ul>
-<h2 id="continue-next-steps-with-14-testing-migration-guide">* Continue next steps with <a href="../alpha_migration_guide/">1.4. -Testing - Migration Guide</a></h2>
                 
                   
                 
