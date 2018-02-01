@@ -374,8 +374,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpha-quickstart-guide-notes" title="Alpha Quickstart Guide Notes" class="md-nav__link">
-    Alpha Quickstart Guide Notes
+  <a href="#alpha-islelocaldomain-quickstart-guide-notes" title="Alpha isle.localdomain Quickstart Guide Notes" class="md-nav__link">
+    Alpha isle.localdomain Quickstart Guide Notes
   </a>
   
 </li>
@@ -395,12 +395,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alpha-install-process-same-for-all-host-server-types" title="Alpha install process (same for all host server types)" class="md-nav__link">
-    Alpha install process (same for all host server types)
+  <a href="#isle_localdomain-install-process-same-for-all-host-server-types" title="isle_localdomain install process (same for all host server types)" class="md-nav__link">
+    isle_localdomain install process (same for all host server types)
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-add-the-isle-host-server-ip-to-the-docker-composeyml-file" title="0. Add the ISLE Host server IP to the docker-compose.yml file" class="md-nav__link">
+    0. Add the ISLE Host server IP to the docker-compose.yml file
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#1-mysql-image-pull-container-launch-10-15-mins" title="1. MySQL image pull &amp; container launch (10-15 mins)" class="md-nav__link">
@@ -433,13 +440,6 @@
           <li class="md-nav__item">
   <a href="#5-install-script-on-apache-container-20-40-mins" title="5. Install script on Apache container (20 - 40 mins)" class="md-nav__link">
     5. Install script on Apache container (20 - 40 mins)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#total-build-process-takes-45-75-minutes-depending-on-system-and-internet-speeds" title="Total build process takes 45 - 75 minutes (depending on system and internet speeds)" class="md-nav__link">
-    Total build process takes 45 - 75 minutes (depending on system and internet speeds)
   </a>
   
 </li>
@@ -2196,8 +2196,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpha-quickstart-guide-notes" title="Alpha Quickstart Guide Notes" class="md-nav__link">
-    Alpha Quickstart Guide Notes
+  <a href="#alpha-islelocaldomain-quickstart-guide-notes" title="Alpha isle.localdomain Quickstart Guide Notes" class="md-nav__link">
+    Alpha isle.localdomain Quickstart Guide Notes
   </a>
   
 </li>
@@ -2217,12 +2217,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alpha-install-process-same-for-all-host-server-types" title="Alpha install process (same for all host server types)" class="md-nav__link">
-    Alpha install process (same for all host server types)
+  <a href="#isle_localdomain-install-process-same-for-all-host-server-types" title="isle_localdomain install process (same for all host server types)" class="md-nav__link">
+    isle_localdomain install process (same for all host server types)
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#0-add-the-isle-host-server-ip-to-the-docker-composeyml-file" title="0. Add the ISLE Host server IP to the docker-compose.yml file" class="md-nav__link">
+    0. Add the ISLE Host server IP to the docker-compose.yml file
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#1-mysql-image-pull-container-launch-10-15-mins" title="1. MySQL image pull &amp; container launch (10-15 mins)" class="md-nav__link">
@@ -2255,13 +2262,6 @@
           <li class="md-nav__item">
   <a href="#5-install-script-on-apache-container-20-40-mins" title="5. Install script on Apache container (20 - 40 mins)" class="md-nav__link">
     5. Install script on Apache container (20 - 40 mins)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#total-build-process-takes-45-75-minutes-depending-on-system-and-internet-speeds" title="Total build process takes 45 - 75 minutes (depending on system and internet speeds)" class="md-nav__link">
-    Total build process takes 45 - 75 minutes (depending on system and internet speeds)
   </a>
   
 </li>
@@ -2329,8 +2329,9 @@
                 
                   <h1>1.4. -Testing - Alpha Quickstart Guide</h1>
                 
-                <h3 id="alpha-quickstart-guide-notes">Alpha Quickstart Guide Notes</h3>
-<p>This Alpha Quickstart guide is intended to be the <strong>fastest</strong> method of installation i.e. downloading ISLE Docker images from Dockerhub.</p>
+                <h3 id="alpha-islelocaldomain-quickstart-guide-notes">Alpha isle.localdomain Quickstart Guide Notes</h3>
+<p>This Alpha Quickstart guide is intended to be the <strong>fastest</strong> method of using ISLE to test.</p>
+<p>This guide enables an enduser to spin up and install the "baked in" sample site, <code>isle-localdomain</code> for review and testing.</p>
 <p>Previous guides used a manual "build" process which is still possible but not necessary for most endusers due to complexity and process length.</p>
 <p>Current documentation will now refer to an "install" process using Dockerhub images instead of a "build" process where the enduser manually built these images.</p>
 <p>If one would like to manually build the images please refer to one of the following Alpha Build guides:</p>
@@ -2343,7 +2344,7 @@
 </li>
 </ul>
 <h3 id="dockerhub-images">Dockerhub images</h3>
-<p>Four Dockerhub images have already been "built" and are stored in a repository thus saving the endusers hours of build time.  </p>
+<p>Four Dockerhub images have already been "built" and are stored in a repository thus saving the endusers hours of build time.  Use the images tagged with <code>alpha2</code>.</p>
 <ul>
 <li>
 <p>isle-apache <a href="https://hub.docker.com/r/islandoracollabgroup/isle-apache/">https://hub.docker.com/r/islandoracollabgroup/isle-apache/</a>  </p>
@@ -2375,29 +2376,49 @@
 </ul>
 </li>
 <li>
-<p>By default the <code>Docker-Compose.yml</code> file is configured for Linux Host Servers.</p>
+<p>By default the <code>isle.localdomain</code> <code>docker-compose.yml</code> file is configured for Linux Host Servers. (found at the root of the ISLE Project directory)</p>
 <ul>
 <li>If one is using a <strong>Mac OS</strong> Host server, then edit the <code>docker-compose.yml</code> file to ensure the following lines look like this:  </li>
 </ul>
 </li>
 </ul>
-<pre><code>    # - ./customize/apache/site/linux_settings.php:/var/www/html/sites/default/settings.php  
-    - ./customize/apache/site/macosx_settings.php:/var/www/html/sites/default/settings.php  
+<pre><code>    - ./config/isle_localdomain/apache/macosx_settings.php:/var/www/html/sites/default/settings.php  
 </code></pre>
 
-<h3 id="alpha-install-process-same-for-all-host-server-types">Alpha install process (same for all host server types)</h3>
+<h3 id="isle_localdomain-install-process-same-for-all-host-server-types">isle_localdomain install process (same for all host server types)</h3>
 <p><strong>Please note:</strong> <em>The first container (MySQL, isle-mysql, mysql) has to be running PRIOR to all others (including fedora &amp; apache) due to a race condition (fedora starts prior to mysql being ready to accept connections). This improper state will be fixed at a later point in the project.</em>  <strong>DO NOT RUN</strong> <code>docker-compose up -d</code> during the initial install process as this will download all images and then run all containers at the same time which will trigger this race condition and subsequent chain of service failures.</p>
 <ul>
 <li><strong>During the initial install process</strong> do the following steps to individually download each image and run each container.</li>
 </ul>
+<h4 id="0-add-the-isle-host-server-ip-to-the-docker-composeyml-file">0. Add the ISLE Host server IP to the <code>docker-compose.yml</code> file</h4>
+<ul>
+<li>Lines 39 &amp; 68 both require the same value of the Host server IP address for the <code>extra_hosts</code> setting.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>   extra_hosts:
+     - &quot;isle.localdomain:192.168.1.1&quot;
+</code></pre>
+
+<ul>
+<li>
+<p>Open a text editor, add this same IP to both lines and save the file.</p>
+</li>
+<li>
+<p><strong>Please note:</strong></p>
+<ul>
+<li>This IP can be from a VM run on a local laptop or workstation.</li>
+<li>If using Docker for Mac, then comment out these <code>extra_hosts</code> sections and add the following value of <code>127.0.0.1 isle.localdomain</code> to the laptop / workstation's <code>/etc/hosts</code> file.     </li>
+</ul>
+</li>
+</ul>
 <h4 id="1-mysql-image-pull-container-launch-10-15-mins">1. MySQL image pull &amp; container launch (10-15 mins)</h4>
 <ul>
-<li><code>docker pull islandoracollabgroup/isle-mysql</code>  </li>
+<li><code>docker pull islandoracollabgroup/isle-mysql:alpha2</code>  </li>
 <li><code>docker-compose up -d mysql</code>  </li>
 </ul>
 <h4 id="2-fedora-image-pull-container-launch-20-30-mins">2. Fedora image pull &amp; container launch (20 - 30 mins)</h4>
 <ul>
-<li><code>docker pull islandoracollabgroup/isle-fedora</code>  </li>
+<li><code>docker pull islandoracollabgroup/isle-fedora:alpha2</code>  </li>
 <li>
 <p><code>docker-compose up -d fedora</code>  </p>
 </li>
@@ -2406,14 +2427,14 @@
 </li>
 <li>After spinning up fedora container, check if the Fedora service is running prior to advancing.</li>
 <li>Navigate to http://fedora:8080/manager/html a popup login prompt should appear.<ul>
-<li>using the supplied username and password at the bottom of this page, enter the appropriate values</li>
-<li>section #### 2. Fedora container, service Tomcat, user is admin</li>
+<li>using the supplied username and password at the bottom of this page, enter the appropriate values from the <strong>Fast facts</strong> section at the bottom of the page.</li>
+<li>see 2. Fedora container - service Tomcat, user is admin</li>
 <li>upon login a large display of running Tomcat applications should display, scroll down to <code>fedora</code></li>
 </ul>
 </li>
 <li>The application state / status should be <code>true</code></li>
 <li>If <code>false</code> appears instead, attempt to restart the fedora service manually.<ul>
-<li>Select the <code>restart</code> button to the right of the status area. </li>
+<li>Select the <code>restart</code> button to the right of the status area.</li>
 </ul>
 </li>
 <li>If it still fails, review the mounted fedora logs. The <code>docker-compose.yml</code> file will indicate where the logs are located.</li>
@@ -2421,13 +2442,13 @@
 </ul>
 <h4 id="3-solr-image-pull-container-launch-10-20-mins">3. Solr image pull &amp; container launch (10 - 20 mins)</h4>
 <ul>
-<li><code>docker pull islandoracollabgroup/isle-solr</code>  </li>
+<li><code>docker pull islandoracollabgroup/isle-solr:alpha2</code>  </li>
 <li><code>docker-compose up -d solr</code>  </li>
 </ul>
 <h4 id="4-apache-image-pull-container-launch-30-45-mins">4. Apache image pull &amp; container launch (30 - 45 mins)</h4>
 <ul>
 <li>
-<p><code>docker pull islandoracollabgroup/isle-apache</code>  </p>
+<p><code>docker pull islandoracollabgroup/isle-apache:alpha2</code>  </p>
 </li>
 <li>
 <p><code>docker-compose up -d apache</code>  </p>
@@ -2446,19 +2467,18 @@
 <p>Run the following shell scripts manually on the apache container  </p>
 <ul>
 <li><code>docker exec -it isle-apache bash</code></li>
-<li><code>cd /tmp</code></li>
+<li><code>cd /tmp/isle_drupal_build_tools/</code></li>
 <li><code>chmod 777 *.sh</code></li>
-<li><code>./make_site.sh</code></li>
-<li><code>./install_site.sh</code></li>
+<li><code>./apache_provision.sh</code></li>
 </ul>
 </li>
 <li>
 <p>Once finished <code>cntrl-D</code> or type <code>exit</code> to get out of the apache container</p>
 </li>
-<li>Test (QC) the resulting setup by opening a web browser to the URL of your new Islandora Docker server (i.e. http://myname.institution.edu)</li>
+<li>Test (QC) the resulting setup by opening a web browser to the <code>isle.localdomain</code> URL of the new ISLE sample site (i.e. http://isle.localdomain)</li>
 </ul>
-<p><strong>Please note:</strong> The cronjob setting in the <code>install_site.sh</code> script is commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
-<h4 id="total-build-process-takes-45-75-minutes-depending-on-system-and-internet-speeds">Total build process takes 45 - 75 minutes (depending on system and internet speeds)</h4>
+<p><strong>Please note:</strong> The cronjob setting in the <code>apache_provision.sh</code> script is still commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
+<p><strong>Total build process</strong> takes 15 - 35 minutes (<em>depending on system and internet speeds</em>)</p>
 <hr />
 <h3 id="fast-facts">Fast Facts</h3>
 <p><code>islandora</code> user on host server uses <code>isle2017</code> as password</p>

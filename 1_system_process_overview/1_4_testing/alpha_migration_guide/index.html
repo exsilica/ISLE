@@ -351,7 +351,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
+    <a href="../alpha_isle_localdomain_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
       1.4. -Testing - Alpha Quickstart Guide
     </a>
   </li>
@@ -2324,21 +2324,27 @@
 </li>
 </ul>
 <h3 id="migration-to-isle-process-overview">Migration to ISLE Process Overview</h3>
-<pre><code>**TO DO:** Review Ben's outlines from https://github.com/Islandora-Collaboration-Group/ISLE/issues/80
-</code></pre>
-
+<p>As this is a large guide, here's a quick not very detailed overview of what's going to happen in the next steps:</p>
 <ul>
-<li>Here's what's going to happen / why?</li>
-<li>Copying from prod location to prod location on ISLE host Server</li>
-<li>Blah blah about mering into config diff solr etc</li>
-</ul>
-<p><em>Friendly note to endusers: While the following process may seem overly cautious or redundant, it saves time and establishes a safer conditions for endusers to work with valuable data.</em></p>
-<ul>
-<li>repeat entire process (if necessary) for additional ISLE platform e.g. production, staging and development</li>
+<li>Ensure that the destination ISLE host server has the same (or more) amount of storage as the production server.</li>
+<li>Create appropriate Islandora Production data storage structure on new ISLE host server</li>
+<li>Copy current production data and config files as directed by the <a href="../alpha_migration_export_checklist">export checklist</a> to an appropriate location on the new ISLE host Server.</li>
+<li>Create the required new config directory by copying the template <code>/opt/ISLE/config/isle-prod-project.institution</code> to a renamed directory within <code>/opt/ISLE/config</code></li>
+<li>Compare the template settings within the new renamed directory of <code>/opt/ISLE/config/enduser-renamed-directory.institution</code> to the current production config files. Merge or edit as necessary in the new isle config directory for use with ISLE.</li>
+<li>There may be some additional work to compare and merge in previous enduser customizations of the Solr <code>schema.xml</code> to the new ISLE config.</li>
+<li>There may be some additional work to compare and merge in previous enduser customizations of the Solr <code>solrconfig.xml</code> to the new ISLE config.</li>
+<li>There may be some additional work to compare and merge in previous enduser customizations of the Solr <code>stopwords</code> to the new ISLE config.</li>
+<li>There may be some additional work to compare and merge in previous enduser customizations of the Islandora Transform (XSLTs) files to the new ISLE versions.        </li>
+<li>Based on new paths, edit the <code>docker-compose.yml</code> file to</li>
+<li>Point to the new associated <code>islandora_production_data_storage</code> structure.</li>
+<li>Point to the new directories and config settings in <code>/opt/ISLE/config/enduser-renamed-directory.institution</code></li>
+<li>Spin up new containers one at a time with the new config settings</li>
+<li>Check that all services are running properly</li>
+<li>Repeat entire process (<em>if necessary</em>) for additional ISLE platforms e.g. <em>production, staging and development</em></li>
 </ul>
 <h3 id="step-1-create-appropriate-islandora-production-data-storage-structure-on-new-isle-host-server">Step 1: Create appropriate Islandora Production data storage structure on new ISLE host server</h3>
-<p>It is recommended that endusers use a large volume or attached drive that can store a copy of the entire production storage.</p>
-<p><strong>Please note:</strong> this storage is in addition to any data storage required by ISLE.</p>
+<p><em>Friendly note to endusers: While the following process may seem overly cautious or redundant, it saves time and establishes a safer conditions for endusers to work with valuable data.</em></p>
+<p>It is recommended that endusers use a large volume or network attached drive that can store a backup copy of the entire production storage, an merged copy of the production storage and associated config files as outlined in the <strong>Migration Export Checklist</strong> <a href="../alpha_migration_export_checklist/">page</a> and additional datastores.</p>
 <ul>
 <li>
 <p>In an appropriate area / path on one's intended ISLE host server e.g. <code>/opt/</code> or <code>/mnt/</code>, create a directory e.g. <code>islandora_production_data_storage</code> with the following sub-directories:</p>
@@ -2374,7 +2380,6 @@
 <p>Please review the <strong>Migration Export Checklist</strong> <a href="../alpha_migration_export_checklist/">page</a> and ensure all production data detailed within has been <strong>COPIED</strong> over to the ISLE Host Server PRIOR to proceeding with this guide.</p>
 <hr />
 <h3 id="step-3-setup-git-repo-for-institutional-docker-configuration">Step 3: Setup Git repo for institutional Docker configuration</h3>
-<p><em>Please Note</em> Because  config folder defines the entire platform setup eseentially keeping the sample</p>
 <p>This process is necessary for running multiple versions of ISLE e.g. production, staging and development / sandbox. The config folder</p>
 <ul>
 <li>
@@ -2400,7 +2405,7 @@
 
 <ul>
 <li>
-<p>Copy the contents of the <code>/opt/ISLE/config/production_template/</code> to this new directory e.g. <code>/opt/ISLE/config/isle-prod-project.institution</code></p>
+<p>Copy the contents of the <code>/opt/ISLE/config/isle-prod-project.institution</code> to this new directory e.g. <code>/opt/ISLE/config/isle-prod-project.institution</code></p>
 </li>
 <li>
 <p>The enduser will need to add the <code>/home/islandora/.ssh/id_rsa.pub</code> as a git ssh deploy key to be able to push pull from the server.</p>
@@ -2628,7 +2633,7 @@ TO DO : apache service edits
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../alpha_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../alpha_isle_localdomain_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
