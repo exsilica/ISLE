@@ -2285,7 +2285,7 @@
 <p>The filename can stay the same or can be changed. Please note that Line 85 of the associated <code>docker-compose.yml</code> will need to be updated if the file is renamed</p>
 </li>
 <li>
-<p>Lines 2, 3, 6, 7, 34 - 37, 39, 40, 44 &amp; 45 Edit as directed by the (# enduser please edit this and then remove this comment) instructions.</p>
+<p>Lines 2, 3, 6, 7, 34 - 37, 39, 40, 44 &amp; 45:  endusers will edit this file as directed in the (# enduser please edit this and then remove this comment) instructions.</p>
 </li>
 <li>
 <p>Do remove (# enduser please edit this and then remove this comment) after editing or adding the appropriate values.</p>
@@ -2432,16 +2432,59 @@
 </ul>
 </li>
 <li>
-<p><code>fedora-users.xml</code> - endusers will want to edit</p>
+<p><code>fedora-users.xml</code> - endusers will want to edit the following:</p>
+<ul>
+<li>Lines 3, 8, 14 and 19: Add the appropriate passwords or users as needed.  </li>
+</ul>
 </li>
 <li>
 <p><code>filter-drupal.xml</code> - endusers will want to edit</p>
+<ul>
+<li>
+<p>Line 3: Add the appropriate Drupal site database name, Drupal site database user and Drupal site database user password in between all <code>""</code></p>
 </li>
+<li>
+<p><strong>Please note:</strong> For endusers using Drupal multi-sites, please add additional sites as guided in the example below</p>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+</li>
+</ul>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;FilterDrupal_Connection&gt;
+
+    &lt;connection server=&quot;mysql&quot; port=&quot;3306&quot; dbname=&quot;drupalsite1&quot; user=&quot;drupalsite1_user&quot; password=&quot;drupalsite1_user_pw&quot;&gt;
+    &lt;sql&gt;
+       SELECT DISTINCT u.uid AS userid, u.name AS Name, u.pass AS Pass,r.name AS Role FROM (users u LEFT JOIN users_roles ON u.uid=users_roles.uid) LEFT JOIN role r ON r.rid=users_roles.rid WHERE u.name=? AND u.pass=?;
+    &lt;/sql&gt;
+    &lt;/connection&gt;
+
+    &lt;connection server=&quot;mysql&quot; port=&quot;3306&quot; dbname=&quot;drupalsite2&quot; user=&quot;drupalsite2_user&quot; password=&quot;drupalsite2_user_pw&quot;&gt;
+    &lt;sql&gt;
+       SELECT DISTINCT u.uid AS userid, u.name AS Name, u.pass AS Pass,r.name AS Role FROM (users u LEFT JOIN users_roles ON u.uid=users_roles.uid) LEFT JOIN role r ON r.rid=users_roles.rid WHERE u.name=? AND u.pass=?;
+    &lt;/sql&gt;
+    &lt;/connection&gt;
+
+&lt;/FilterDrupal_Connection&gt;
+</code></pre>
+
+<ul>
 <li>
 <p><code>fedora/repository-policies</code> - endusers can edit the files contained within for more granular or customized Fedora user permissions or repository access.</p>
 </li>
 <li>
 <p><code>site.conf</code> - endusers will want to edit this Apache vhost for the fedora proxy site name (if using Djatoka)</p>
+<ul>
+<li>
+<p>The filename can stay the same or can be changed. Please note that Line 37 of the associated <code>docker-compose.yml</code> will need to be updated if the file is renamed</p>
+</li>
+<li>
+<p>Lines 2, 3, 6, 7, 34 - 37, 39, 40, 44 &amp; 45:  endusers will edit this file as directed in the (# enduser please edit this and then remove this comment) instructions.</p>
+</li>
+<li>
+<p>Do remove (# enduser please edit this and then remove this comment) after editing or adding the appropriate values.</p>
+</li>
+</ul>
 </li>
 </ul>
                 
