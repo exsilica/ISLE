@@ -18,7 +18,7 @@
     
     
       
-        <title>1.4. -Testing - Host Server Build - Centos - Islandora Enterprise (ISLE)</title>
+        <title>1.4. -Testing - Host Local Setup Guide - Ansible - Islandora Enterprise (ISLE)</title>
       
     
     
@@ -88,7 +88,7 @@
                 </span>
               
             
-            1.4. -Testing - Host Server Build - Centos
+            1.4. -Testing - Host Local Setup Guide - Ansible
           
         </span>
       </div>
@@ -349,54 +349,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../alpha_isle_localdomain_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
-      1.4. -Testing - Alpha Quickstart Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../alpha_migration_export_checklist/" title="1.4. -Testing - Alpha Migration Export Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Export Checklist
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../alpha_migration_merge_checklist/" title="1.4. -Testing - Alpha Migration Merge Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Merge Checklist
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -406,11 +358,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        1.4. -Testing - Host Server Build - Centos
+        1.4. -Testing - Host Local Setup Guide - Ansible
       </label>
     
-    <a href="./" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link md-nav__link--active">
-      1.4. -Testing - Host Server Build - Centos
+    <a href="./" title="1.4. -Testing - Host Local Setup Guide - Ansible" class="md-nav__link md-nav__link--active">
+      1.4. -Testing - Host Local Setup Guide - Ansible
     </a>
     
       
@@ -422,64 +374,159 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#centos-7-host-server-setup" title="CentOS 7 Host Server Setup" class="md-nav__link">
-    CentOS 7 Host Server Setup
+  <a href="#host-local-setup-guide-ansible" title="Host Local Setup Guide - Ansible" class="md-nav__link">
+    Host Local Setup Guide - Ansible
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-run-on-centos-7-server" title="Install / run on CentOS 7 server" class="md-nav__link">
-    Install / run on CentOS 7 server
+  <a href="#prerequisites-assumptions" title="Prerequisites / Assumptions" class="md-nav__link">
+    Prerequisites / Assumptions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-setup-for-centos-7" title="Docker setup for CentOS 7" class="md-nav__link">
-    Docker setup for CentOS 7
+  <a href="#ansible-deploy-script-explanation" title="Ansible Deploy Script Explanation" class="md-nav__link">
+    Ansible Deploy Script Explanation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installs-software-dependencies-tools-including" title="Installs software dependencies &amp; tools including:" class="md-nav__link">
+    Installs software dependencies &amp; tools including:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makes-isle-host-service-changes" title="Makes ISLE Host service changes" class="md-nav__link">
+    Makes ISLE Host service changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adds-users-groups-and-updates-permissions" title="Adds users, groups and updates permissions" class="md-nav__link">
+    Adds users, groups and updates permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installs-additional-software" title="Installs additional software" class="md-nav__link">
+    Installs additional software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-script-directory-structure" title="Ansible script directory structure" class="md-nav__link">
+    Ansible script directory structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ansible-script-to-deploy-to-isle-host" title="Configure Ansible Script to deploy to ISLE Host" class="md-nav__link">
+    Configure Ansible Script to deploy to ISLE Host
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansibledocker_installyml" title="ansible/docker_install.yml" class="md-nav__link">
+    ansible/docker_install.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleinventoryyml" title="ansible/inventory.yml" class="md-nav__link">
+    ansible/inventory.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleisle-prod-projectinstitutionyml" title="ansible/isle-prod-project.institution.yml" class="md-nav__link">
+    ansible/isle-prod-project.institution.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-commands-to-test-connection" title="Ansible commands to test connection" class="md-nav__link">
+    Ansible commands to test connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-commands-for-deploy" title="Ansible commands for deploy" class="md-nav__link">
+    Ansible commands for deploy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-docker-on-centos-7-as-root-user" title="Install Docker on CentOS 7 (as root user)" class="md-nav__link">
-    Install Docker on CentOS 7 (as root user)
+  <a href="#qc-review-checklist" title="QC Review checklist" class="md-nav__link">
+    QC Review checklist
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" title="Docker Compose" class="md-nav__link">
+    Docker Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islandora-user" title="Islandora user" class="md-nav__link">
+    Islandora user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isle-project-directory" title="ISLE Project directory" class="md-nav__link">
+    ISLE Project directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-islandora-user-as-root" title="Create islandora user (as root)" class="md-nav__link">
-    Create islandora user (as root)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7" class="md-nav__link">
-    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clone-isle-repository" title="Clone ISLE repository" class="md-nav__link">
-    Clone ISLE repository
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" title="Next steps" class="md-nav__link">
-    Next steps
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue-next-steps-with-14-testing-migration-guide" title="* Continue next steps with 1.4. -Testing - Migration Guide" class="md-nav__link">
-    * Continue next steps with 1.4. -Testing - Migration Guide
+  <a href="#post-server-deploy-or-next-steps" title="Post Server Deploy or next steps" class="md-nav__link">
+    Post Server Deploy or next steps
   </a>
   
 </li>
@@ -499,8 +546,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_ubuntu/" title="1.4. -Testing - Host Server Build - Ubuntu" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Ubuntu
+    <a href="../host_local_setup_centos/" title="1.4. -Testing - Host Local Setup Guide - CentOS" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - CentOS
     </a>
   </li>
 
@@ -511,8 +558,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
-      1.4. -Testing - Host Server Build - MacOS
+    <a href="../host_local_setup_macos/" title="1.4. -Testing - Host Local Setup Guide - MacOS" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - MacOS
     </a>
   </li>
 
@@ -523,8 +570,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_ansible/" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Ansible
+    <a href="../host_local_setup_ubuntu/" title="1.4. -Testing - Host Local Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - Ubuntu
     </a>
   </li>
 
@@ -535,8 +582,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Linux
+    <a href="../host_remote_setup_ansible/" title="1.4. -Testing - Host Remote Setup Guide - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ansible
     </a>
   </li>
 
@@ -547,8 +594,116 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_build_guide_mac/" title="1.4. -Testing - Alpha Build Guide - Mac OSX" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Mac OSX
+    <a href="../host_remote_setup_centos/" title="1.4. -Testing - Host Remote Setup Guide - Centos" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Centos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_remote_setup_ubuntu/" title="1.4. -Testing - Host Remote Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev_build_guide_linux/" title="1.4. -Testing - Dev Build Guide - Linux" class="md-nav__link">
+      1.4. -Testing - Dev Build Guide - Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev_build_guide_mac/" title="1.4. -Testing - Dev Build Guide - Mac OSX" class="md-nav__link">
+      1.4. -Testing - Dev Build Guide - Mac OSX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_guide/" title="1.4. -Testing - Migration Guide" class="md-nav__link">
+      1.4. -Testing - Migration Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_export_checklist/" title="1.4. -Testing - Migration Export Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Export Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_merge_checklist/" title="1.4. -Testing - Migration Merge Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Merge Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_docker_compose/" title="1.4. -Testing - Migration Docker Compose Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Docker Compose Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../newsite_guide/" title="1.4. -Testing - New site Guide" class="md-nav__link">
+      1.4. -Testing - New site Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testsite_guide/" title="1.4. -Testing - Test site Guide" class="md-nav__link">
+      1.4. -Testing - Test site Guide
     </a>
   </li>
 
@@ -2154,64 +2309,159 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#centos-7-host-server-setup" title="CentOS 7 Host Server Setup" class="md-nav__link">
-    CentOS 7 Host Server Setup
+  <a href="#host-local-setup-guide-ansible" title="Host Local Setup Guide - Ansible" class="md-nav__link">
+    Host Local Setup Guide - Ansible
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-run-on-centos-7-server" title="Install / run on CentOS 7 server" class="md-nav__link">
-    Install / run on CentOS 7 server
+  <a href="#prerequisites-assumptions" title="Prerequisites / Assumptions" class="md-nav__link">
+    Prerequisites / Assumptions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-setup-for-centos-7" title="Docker setup for CentOS 7" class="md-nav__link">
-    Docker setup for CentOS 7
+  <a href="#ansible-deploy-script-explanation" title="Ansible Deploy Script Explanation" class="md-nav__link">
+    Ansible Deploy Script Explanation
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installs-software-dependencies-tools-including" title="Installs software dependencies &amp; tools including:" class="md-nav__link">
+    Installs software dependencies &amp; tools including:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makes-isle-host-service-changes" title="Makes ISLE Host service changes" class="md-nav__link">
+    Makes ISLE Host service changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adds-users-groups-and-updates-permissions" title="Adds users, groups and updates permissions" class="md-nav__link">
+    Adds users, groups and updates permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installs-additional-software" title="Installs additional software" class="md-nav__link">
+    Installs additional software
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-script-directory-structure" title="Ansible script directory structure" class="md-nav__link">
+    Ansible script directory structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-ansible-script-to-deploy-to-isle-host" title="Configure Ansible Script to deploy to ISLE Host" class="md-nav__link">
+    Configure Ansible Script to deploy to ISLE Host
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansibledocker_installyml" title="ansible/docker_install.yml" class="md-nav__link">
+    ansible/docker_install.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleinventoryyml" title="ansible/inventory.yml" class="md-nav__link">
+    ansible/inventory.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansibleisle-prod-projectinstitutionyml" title="ansible/isle-prod-project.institution.yml" class="md-nav__link">
+    ansible/isle-prod-project.institution.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ansible-commands-to-test-connection" title="Ansible commands to test connection" class="md-nav__link">
+    Ansible commands to test connection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansible-commands-for-deploy" title="Ansible commands for deploy" class="md-nav__link">
+    Ansible commands for deploy
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#install-docker-on-centos-7-as-root-user" title="Install Docker on CentOS 7 (as root user)" class="md-nav__link">
-    Install Docker on CentOS 7 (as root user)
+  <a href="#qc-review-checklist" title="QC Review checklist" class="md-nav__link">
+    QC Review checklist
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#docker" title="Docker" class="md-nav__link">
+    Docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-compose" title="Docker Compose" class="md-nav__link">
+    Docker Compose
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#islandora-user" title="Islandora user" class="md-nav__link">
+    Islandora user
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isle-project-directory" title="ISLE Project directory" class="md-nav__link">
+    ISLE Project directory
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-islandora-user-as-root" title="Create islandora user (as root)" class="md-nav__link">
-    Create islandora user (as root)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7" class="md-nav__link">
-    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#clone-isle-repository" title="Clone ISLE repository" class="md-nav__link">
-    Clone ISLE repository
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" title="Next steps" class="md-nav__link">
-    Next steps
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#continue-next-steps-with-14-testing-migration-guide" title="* Continue next steps with 1.4. -Testing - Migration Guide" class="md-nav__link">
-    * Continue next steps with 1.4. -Testing - Migration Guide
+  <a href="#post-server-deploy-or-next-steps" title="Post Server Deploy or next steps" class="md-nav__link">
+    Post Server Deploy or next steps
   </a>
   
 </li>
@@ -2231,207 +2481,496 @@
               
                 
                 
-                  <h1>1.4. -Testing - Host Server Build - Centos</h1>
+                  <h1>1.4. -Testing - Host Local Setup Guide - Ansible</h1>
                 
-                <h4 id="centos-7-host-server-setup"><strong>CentOS 7</strong> Host Server Setup</h4>
+                <h3 id="host-local-setup-guide-ansible">Host Local Setup Guide - Ansible</h3>
+<pre><code>TO DO
+
+Modify for Local Virtualbox settings Please
+
+</code></pre>
+
+<p>Endusers now have the choice of using Ansible to deploy their Docker Host server instead of performing manual commands. The Ansible script and configuration files can be found in the root folder of the ISLE git repo in a directory named <code>ansible</code>.</p>
+<p>Ansible is an free open source automation platform / tool which runs on Linux, Mac or BSD, doesn’t use local or remote agents and is relatively easy to setup. Ansible can help with server configuration management, application deployment, task automation and IT orchestration (<em>running tasks in sequence on several different servers or devices</em>).</p>
+<p>If you are not familiar with the Ansible, it is recommended to start with their documentation.</p>
 <ul>
-<li>This alpha build uses <code>islandora-docker.com</code> as the test domain along with the Docker Compose service names e.g. <code>mysql, fedora, apache</code> etc.<ul>
-<li>If your institution's server uses real DNS, then skip the next step. If not, please proceed with the following:</li>
-<li>To ensure this domain resolves properly, one will need to edit the servers and/or their own local <code>/etc/hosts</code> file.<ul>
-<li>
-<p>Open up a terminal and enter: <code>sudo vi /etc/hosts</code></p>
-<ul>
-<li>
-<p>Add one or more of the following: (<strong>Examples ONLY</strong>)</p>
-</li>
-<li>
-<p>Ubuntu 16.04 LTS Host Server (or VM)<br />
-<code>127.0.0.1       localhost islandora-docker.com fedora apache fedora.islandora-docker.com apache.islandora-docker.com</code></p>
-</li>
-<li>
-<p>Enduser local laptop
- <code>127.0.0.1 localhost   
- 192.156.123.26       islandora-docker.com fedora apache fedora.islandora-docker.com apache.islandora-docker.com</code></p>
-</li>
+<li><a href="https://www.ansible.com/">Ansible website</a></li>
+<li><a href="https://www.ansible.com/overview/how-ansible-works">What is Ansible?</a></li>
+<li><a href="http://docs.ansible.com/ansible/latest/intro.html">Ansible Documentation</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="install-run-on-centos-7-server">Install / run on CentOS 7 server</h4>
-<ul>
-<li>Virtualbox Virtual Machine (VM)  </li>
-<li>a Vagrant image (recommend using <a href="https://app.vagrantup.com/bento/boxes/centos-7.2">bento/centos-7.2</a>)  </li>
-<li>Cloud based server e.g. Digital Ocean or Amazon Web Services  </li>
-<li>Post-installation, add the appropriate ssh keys to the root user's <code>.ssh/authorized_keys</code> file.  </li>
-</ul>
-<h4 id="docker-setup-for-centos-7">Docker setup for CentOS 7</h4>
-<ul>
-<li>Open a terminal, ssh to the CentOS server as root and install the following:  <ul>
-<li><code>yum install openssl git htop ntp wget curl</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="install-docker-on-centos-7-as-root-user">Install Docker on CentOS 7 (as root user)</h4>
-<ul>
-<li><code>wget -qO- https://get.docker.com/ | sh</code></li>
-</ul>
-<h4 id="create-islandora-user-as-root">Create islandora user (as root)</h4>
+<h3 id="prerequisites-assumptions">Prerequisites / Assumptions</h3>
 <ul>
 <li>
-<p><code>adduser islandora</code></p>
+<p>Familiarity or knowledge of Ansible</p>
 </li>
 <li>
-<p><code>passwd islandora</code></p>
+<p>Ansible control workstation, laptop or server that runs MacOs, BSD or Linux (Windows doesn't work yet for this) with the following:</p>
+</li>
+<li><code>Ansible 2.2+</code> (choice of <a href="http://docs.ansible.com/ansible/latest/intro_installation.html#installing-the-control-machine">install methods</a>)</li>
+<li><code>openssh</code> (2.2.x+)</li>
+<li><code>git</code> (2.15.1+)</li>
+<li><code>python</code> (2.7+)</li>
+<li>
+<p>The <a href="https://github.com/Islandora-Collaboration-Group/ISLE">ISLE project repository</a> cloned to an appropriate location.</p>
 </li>
 <li>
-<p><code>isle2017</code></p>
+<p>A previously created ISLE Host Server running either of these operating systems:</p>
+</li>
+<li>Ubuntu 16.04 LTS</li>
+<li>
+<p>CentOS 7   </p>
 </li>
 <li>
-<p><code>echo "islandora ALL=(ALL) NOPASSWD: ALL" &gt; /etc/sudoers.d/islandora</code></p>
+<p>An account with ssh access to the ISLE Host Server</p>
 </li>
 <li>
-<p>Create Docker group <code>groupadd docker</code>  </p>
+<p>An account with passwordless sudo access on the ISLE Host Server</p>
 </li>
 <li>
-<p>Add islandora user to docker group <code>usermod -aG docker islandora</code>  </p>
+<p>The IP of the ISLE Host server</p>
 </li>
-<li>
-<p>Add islandora user to wheel group <code>sudo usermod -aG wheel islandora</code></p>
-</li>
-<li>
-<p>Create a ssh key for the islandora user</p>
-</li>
-<li>
-<p><code>mkdir /home/islandora/.ssh</code>  </p>
-</li>
-<li>
-<p><code>chmod -Rv 700 /home/islandora/.ssh</code>  </p>
-</li>
-<li>
-<p><code>cd /home/islandora/.ssh</code>  </p>
-</li>
-<li>
-<p><code>ssh-keygen</code>  </p>
+</ul>
+<hr />
+<h3 id="ansible-deploy-script-explanation">Ansible Deploy Script Explanation</h3>
+<p>Within the <code>docker_install.yml</code> Ansible playbook, there are the following roles which perform different actions or cause different events on the ISLE Host server.</p>
+<table>
+<thead>
+<tr>
+<th>Ansible Role</th>
+<th>Action / Event</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dependencies</code></td>
+<td><em>Installs software dependencies &amp; tools as described above</em></td>
+</tr>
+<tr>
+<td><code>users_groups</code></td>
+<td><em>Adds users, groups and updates permissions as described above</em></td>
+</tr>
+<tr>
+<td><code>docker</code></td>
+<td><em>Installs Docker</em></td>
+</tr>
+<tr>
+<td><code>docker_compose</code></td>
+<td><em>Installs Docker Compose</em></td>
+</tr>
+<tr>
+<td><code>git_clone</code></td>
+<td><em>Clones the current ISLE git repository to <code>/opt/ISLE</code></em></td>
+</tr>
+<tr>
+<td><code>docker_images</code></td>
+<td><em>Pulls down the latest ISLE Docker Images from Dockerhub.com</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="installs-software-dependencies-tools-including">Installs software dependencies &amp; tools including:</h4>
+<p>The Ansible script will deploy the following to the ISLE Host server:</p>
+<table>
+<thead>
+<tr>
+<th>Ubuntu / Debian</th>
+<th>CentOS / RHEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>software-properties-common</td>
+<td>libselinux-python</td>
+</tr>
+<tr>
+<td>python-software-properties</td>
+<td>libsemanage-python</td>
+</tr>
+<tr>
+<td>--</td>
+<td>yum-utils</td>
+</tr>
+<tr>
+<td>ntp</td>
+<td>ntp</td>
+</tr>
+<tr>
+<td>openssh-client</td>
+<td>openssh-clients</td>
+</tr>
+<tr>
+<td>rsync</td>
+<td>rsync</td>
+</tr>
+<tr>
+<td>curl</td>
+<td>curl</td>
+</tr>
+<tr>
+<td>wget</td>
+<td>wget</td>
+</tr>
+<tr>
+<td>git</td>
+<td>git</td>
+</tr>
+<tr>
+<td>zip</td>
+<td>zip</td>
+</tr>
+<tr>
+<td>unzip</td>
+<td>unzip</td>
+</tr>
+<tr>
+<td>vim</td>
+<td>vim</td>
+</tr>
+<tr>
+<td>nano</td>
+<td>nano</td>
+</tr>
+<tr>
+<td>emacs24-nox</td>
+<td>emacs</td>
+</tr>
+<tr>
+<td>htop</td>
+<td>htop</td>
+</tr>
+<tr>
+<td>apt-transport-https</td>
+<td>--</td>
+</tr>
+<tr>
+<td>ca-certificates</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<h4 id="makes-isle-host-service-changes">Makes ISLE Host service changes</h4>
+<p><strong>Please Note:</strong> <em>Any of these services can be re-enabled post installation see appropriate documentation for opening ports on firewalls etc.</em></p>
+<table>
+<thead>
+<tr>
+<th>Ubuntu / Debian</th>
+<th>CentOS / RHEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>enables ntp service</em></td>
+<td><em>enables ntp service</em></td>
+</tr>
+<tr>
+<td><em>disables ufw</em></td>
+<td><em>disables iptables</em></td>
+</tr>
+<tr>
+<td>--</td>
+<td><em>sets selinux to permissive</em></td>
+</tr>
+</tbody>
+</table>
+<h4 id="adds-users-groups-and-updates-permissions">Adds users, groups and updates permissions</h4>
 <ul>
-<li>Follow the prompts to save these files to <code>/home/islandora/.ssh</code></li>
+<li>Creates the <code>islandora</code> user</li>
+<li>Along with an appropriate password</li>
+<li>generates a ssh key</li>
+<li>bestows sudo password-less access</li>
+<li>
+<p>Gives the <code>islandora</code> user the ability to run Docker &amp; Docker Compose by adding the account to the Docker group.  </p>
+</li>
+<li>
+<p>Disables <code>root</code> user access via ssh</p>
+</li>
+<li>Disables use of passwords with ssh.</li>
+<li><em>key based access only to the ISLE Host server</em></li>
 </ul>
-</li>
-<li>
-<p>Create an <code>authorized_keys</code> file in <code>/home/islandora/.ssh</code>using one of the following tools: <code>nano</code>, <code>pico</code>, <code>vi</code> or <code>emacs</code></p>
-</li>
-<li>
-<p>Example:
-     <code>vi /home/islandora/.ssh/authorized_keys</code></p>
-</li>
-<li>
-<p>Copy in the existing ssh key from the enduser's laptop /workstation. This will allow key based ssh access for the enduser.</p>
+<h4 id="installs-additional-software">Installs additional software</h4>
 <ul>
 <li>
-<p><code>cat /Users/endusername/.ssh/id_rsa.pub</code></p>
+<p>Docker</p>
 </li>
 <li>
-<p>Copy and paste this value exactly into the <code>/home/islandora/.ssh/authorized_keys</code> file.</p>
+<p>Docker Compose</p>
+</li>
+<li>
+<p>Git clones the ISLE repo to <code>/opt/ISLE</code></p>
+</li>
+<li>
+<p>Pulls down the most recent ISLE images</p>
 </li>
 </ul>
-</li>
-<li>
-<p>Exit out of the ssh session from the host server as the root user <code>exit</code></p>
-</li>
-<li>
-<p>ssh back in as <code>islandora</code></p>
-</li>
-<li>
-<p>Enable the Docker service to start on host server boot</p>
+<h4 id="ansible-script-directory-structure">Ansible script directory structure</h4>
+<pre><code>ansible
+├── docker_install.yml
+├── host_vars
+│   └── isle-prod-project.institution.yml
+├── inventory
+└── roles
+    ├── dependencies
+    │   └── tasks
+    │       ├── debian_ubuntu.yml
+    │       ├── main.yml
+    │       └── rhel_centos.yml
+    ├── docker
+    │   └── tasks
+    │       ├── install.yml
+    │       └── main.yml
+    ├── docker_compose
+    │   └── tasks
+    │       ├── install.yml
+    │       └── main.yml
+    ├── docker_images
+    │   └── tasks
+    │       ├── images_pull.yml
+    │       └── main.yml
+    ├── git_clone
+    │   └── tasks
+    │       ├── git_clone.yml
+    │       └── main.yml
+    └── users_groups
+        ├── files
+        │   └── islandora
+        └── tasks
+            ├── groups.yml
+            ├── main.yml
+            ├── secure.yml
+            ├── ssh.yml
+            └── users.yml
+</code></pre>
+
+<h3 id="configure-ansible-script-to-deploy-to-isle-host">Configure Ansible Script to deploy to ISLE Host</h3>
+<p>To configure the Ansible script to deploy to one's institutional ISLE Host Server, please review and edit the following files within the <code>ansible</code> directory.</p>
 <ul>
-<li><code>sudo systemctl enable docker.service</code></li>
+<li><code>ansible/docker_install.yml</code></li>
+<li><code>ansible/inventory</code></li>
+<li><code>ansible/host_vars/isle-prod-project.institution.yml</code></li>
 </ul>
-</li>
-<li>
-<p>Start the Docker service</p>
+<p>Basically wherever <code>isle-prod-project.institution</code> appears as a value in these three files, please replace with the appropriate ISLE Host server fully qualified domain name (<strong>fqdn</strong>) e.g. <code>yourislesite.institution.com</code></p>
+<p>One can open up and edit all files in a text editor e.g. Atom, Textedit, Textwrangler etc.</p>
+<h4 id="ansibledocker_installyml">ansible/docker_install.yml</h4>
+<p><em>This is the Ansible playbook necessary to deploy software to the ISLE host server.</em></p>
 <ul>
-<li><code>sudo systemctl start docker.service</code></li>
+<li>At the top of the file remove <code>isle-prod-project.institution</code> and replace with the appropriate <strong>fqdn</strong>.  </li>
 </ul>
-</li>
-</ul>
-<h4 id="install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7">Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7</h4>
-<ul>
-<li>
-<p>Open a terminal and ssh back into the CentOS Host Server/VM as the <code>islandora</code> user and perform the following:</p>
-</li>
-<li>
-<p>Add the RHEL/CENTOS epel-release package repository</p>
-<ul>
-<li><code>sudo yum install epel-release</code></li>
-</ul>
-</li>
-<li>
-<p>Install Python Pip (package manager for Python Scripting Language)</p>
-<ul>
-<li><code>sudo yum install -y python-pip</code></li>
-</ul>
-</li>
-<li>
-<p>Upgrade Python to latest version</p>
-<ul>
-<li><code>sudo yum upgrade python*</code></li>
-</ul>
-</li>
-<li>
-<p>Upgrade Python Pip</p>
-<ul>
-<li><code>sudo pip install --upgrade pip</code></li>
-</ul>
-</li>
-<li>
-<p>Install Docker compose</p>
-<ul>
-<li><code>sudo pip install docker-compose</code></li>
-</ul>
-</li>
-</ul>
-<h4 id="clone-isle-repository">Clone ISLE repository</h4>
+<h4 id="ansibleinventoryyml">ansible/inventory.yml</h4>
+<p><em>This is the possible list of server(s) to deploy to using Ansible and its associated playbook(s).</em></p>
+<p><strong>Please Note:</strong> These instructions below are repeated within the file itself.</p>
 <ul>
 <li>
-<p>Please note in some Linux Distributions, one might need to create the <code>/opt</code> directory (optional)  </p>
+<p>Line 7: remove <code>isle-prod-project.institution</code> from in between the brackets and replace with the appropriate <strong>fqdn</strong></p>
+</li>
+<li>
+<p>Line 8: Add the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions to the end of <code>ansible_ssh_user=</code></p>
+<p><strong>Example</strong>: <code>ansible_ssh_user=janesmith</code></p>
+</li>
+<li>
+<p>Line 8: Add the appropriate path to this ISLE Host Server user accounts public ssh key to the end of <code>ansible_ssh_private_key_file=</code></p>
+</li>
+<li>
+<p><strong>Example</strong> of inventory using settings for local Ansible deploy laptop:</p>
+</li>
+</ul>
+<pre><code>ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub
+</code></pre>
+
+<p><strong>Please Note:</strong> This key is typically found on the local control (Ansible deploy laptop / workstation) system and should have been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</p>
+<ul>
+<li><strong>Final Example</strong> end result for inventory file with all settings above</li>
+</ul>
+<pre><code>[yourislesite.institution.com]   
+yourislesite.institution.com ansible_connection=ssh ansible_ssh_user=janesmith ansible_ssh_private_key_file=/home/janesmith/.ssh/id_rsa.pub
+</code></pre>
+
+<h4 id="ansibleisle-prod-projectinstitutionyml">ansible/isle-prod-project.institution.yml</h4>
 <ul>
 <li>
-<p>One can <code>ls -lha /</code> to see if an <code>/opt</code> directory exists  </p>
+<p>Copy this file and rename the copy to with the appropriate <strong>fqdn</strong></p>
+</li>
+<li>
+<p><strong>Example</strong> of how <code>host_vars</code> directory should now contain two files:  </p>
+</li>
+</ul>
+<pre><code>ansible
+├── docker_install.yml
+├── host_vars
+│   ├── isle-prod-project.institution.yml
+│   └── yourislesite.institution.com.yml
+├── inventory
+└── roles
+</code></pre>
+
 <ul>
 <li>
-<p>If missing, <code>sudo mkdir /opt</code>  </p>
+<p>Edit the following lines within the newly created file i.e. <code>yourislesite.institution.com.yml</code> and remove the comments (#) as asked</p>
 </li>
 <li>
-<p>If not missing, proceed to next step.  </p>
+<p><strong>Please Note:</strong> <em>The <strong>fqdn</strong> in the <code>inventory</code> file should match this filename as well.</em></p>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-<li>
-<p><code>cd /opt</code></p>
-</li>
-<li>
-<p><code>sudo git clone https://github.com/Islandora-Collaboration-Group/ISLE.git</code></p>
-</li>
-<li>
-<p>This process will take 1 - 3 minutes depending on internet bandwidth</p>
-</li>
-<li>
-<p><code>sudo chown -Rv islandora:islandora ISLE</code></p>
-</li>
-<li>
-<p><code>cd /opt/ISLE</code></p>
-</li>
-</ul>
-<h4 id="next-steps">Next steps</h4>
-<p>Once this process has finished one chose to do one of the following:</p>
+<p><strong>Examples ONLY</strong> (<em>Do not enter these literal values</em>)  </p>
 <ul>
-<li>Continue next steps with the <a href="../alpha_isle_localdomain_quickstart/">1.4. -Testing - isle.localdomain Quickstart Guide</a></li>
+<li>
+<p>Line 9: <code>ansible_ssh_host: 192.168.1.16</code></p>
+<ul>
+<li><em>This is the IP address of the ISLE Host server</em></li>
 </ul>
-<h2 id="continue-next-steps-with-14-testing-migration-guide">* Continue next steps with <a href="../alpha_migration_guide/">1.4. -Testing - Migration Guide</a></h2>
+</li>
+<li>
+<p>Line 10: <code>ansible_ssh_user: janesmith</code>  </p>
+<ul>
+<li><em>This is the appropriate ISLE Host server user account that has <code>sudo</code> passwordless permissions.</em></li>
+</ul>
+</li>
+<li>
+<p>Line 15: <code>pub_locale: /home/janesmith/.ssh/id_rsa.pub</code></p>
+<ul>
+<li><em>This is the key found on the local control (Ansible deploy laptop / workstation) system which has been previously copied to the appropriate ISLE Host server user account's <code>/home/islehostserver_user/.ssh/authorized_keys</code> file.</em></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h4 id="ansible-commands-to-test-connection">Ansible commands to test connection</h4>
+<ul>
+<li>Test if the Ansible control laptop / workstation can connect to the ISLE Host server by running these commands. On the local Ansible control laptop / workstation, open a terminal window and enter the following:</li>
+</ul>
+<pre><code>cd /path/to/ISLE/repo
+
+ansible -i inventory isle-host-server -m ping
+</code></pre>
+
+<ul>
+<li><strong>Example</strong> output of above command (<em>IGNORE THE WARNING</em>)</li>
+</ul>
+<pre><code>[WARNING]: Found both group and host with same name: isle-host-server   
+
+isle-host-server | SUCCESS =&gt; {
+     &quot;changed&quot;: false,
+     &quot;ping&quot;: &quot;pong&quot;
+   }
+</code></pre>
+
+<p><strong>Please Note:</strong> <em>If SUCCESS doesn't appear as a value or if the wording of the prompt is in RED with "host doesn't exist ...", review all steps above and check the settings. Do not advance until the <strong>Example</strong> output above matches.</em>  </p>
+<h3 id="ansible-commands-for-deploy">Ansible commands for deploy</h3>
+<ul>
+<li>
+<p>To deploy to the ISLE Host Server, run this command.</p>
+<p><code>ansible-playbook -i inventory docker_install.yml</code></p>
+</li>
+</ul>
+<p>Ansible will start displaying output within the terminal. If any turn red and the script terminates, please review the above settings and connectivity to the server. Attempt to rerun the script.</p>
+<h3 id="qc-review-checklist">QC Review checklist</h3>
+<p>To ensure a successful deploy to the ISLE Server, please review the following to ensure that the deploy to the Islandora Host server was successful.</p>
+<p>Open a terminal window on the Ansible control laptop /workstation and <code>ssh</code> into the Islandora Host server using the appropriate enduser account setup prior to the deploy.</p>
+<p><strong>Example</strong>:</p>
+<p><code>ssh enduser@isle-prod-project.institution</code></p>
+<hr />
+<h4 id="docker">Docker</h4>
+<ul>
+<li>
+<p>To check where Docker has been installed to, enter:  </p>
+<p><code>which docker</code>    </p>
+<p><strong>Example</strong> output:      </p>
+<p><code>/usr/bin/docker</code></p>
+</li>
+<li>
+<p>To check which version of Docker has been installed, enter:</p>
+<p><code>docker --version</code></p>
+<p><strong>Example</strong> output:</p>
+<p><code>Docker version 17.12.0-ce, build c97c6d6</code></p>
+</li>
+<li>
+<p>To check if Docker is running, enter:</p>
+<p><code>service docker status</code>   </p>
+<p><strong>Example</strong> output:</p>
+</li>
+</ul>
+<pre><code>Redirecting to /bin/systemctl status docker.service
+● docker.service - Docker Application Container Engine
+  Loaded: loaded (/usr/lib/systemd/system/docker.service; enabled; vendor preset: disabled)
+  Active: active (running) since Thu 2018-01-18 14:36:55 EST; 1 weeks 4 days ago
+    Docs: https://docs.docker.com
+Main PID: 23066 (dockerd)
+  Memory: 55.3M
+....
+</code></pre>
+
+<ul>
+<li>
+<p>To check if the ISLE images have been downloaded on the ISLE Host server, enter:</p>
+<p><code>docker image ls</code></p>
+<p><strong>Example</strong> output:  </p>
+</li>
+</ul>
+<pre><code>REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
+islandoracollabgroup/isle-fedora   alpha2              6e2749ca2c2f        2 weeks ago         2.43GB
+islandoracollabgroup/isle-apache   alpha2              82fe4ae16932        2 weeks ago         2.18GB
+islandoracollabgroup/isle-solr     alpha2              7fba26c10433        2 weeks ago         784MB
+islandoracollabgroup/isle-mysql    alpha2              f34162f1e0f8        2 weeks ago         299MB
+</code></pre>
+
+<h4 id="docker-compose">Docker Compose</h4>
+<ul>
+<li>
+<p>To check where Docker-compose has been installed to, enter:  </p>
+<p><code>which docker-compose</code></p>
+<p><strong>Example</strong> output:</p>
+<p><code>/usr/local/bin/docker-compose</code></p>
+</li>
+<li>
+<p>To check which version of Docker-compose has been installed, enter:</p>
+<p><code>docker-compose -version</code></p>
+<p><strong>Example</strong> output:</p>
+<p><code>docker-compose version 1.17.1, build 6d101fb</code></p>
+</li>
+</ul>
+<h4 id="islandora-user">Islandora user</h4>
+<ul>
+<li>
+<p>To check if the <code>islandora</code> user has been created, enter:</p>
+<p><code>cat /etc/passwd</code>  </p>
+<p><strong>Example</strong> output:</p>
+<p><code>islandora:x:1002:1002::/home/islandora:/bin/bash</code></p>
+</li>
+</ul>
+<h4 id="isle-project-directory">ISLE Project directory</h4>
+<ul>
+<li>
+<p>To check if the ISLE project git repo has been cloned to <code>/opt/ISLE</code>, enter:</p>
+<p><code>ls -lh /opt/ISLE</code></p>
+<p><strong>Example</strong> output:</p>
+</li>
+</ul>
+<pre><code>total 24K
+drwxr-xr-x. 3 islandora islandora  110 Jan 17 09:17 apache
+drwxr-xr-x. 5 islandora islandora   84 Jan 23 13:44 config
+-rwxr-xr-x. 1 islandora islandora 2.0K Jan 18 16:58 docker-compose.yml
+drwxr-xr-x. 7 islandora islandora  143 Jan 17 09:17 docs
+drwxr-xr-x. 7 islandora islandora  102 Jan 17 09:17 fedora
+-rwxr-xr-x. 1 islandora islandora  12K Jan 17 09:17 mkdocs.yml
+drwxr-xr-x. 3 islandora islandora   54 Jan 17 09:17 mysql
+-rwxr-xr-x. 1 islandora islandora 4.1K Jan 17 09:17 README.md
+drwxr-xr-x. 4 islandora islandora   50 Jan 17 09:17 solr
+</code></pre>
+
+<hr />
+<h3 id="post-server-deploy-or-next-steps">Post Server Deploy or next steps</h3>
+<p>Once this script has finished one can:</p>
+<ul>
+<li>
+<p>Add any appropriate public ssh keys to <code>/home/islandora/.ssh/authorized_keys</code> prior to attempting to ssh to the Islandora Host server as the <code>islandora</code> user.</p>
+</li>
+<li>
+<p>Add the <code>/home/islandora/.ssh/id_rsa.pub</code> key to any git repository contained within the Migration Guide. (Additional instructions appear in that guide if this process is unfamiliar.)</p>
+</li>
+<li>
+<p>Continue next steps with the <a href="../testsite_guide/">Test Site Guide - isle.localdomain</a></p>
+</li>
+<li>
+<p>Continue next steps with <a href="../migration_guide/">Migration Guide</a></p>
+</li>
+</ul>
                 
                   
                 
@@ -2450,7 +2989,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../alpha_migration_merge_checklist/" title="1.4. -Testing - Alpha Migration Merge Checklist" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../1_3_system_overview/release-process/" title="1.3 - Release Process" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2459,19 +2998,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1.4. -Testing - Alpha Migration Merge Checklist
+                1.3 - Release Process
               </span>
             </div>
           </a>
         
         
-          <a href="../host_server_setup_ubuntu/" title="1.4. -Testing - Host Server Build - Ubuntu" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../host_local_setup_centos/" title="1.4. -Testing - Host Local Setup Guide - CentOS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                1.4. -Testing - Host Server Build - Ubuntu
+                1.4. -Testing - Host Local Setup Guide - CentOS
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

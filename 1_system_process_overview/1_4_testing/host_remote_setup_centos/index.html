@@ -18,7 +18,7 @@
     
     
       
-        <title>1.4. -Testing - Alpha Quickstart Guide - Islandora Enterprise (ISLE)</title>
+        <title>1.4. -Testing - Host Remote Setup Guide - Centos - Islandora Enterprise (ISLE)</title>
       
     
     
@@ -88,7 +88,7 @@
                 </span>
               
             
-            1.4. -Testing - Alpha Quickstart Guide
+            1.4. -Testing - Host Remote Setup Guide - Centos
           
         </span>
       </div>
@@ -349,6 +349,66 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../host_local_setup_ansible/" title="1.4. -Testing - Host Local Setup Guide - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - Ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_local_setup_centos/" title="1.4. -Testing - Host Local Setup Guide - CentOS" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - CentOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_local_setup_macos/" title="1.4. -Testing - Host Local Setup Guide - MacOS" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_local_setup_ubuntu/" title="1.4. -Testing - Host Local Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_remote_setup_ansible/" title="1.4. -Testing - Host Remote Setup Guide - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -358,11 +418,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        1.4. -Testing - Alpha Quickstart Guide
+        1.4. -Testing - Host Remote Setup Guide - Centos
       </label>
     
-    <a href="./" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link md-nav__link--active">
-      1.4. -Testing - Alpha Quickstart Guide
+    <a href="./" title="1.4. -Testing - Host Remote Setup Guide - Centos" class="md-nav__link md-nav__link--active">
+      1.4. -Testing - Host Remote Setup Guide - Centos
     </a>
     
       
@@ -374,72 +434,58 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpha-islelocaldomain-quickstart-guide-notes" title="Alpha isle.localdomain Quickstart Guide Notes" class="md-nav__link">
-    Alpha isle.localdomain Quickstart Guide Notes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dockerhub-images" title="Dockerhub images" class="md-nav__link">
-    Dockerhub images
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#document-assumptions-prerequisites" title="Document Assumptions / Prerequisites:" class="md-nav__link">
-    Document Assumptions / Prerequisites:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#isle_localdomain-install-process-same-for-all-host-server-types" title="isle_localdomain install process (same for all host server types)" class="md-nav__link">
-    isle_localdomain install process (same for all host server types)
+  <a href="#host-remote-setup-guide-centos" title="Host Remote Setup Guide - CentOS" class="md-nav__link">
+    Host Remote Setup Guide - CentOS
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#0-add-the-isle-host-server-ip-to-the-docker-composeyml-file" title="0. Add the ISLE Host server IP to the docker-compose.yml file" class="md-nav__link">
-    0. Add the ISLE Host server IP to the docker-compose.yml file
+  <a href="#install-run-on-centos-7-server" title="Install / run on CentOS 7 server" class="md-nav__link">
+    Install / run on CentOS 7 server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-mysql-image-pull-container-launch-10-15-mins" title="1. MySQL image pull &amp; container launch (10-15 mins)" class="md-nav__link">
-    1. MySQL image pull &amp; container launch (10-15 mins)
+  <a href="#docker-setup-for-centos-7" title="Docker setup for CentOS 7" class="md-nav__link">
+    Docker setup for CentOS 7
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-fedora-image-pull-container-launch-20-30-mins" title="2. Fedora image pull &amp; container launch (20 - 30 mins)" class="md-nav__link">
-    2. Fedora image pull &amp; container launch (20 - 30 mins)
+  <a href="#install-docker-on-centos-7-as-root-user" title="Install Docker on CentOS 7 (as root user)" class="md-nav__link">
+    Install Docker on CentOS 7 (as root user)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-solr-image-pull-container-launch-10-20-mins" title="3. Solr image pull &amp; container launch (10 - 20 mins)" class="md-nav__link">
-    3. Solr image pull &amp; container launch (10 - 20 mins)
+  <a href="#create-islandora-user-as-root" title="Create islandora user (as root)" class="md-nav__link">
+    Create islandora user (as root)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-apache-image-pull-container-launch-30-45-mins" title="4. Apache image pull &amp; container launch (30 - 45 mins)" class="md-nav__link">
-    4. Apache image pull &amp; container launch (30 - 45 mins)
+  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7" class="md-nav__link">
+    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-install-script-on-apache-container-20-40-mins" title="5. Install script on Apache container (20 - 40 mins)" class="md-nav__link">
-    5. Install script on Apache container (20 - 40 mins)
+  <a href="#clone-isle-repository" title="Clone ISLE repository" class="md-nav__link">
+    Clone ISLE repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" title="Next steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -450,43 +496,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fast-facts" title="Fast Facts" class="md-nav__link">
-    Fast Facts
+  <a href="#continue-next-steps-with-migration-guide" title="* Continue next steps with Migration Guide" class="md-nav__link">
+    * Continue next steps with Migration Guide
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-mysql-container" title="1. MySQL container" class="md-nav__link">
-    1. MySQL container
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-fedora-container" title="2. Fedora container" class="md-nav__link">
-    2. Fedora container
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-solr-container" title="3. Solr container" class="md-nav__link">
-    3. Solr container
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-apache-container" title="4. Apache container" class="md-nav__link">
-    4. Apache container
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -505,8 +517,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Guide
+    <a href="../host_remote_setup_ubuntu/" title="1.4. -Testing - Host Remote Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ubuntu
     </a>
   </li>
 
@@ -517,8 +529,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_migration_export_checklist/" title="1.4. -Testing - Alpha Migration Export Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Export Checklist
+    <a href="../dev_build_guide_linux/" title="1.4. -Testing - Dev Build Guide - Linux" class="md-nav__link">
+      1.4. -Testing - Dev Build Guide - Linux
     </a>
   </li>
 
@@ -529,8 +541,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_migration_merge_checklist/" title="1.4. -Testing - Alpha Migration Merge Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Merge Checklist
+    <a href="../dev_build_guide_mac/" title="1.4. -Testing - Dev Build Guide - Mac OSX" class="md-nav__link">
+      1.4. -Testing - Dev Build Guide - Mac OSX
     </a>
   </li>
 
@@ -541,8 +553,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Centos
+    <a href="../migration_guide/" title="1.4. -Testing - Migration Guide" class="md-nav__link">
+      1.4. -Testing - Migration Guide
     </a>
   </li>
 
@@ -553,8 +565,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_ubuntu/" title="1.4. -Testing - Host Server Build - Ubuntu" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Ubuntu
+    <a href="../migration_export_checklist/" title="1.4. -Testing - Migration Export Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Export Checklist
     </a>
   </li>
 
@@ -565,8 +577,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
-      1.4. -Testing - Host Server Build - MacOS
+    <a href="../migration_merge_checklist/" title="1.4. -Testing - Migration Merge Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Merge Checklist
     </a>
   </li>
 
@@ -577,8 +589,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_ansible/" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Ansible
+    <a href="../migration_docker_compose/" title="1.4. -Testing - Migration Docker Compose Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Docker Compose Checklist
     </a>
   </li>
 
@@ -589,8 +601,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Linux
+    <a href="../newsite_guide/" title="1.4. -Testing - New site Guide" class="md-nav__link">
+      1.4. -Testing - New site Guide
     </a>
   </li>
 
@@ -601,8 +613,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_build_guide_mac/" title="1.4. -Testing - Alpha Build Guide - Mac OSX" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Mac OSX
+    <a href="../testsite_guide/" title="1.4. -Testing - Test site Guide" class="md-nav__link">
+      1.4. -Testing - Test site Guide
     </a>
   </li>
 
@@ -2208,72 +2220,58 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alpha-islelocaldomain-quickstart-guide-notes" title="Alpha isle.localdomain Quickstart Guide Notes" class="md-nav__link">
-    Alpha isle.localdomain Quickstart Guide Notes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dockerhub-images" title="Dockerhub images" class="md-nav__link">
-    Dockerhub images
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#document-assumptions-prerequisites" title="Document Assumptions / Prerequisites:" class="md-nav__link">
-    Document Assumptions / Prerequisites:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#isle_localdomain-install-process-same-for-all-host-server-types" title="isle_localdomain install process (same for all host server types)" class="md-nav__link">
-    isle_localdomain install process (same for all host server types)
+  <a href="#host-remote-setup-guide-centos" title="Host Remote Setup Guide - CentOS" class="md-nav__link">
+    Host Remote Setup Guide - CentOS
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#0-add-the-isle-host-server-ip-to-the-docker-composeyml-file" title="0. Add the ISLE Host server IP to the docker-compose.yml file" class="md-nav__link">
-    0. Add the ISLE Host server IP to the docker-compose.yml file
+  <a href="#install-run-on-centos-7-server" title="Install / run on CentOS 7 server" class="md-nav__link">
+    Install / run on CentOS 7 server
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#1-mysql-image-pull-container-launch-10-15-mins" title="1. MySQL image pull &amp; container launch (10-15 mins)" class="md-nav__link">
-    1. MySQL image pull &amp; container launch (10-15 mins)
+  <a href="#docker-setup-for-centos-7" title="Docker setup for CentOS 7" class="md-nav__link">
+    Docker setup for CentOS 7
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-fedora-image-pull-container-launch-20-30-mins" title="2. Fedora image pull &amp; container launch (20 - 30 mins)" class="md-nav__link">
-    2. Fedora image pull &amp; container launch (20 - 30 mins)
+  <a href="#install-docker-on-centos-7-as-root-user" title="Install Docker on CentOS 7 (as root user)" class="md-nav__link">
+    Install Docker on CentOS 7 (as root user)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-solr-image-pull-container-launch-10-20-mins" title="3. Solr image pull &amp; container launch (10 - 20 mins)" class="md-nav__link">
-    3. Solr image pull &amp; container launch (10 - 20 mins)
+  <a href="#create-islandora-user-as-root" title="Create islandora user (as root)" class="md-nav__link">
+    Create islandora user (as root)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-apache-image-pull-container-launch-30-45-mins" title="4. Apache image pull &amp; container launch (30 - 45 mins)" class="md-nav__link">
-    4. Apache image pull &amp; container launch (30 - 45 mins)
+  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7" class="md-nav__link">
+    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-install-script-on-apache-container-20-40-mins" title="5. Install script on Apache container (20 - 40 mins)" class="md-nav__link">
-    5. Install script on Apache container (20 - 40 mins)
+  <a href="#clone-isle-repository" title="Clone ISLE repository" class="md-nav__link">
+    Clone ISLE repository
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" title="Next steps" class="md-nav__link">
+    Next steps
   </a>
   
 </li>
@@ -2284,43 +2282,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fast-facts" title="Fast Facts" class="md-nav__link">
-    Fast Facts
+  <a href="#continue-next-steps-with-migration-guide" title="* Continue next steps with Migration Guide" class="md-nav__link">
+    * Continue next steps with Migration Guide
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-mysql-container" title="1. MySQL container" class="md-nav__link">
-    1. MySQL container
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-fedora-container" title="2. Fedora container" class="md-nav__link">
-    2. Fedora container
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-solr-container" title="3. Solr container" class="md-nav__link">
-    3. Solr container
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-apache-container" title="4. Apache container" class="md-nav__link">
-    4. Apache container
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2339,484 +2303,213 @@
               
                 
                 
-                  <h1>1.4. -Testing - Alpha Quickstart Guide</h1>
+                  <h1>1.4. -Testing - Host Remote Setup Guide - Centos</h1>
                 
-                <h3 id="alpha-islelocaldomain-quickstart-guide-notes">Alpha isle.localdomain Quickstart Guide Notes</h3>
-<p>This Alpha Quickstart guide is intended to be the <strong>fastest</strong> method of using ISLE to test.</p>
-<p>This guide enables an enduser to spin up and install the "baked in" sample site, <code>isle-localdomain</code> for review and testing.</p>
-<p>Previous guides used a manual "build" process which is still possible but not necessary for most endusers due to complexity and process length.</p>
-<p>Current documentation will now refer to an "install" process using Dockerhub images instead of a "build" process where the enduser manually built these images.</p>
-<p>If one would like to manually build the images please refer to one of the following Alpha Build guides:</p>
-<ul>
-<li>
-<p>For <a href="../alpha_build_guide_linux/">Linux Host Servers</a></p>
-</li>
-<li>
-<p>For <a href="../alpha_build_guide_mac/">MacOS Host Servers</a></p>
-</li>
-</ul>
-<h3 id="dockerhub-images">Dockerhub images</h3>
-<p>Four Dockerhub images have already been "built" and are stored in a repository thus saving the endusers hours of build time.  Use the images tagged with <code>alpha2</code>.</p>
-<ul>
-<li>
-<p>isle-apache <a href="https://hub.docker.com/r/islandoracollabgroup/isle-apache/">https://hub.docker.com/r/islandoracollabgroup/isle-apache/</a>  </p>
-</li>
-<li>
-<p>isle-fedora <a href="https://hub.docker.com/r/islandoracollabgroup/isle-fedora/">https://hub.docker.com/r/islandoracollabgroup/isle-fedora/</a>  </p>
-</li>
-<li>
-<p>isle-mysql <a href="https://hub.docker.com/r/islandoracollabgroup/isle-mysql/">https://hub.docker.com/r/islandoracollabgroup/isle-mysql/</a>  </p>
-</li>
-<li>
-<p>isle-solr  <a href="https://hub.docker.com/r/islandoracollabgroup/isle-solr/">https://hub.docker.com/r/islandoracollabgroup/isle-solr/</a>  </p>
-</li>
-</ul>
-<h3 id="document-assumptions-prerequisites">Document Assumptions / Prerequisites:</h3>
-<ul>
-<li>
-<p>The Host Server has already been setup and is running. If one has not setup the Host server please follow one of the following links below and then return to this document please.  </p>
-<ul>
-<li>
-<p>Host Server setup for <a href="../host_server_setup_centos/"><strong>CentOS 7</strong></a>  </p>
-</li>
-<li>
-<p>Host Server setup for <a href="../host_server_setup_ubuntu/"><strong>Ubuntu 16.04 LTS</strong></a>  </p>
-</li>
-<li>
-<p>Host Server setup for <a href="../host_server_setup_macos/"><strong>Mac OS</strong></a>  </p>
-</li>
-</ul>
-</li>
-<li>
-<p>By default the <code>isle.localdomain</code> <code>docker-compose.yml</code> file is configured for Linux Host Servers. (found at the root of the ISLE Project directory)</p>
-<ul>
-<li>If one is using a <strong>Mac OS</strong> Host server, then edit the <code>docker-compose.yml</code> file to ensure the following lines look like this:  </li>
-</ul>
-</li>
-</ul>
-<pre><code>    - ./config/isle_localdomain/apache/macosx_settings.php:/var/www/html/sites/default/settings.php  
-</code></pre>
+                <h3 id="host-remote-setup-guide-centos">Host Remote Setup Guide - CentOS</h3>
+<pre><code>TO DO
 
-<h3 id="isle_localdomain-install-process-same-for-all-host-server-types">isle_localdomain install process (same for all host server types)</h3>
-<p><strong>Please note:</strong> <em>The first container (MySQL, isle-mysql, mysql) has to be running PRIOR to all others (including fedora &amp; apache) due to a race condition (fedora starts prior to mysql being ready to accept connections). This improper state will be fixed at a later point in the project.</em>  <strong>DO NOT RUN</strong> <code>docker-compose up -d</code> during the initial install process as this will download all images and then run all containers at the same time which will trigger this race condition and subsequent chain of service failures.</p>
-<ul>
-<li><strong>During the initial install process</strong> do the following steps to individually download each image and run each container.</li>
-</ul>
-<h4 id="0-add-the-isle-host-server-ip-to-the-docker-composeyml-file">0. Add the ISLE Host server IP to the <code>docker-compose.yml</code> file</h4>
-<ul>
-<li>Lines 39 &amp; 68 both require the same value of the Host server IP address for the <code>extra_hosts</code> setting.</li>
-</ul>
-<p><strong>Example:</strong></p>
-<pre><code>   extra_hosts:
-     - &quot;isle.localdomain:192.168.1.1&quot;
+Modify for Remote settings Please
+
 </code></pre>
 
 <ul>
+<li>This alpha build uses <code>isle.localdomain</code> as the test domain along with the Docker Compose service names e.g. <code>mysql, fedora, apache</code> etc.<ul>
+<li>If your institution's server uses real DNS, then skip the next step. If not, please proceed with the following:</li>
+<li>To ensure this domain resolves properly, one will need to edit the servers and/or their own local <code>/etc/hosts</code> file.<ul>
 <li>
-<p>Open a text editor, add this same IP to both lines and save the file.</p>
-</li>
-<li>
-<p><strong>Please note:</strong></p>
-<ul>
-<li>This IP can be from a VM run on a local laptop or workstation.</li>
-<li>If using Docker for Mac, then comment out these <code>extra_hosts</code> sections and add the following value of <code>127.0.0.1 isle.localdomain</code> to the laptop / workstation's <code>/etc/hosts</code> file.     </li>
-</ul>
-</li>
-</ul>
-<h4 id="1-mysql-image-pull-container-launch-10-15-mins">1. MySQL image pull &amp; container launch (10-15 mins)</h4>
-<ul>
-<li><code>docker pull islandoracollabgroup/isle-mysql:alpha2</code>  </li>
-<li><code>docker-compose up -d mysql</code>  </li>
-</ul>
-<h4 id="2-fedora-image-pull-container-launch-20-30-mins">2. Fedora image pull &amp; container launch (20 - 30 mins)</h4>
-<ul>
-<li><code>docker pull islandoracollabgroup/isle-fedora:alpha2</code>  </li>
-<li>
-<p><code>docker-compose up -d fedora</code>  </p>
-</li>
-<li>
-<p><strong>(Optional but recommended)</strong></p>
-</li>
-<li>After spinning up fedora container, check if the Fedora service is running prior to advancing.</li>
-<li>Navigate to http://fedora:8080/manager/html a popup login prompt should appear.<ul>
-<li>using the supplied username and password at the bottom of this page, enter the appropriate values from the <strong>Fast facts</strong> section at the bottom of the page.</li>
-<li>see 2. Fedora container - service Tomcat, user is admin</li>
-<li>upon login a large display of running Tomcat applications should display, scroll down to <code>fedora</code></li>
-</ul>
-</li>
-<li>The application state / status should be <code>true</code></li>
-<li>If <code>false</code> appears instead, attempt to restart the fedora service manually.<ul>
-<li>Select the <code>restart</code> button to the right of the status area.</li>
-</ul>
-</li>
-<li>If it still fails, review the mounted fedora logs. The <code>docker-compose.yml</code> file will indicate where the logs are located.</li>
-<li>using a command like <code>tail -n 300 &lt;path to fedora logs&gt;/fedora.log</code> should display enough information to troubleshoot.</li>
-</ul>
-<h4 id="3-solr-image-pull-container-launch-10-20-mins">3. Solr image pull &amp; container launch (10 - 20 mins)</h4>
-<ul>
-<li><code>docker pull islandoracollabgroup/isle-solr:alpha2</code>  </li>
-<li><code>docker-compose up -d solr</code>  </li>
-</ul>
-<h4 id="4-apache-image-pull-container-launch-30-45-mins">4. Apache image pull &amp; container launch (30 - 45 mins)</h4>
+<p>Open up a terminal and enter: <code>sudo vi /etc/hosts</code></p>
 <ul>
 <li>
-<p><code>docker pull islandoracollabgroup/isle-apache:alpha2</code>  </p>
+<p>Add one or more of the following: (<strong>Examples ONLY</strong>)</p>
 </li>
 <li>
-<p><code>docker-compose up -d apache</code>  </p>
+<p>Ubuntu 16.04 LTS Host Server (or VM)<br />
+<code>127.0.0.1       localhost isle.localdomain fedora apache fedora.isle.localdomain apache.isle.localdomain</code></p>
 </li>
 <li>
-<p><strong>Please note:</strong> <em>This container on occasion has failed to start initially for as of yet unlogged and unknown reasons.</em>  </p>
+<p>Enduser local laptop
+ <code>127.0.0.1 localhost   
+ 192.156.123.26       isle.localdomain fedora apache fedora.isle.localdomain apache.isle.localdomain</code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="install-run-on-centos-7-server">Install / run on CentOS 7 server</h4>
 <ul>
-<li>One can check if the container is running: <code>docker ps</code> (shows only running containers)  </li>
-<li>One can check if the container stopped running or "exited": <code>docker ps -a</code> (shows all containers running or not)  </li>
+<li>Virtualbox Virtual Machine (VM)  </li>
+<li>a Vagrant image (recommend using <a href="https://app.vagrantup.com/bento/boxes/centos-7.2">bento/centos-7.2</a>)  </li>
+<li>Cloud based server e.g. Digital Ocean or Amazon Web Services  </li>
+<li>Post-installation, add the appropriate ssh keys to the root user's <code>.ssh/authorized_keys</code> file.  </li>
+</ul>
+<h4 id="docker-setup-for-centos-7">Docker setup for CentOS 7</h4>
+<ul>
+<li>Open a terminal, ssh to the CentOS server as root and install the following:  <ul>
+<li><code>yum install openssl git htop ntp wget curl</code></li>
 </ul>
 </li>
 </ul>
-<h4 id="5-install-script-on-apache-container-20-40-mins">5. Install script on Apache container (20 - 40 mins)</h4>
+<h4 id="install-docker-on-centos-7-as-root-user">Install Docker on CentOS 7 (as root user)</h4>
+<ul>
+<li><code>wget -qO- https://get.docker.com/ | sh</code></li>
+</ul>
+<h4 id="create-islandora-user-as-root">Create islandora user (as root)</h4>
 <ul>
 <li>
-<p>Run the following shell scripts manually on the apache container  </p>
+<p><code>adduser islandora</code></p>
+</li>
+<li>
+<p><code>passwd islandora</code></p>
+</li>
+<li>
+<p><code>isle2017</code></p>
+</li>
+<li>
+<p><code>echo "islandora ALL=(ALL) NOPASSWD: ALL" &gt; /etc/sudoers.d/islandora</code></p>
+</li>
+<li>
+<p>Create Docker group <code>groupadd docker</code>  </p>
+</li>
+<li>
+<p>Add islandora user to docker group <code>usermod -aG docker islandora</code>  </p>
+</li>
+<li>
+<p>Add islandora user to wheel group <code>sudo usermod -aG wheel islandora</code></p>
+</li>
+<li>
+<p>Create a ssh key for the islandora user</p>
+</li>
+<li>
+<p><code>mkdir /home/islandora/.ssh</code>  </p>
+</li>
+<li>
+<p><code>chmod -Rv 700 /home/islandora/.ssh</code>  </p>
+</li>
+<li>
+<p><code>cd /home/islandora/.ssh</code>  </p>
+</li>
+<li>
+<p><code>ssh-keygen</code>  </p>
 <ul>
-<li><code>docker exec -it isle-apache bash</code></li>
-<li><code>cd /tmp/isle_drupal_build_tools/</code></li>
-<li><code>chmod 777 *.sh</code></li>
-<li><code>./apache_provision.sh</code></li>
+<li>Follow the prompts to save these files to <code>/home/islandora/.ssh</code></li>
 </ul>
 </li>
 <li>
-<p>Once finished <code>cntrl-D</code> or type <code>exit</code> to get out of the apache container</p>
+<p>Create an <code>authorized_keys</code> file in <code>/home/islandora/.ssh</code>using one of the following tools: <code>nano</code>, <code>pico</code>, <code>vi</code> or <code>emacs</code></p>
 </li>
-<li>Test (QC) the resulting setup by opening a web browser to the <code>isle.localdomain</code> URL of the new ISLE sample site (i.e. http://isle.localdomain)</li>
+<li>
+<p>Example:
+     <code>vi /home/islandora/.ssh/authorized_keys</code></p>
+</li>
+<li>
+<p>Copy in the existing ssh key from the enduser's laptop /workstation. This will allow key based ssh access for the enduser.</p>
+<ul>
+<li>
+<p><code>cat /Users/endusername/.ssh/id_rsa.pub</code></p>
+</li>
+<li>
+<p>Copy and paste this value exactly into the <code>/home/islandora/.ssh/authorized_keys</code> file.</p>
+</li>
 </ul>
-<p><strong>Please note:</strong> The cronjob setting in the <code>apache_provision.sh</code> script is still commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
-<p><strong>Total build process</strong> takes 15 - 35 minutes (<em>depending on system and internet speeds</em>)</p>
-<hr />
-<h3 id="fast-facts">Fast Facts</h3>
-<p><code>islandora</code> user on host server uses <code>isle2017</code> as password</p>
-<h4 id="1-mysql-container">1. MySQL container</h4>
-<table>
-<thead>
-<tr>
-<th align="center">Compose Service Name</th>
-<th align="center">Container Name</th>
-<th>Software</th>
-<th>Ports</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">mysql</td>
-<td align="center">isle-mysql</td>
-<td>MySQL 5.6</td>
-<td>3306</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Account</th>
-<th>Password</th>
-<th>Database</th>
-<th>Perms</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>root</td>
-<td>islemysqlrootpw2017</td>
-<td><strong>ALL</strong></td>
-<td><strong>ALL</strong></td>
-</tr>
-<tr>
-<td>fedora_admin</td>
-<td>dockerfeddb2017</td>
-<td>fedora3</td>
-<td><strong>All</strong> except <code>Grant</code> option</td>
-</tr>
-<tr>
-<td>islandora_user</td>
-<td>islandoradockerdb2017</td>
-<td>islandora_docker</td>
-<td><strong>All</strong> except <code>Grant</code> option</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h4 id="2-fedora-container">2. Fedora container</h4>
-<table>
-<thead>
-<tr>
-<th align="center">Compose Service Name</th>
-<th align="center">Container Name</th>
-<th>Software</th>
-<th>Ports</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">fedora</td>
-<td align="center">isle-fedora</td>
-<td>see below</td>
-<td>8080, 80 (on container) mapped to 8777 (on host)</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Software</th>
-<th>Version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Fedora</td>
-<td>3.8.1</td>
-</tr>
-<tr>
-<td>Apache</td>
-<td>2.4.7</td>
-</tr>
-<tr>
-<td>Drupalfilter</td>
-<td>3.8.1</td>
-</tr>
-<tr>
-<td>Gsearch (w/remote SOLR plugin)</td>
-<td>2.8+ (DG patched)</td>
-</tr>
-<tr>
-<td>(DG) GSearch Extensions</td>
-<td>0.13</td>
-</tr>
-<tr>
-<td>(DG) Islandora Transforms (XSLTs)</td>
-<td>as of 11/2017</td>
-</tr>
-<tr>
-<td>Tomcat</td>
-<td>7.x</td>
-</tr>
-<tr>
-<td>Oracle JDK</td>
-<td>8.x</td>
-</tr>
-<tr>
-<td>Djatoka</td>
-<td>1.1</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Account</th>
-<th>Password</th>
-<th>Service</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fedoraAdmin</td>
-<td>dockerFEDadmin2017</td>
-<td>Fedora</td>
-<td>http://127.0.0.1:8080/fedora/describe</td>
-</tr>
-<tr>
-<td>fedoraIntCallUser</td>
-<td>dockerfedoraIntCallUserpw2017</td>
-<td>Fedora</td>
-<td>http://127.0.0.1:8080/fedora/objects</td>
-</tr>
-<tr>
-<td>anonymous</td>
-<td>anonymous</td>
-<td>Fedora</td>
-<td>---</td>
-</tr>
-<tr>
-<td>fgsAdmin</td>
-<td>dockerfgsAdminpw2017</td>
-<td>Gsearch</td>
-<td>http://127.0.0.1:8080/fedoragsearch/rest?operation=updateIndex</td>
-</tr>
-<tr>
-<td>admin</td>
-<td>dockertcadminpw2017</td>
-<td>Tomcat</td>
-<td>http://127.0.0.1:8080/manager/html</td>
-</tr>
-<tr>
-<td>manager</td>
-<td>dockertcmanpw2017</td>
-<td>Tomcat</td>
-<td>http://127.0.0.1:8080/manager/html</td>
-</tr>
-<tr>
-<td>--</td>
-<td>--</td>
-<td>Djatoka</td>
-<td>http://127.0.0.1:8080/adore-djatoka/</td>
-</tr>
-<tr>
-<td>--</td>
-<td>--</td>
-<td>Apache</td>
-<td>http://127.0.0.1:8777</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h4 id="3-solr-container">3. Solr container</h4>
-<table>
-<thead>
-<tr>
-<th align="center">Compose Service Name</th>
-<th align="center">Container Name</th>
-<th>Software</th>
-<th>Ports</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">solr</td>
-<td align="center">isle-solr</td>
-<td>see below</td>
-<td>8993, 8080 (on container) mapped to 8091 (on host)</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Software</th>
-<th>Version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Solr</td>
-<td>4.10.4</td>
-</tr>
-<tr>
-<td>Tomcat</td>
-<td>7.x</td>
-</tr>
-<tr>
-<td>Oracle JDK</td>
-<td>8.x</td>
-</tr>
-<tr>
-<td>(DG) Basic Solr Config</td>
-<td>4.10.x branch</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Account</th>
-<th>Password</th>
-<th>Service</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>admin</td>
-<td>dockertcadminpw2017</td>
-<td>Tomcat</td>
-<td>http://127.0.0.1:8091/manager/html</td>
-</tr>
-<tr>
-<td>manager</td>
-<td>dockertcmanpw2017</td>
-<td>Tomcat</td>
-<td>http://127.0.0.1:8091/manager/html</td>
-</tr>
-<tr>
-<td>--</td>
-<td>--</td>
-<td>Solr</td>
-<td>http://127.0.0.1:8091/solr/</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h4 id="4-apache-container">4. Apache container</h4>
-<table>
-<thead>
-<tr>
-<th align="center">Compose Service Name</th>
-<th align="center">Container Name</th>
-<th>Software</th>
-<th>Ports</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="center">apache</td>
-<td align="center">isle-apache</td>
-<td>see below</td>
-<td>80</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Software</th>
-<th>Version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Apache</td>
-<td>2.4.7</td>
-</tr>
-<tr>
-<td>Oracle JDK</td>
-<td>8.x</td>
-</tr>
-<tr>
-<td>Djatoka</td>
-<td>1.1</td>
-</tr>
-<tr>
-<td>Drupal</td>
-<td>7.56</td>
-</tr>
-<tr>
-<td>PHP</td>
-<td>5.6</td>
-</tr>
-<tr>
-<td>Islandora</td>
-<td>7.x</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Account</th>
-<th>Password</th>
-<th>Service</th>
-<th>URL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>islandora_docker_admin</td>
-<td>islandoradockeradminpw2017</td>
-<td>Drupal site admin</td>
-<td>http://islandora-docker.com</td>
-</tr>
-</tbody>
-</table>
+</li>
+<li>
+<p>Exit out of the ssh session from the host server as the root user <code>exit</code></p>
+</li>
+<li>
+<p>ssh back in as <code>islandora</code></p>
+</li>
+<li>
+<p>Enable the Docker service to start on host server boot</p>
+<ul>
+<li><code>sudo systemctl enable docker.service</code></li>
+</ul>
+</li>
+<li>
+<p>Start the Docker service</p>
+<ul>
+<li><code>sudo systemctl start docker.service</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7">Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7</h4>
+<ul>
+<li>
+<p>Open a terminal and ssh back into the CentOS Host Server/VM as the <code>islandora</code> user and perform the following:</p>
+</li>
+<li>
+<p>Add the RHEL/CENTOS epel-release package repository</p>
+<ul>
+<li><code>sudo yum install epel-release</code></li>
+</ul>
+</li>
+<li>
+<p>Install Python Pip (package manager for Python Scripting Language)</p>
+<ul>
+<li><code>sudo yum install -y python-pip</code></li>
+</ul>
+</li>
+<li>
+<p>Upgrade Python to latest version</p>
+<ul>
+<li><code>sudo yum upgrade python*</code></li>
+</ul>
+</li>
+<li>
+<p>Upgrade Python Pip</p>
+<ul>
+<li><code>sudo pip install --upgrade pip</code></li>
+</ul>
+</li>
+<li>
+<p>Install Docker compose</p>
+<ul>
+<li><code>sudo pip install docker-compose</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="clone-isle-repository">Clone ISLE repository</h4>
+<ul>
+<li>
+<p>Please note in some Linux Distributions, one might need to create the <code>/opt</code> directory (optional)  </p>
+<ul>
+<li>
+<p>One can <code>ls -lha /</code> to see if an <code>/opt</code> directory exists  </p>
+<ul>
+<li>
+<p>If missing, <code>sudo mkdir /opt</code>  </p>
+</li>
+<li>
+<p>If not missing, proceed to next step.  </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>cd /opt</code></p>
+</li>
+<li>
+<p><code>sudo git clone https://github.com/Islandora-Collaboration-Group/ISLE.git</code></p>
+</li>
+<li>
+<p>This process will take 1 - 3 minutes depending on internet bandwidth</p>
+</li>
+<li>
+<p><code>sudo chown -Rv islandora:islandora ISLE</code></p>
+</li>
+<li>
+<p><code>cd /opt/ISLE</code></p>
+</li>
+</ul>
+<h4 id="next-steps">Next steps</h4>
+<p>Once this process has finished one chose to do one of the following:</p>
+<ul>
+<li>Continue next steps with the <a href="../testsite_guide/">Test Site Guide - isle.localdomain</a></li>
+</ul>
+<h2 id="continue-next-steps-with-migration-guide">* Continue next steps with <a href="../migration_guide/">Migration Guide</a></h2>
                 
                   
                 
@@ -2835,7 +2528,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../1_3_system_overview/release-process/" title="1.3 - Release Process" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../host_remote_setup_ansible/" title="1.4. -Testing - Host Remote Setup Guide - Ansible" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2844,19 +2537,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1.3 - Release Process
+                1.4. -Testing - Host Remote Setup Guide - Ansible
               </span>
             </div>
           </a>
         
         
-          <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../host_remote_setup_ubuntu/" title="1.4. -Testing - Host Remote Setup Guide - Ubuntu" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                1.4. -Testing - Alpha Migration Guide
+                1.4. -Testing - Host Remote Setup Guide - Ubuntu
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

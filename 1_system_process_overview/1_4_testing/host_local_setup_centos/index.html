@@ -18,7 +18,7 @@
     
     
       
-        <title>1.4. -Testing - Host Server Build - Ubuntu - Islandora Enterprise (ISLE)</title>
+        <title>1.4. -Testing - Host Local Setup Guide - CentOS - Islandora Enterprise (ISLE)</title>
       
     
     
@@ -88,7 +88,7 @@
                 </span>
               
             
-            1.4. -Testing - Host Server Build - Ubuntu
+            1.4. -Testing - Host Local Setup Guide - CentOS
           
         </span>
       </div>
@@ -351,56 +351,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_isle_localdomain_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
-      1.4. -Testing - Alpha Quickstart Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../alpha_migration_guide/" title="1.4. -Testing - Alpha Migration Guide" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Guide
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../alpha_migration_export_checklist/" title="1.4. -Testing - Alpha Migration Export Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Export Checklist
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../alpha_migration_merge_checklist/" title="1.4. -Testing - Alpha Migration Merge Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Merge Checklist
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Centos
+    <a href="../host_local_setup_ansible/" title="1.4. -Testing - Host Local Setup Guide - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - Ansible
     </a>
   </li>
 
@@ -418,11 +370,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        1.4. -Testing - Host Server Build - Ubuntu
+        1.4. -Testing - Host Local Setup Guide - CentOS
       </label>
     
-    <a href="./" title="1.4. -Testing - Host Server Build - Ubuntu" class="md-nav__link md-nav__link--active">
-      1.4. -Testing - Host Server Build - Ubuntu
+    <a href="./" title="1.4. -Testing - Host Local Setup Guide - CentOS" class="md-nav__link md-nav__link--active">
+      1.4. -Testing - Host Local Setup Guide - CentOS
     </a>
     
       
@@ -434,57 +386,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ubuntu-1604-lts-host-server-setup" title="Ubuntu 16.04 LTS Host Server Setup" class="md-nav__link">
-    Ubuntu 16.04 LTS Host Server Setup
+  <a href="#host-local-setup-guide-centos" title="Host Local Setup Guide - CentOS" class="md-nav__link">
+    Host Local Setup Guide - CentOS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-run-on-centos-7-server" title="Install / run on CentOS 7 server" class="md-nav__link">
+    Install / run on CentOS 7 server
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-run-on-ubuntu-1604-lts-server" title="Install / run on Ubuntu 16.04 LTS server" class="md-nav__link">
-    Install / run on Ubuntu 16.04 LTS server
+        
+          <li class="md-nav__item">
+  <a href="#docker-setup-for-centos-7" title="Docker setup for CentOS 7" class="md-nav__link">
+    Docker setup for CentOS 7
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-setup-for-ubuntu-1604-lts" title="Docker setup for Ubuntu 16.04 LTS" class="md-nav__link">
-    Docker setup for Ubuntu 16.04 LTS
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-on-centos-7-as-root-user" title="Install Docker on CentOS 7 (as root user)" class="md-nav__link">
+    Install Docker on CentOS 7 (as root user)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-docker-on-ubuntu-1604-lts" title="Install Docker on Ubuntu 16.04 LTS" class="md-nav__link">
-    Install Docker on Ubuntu 16.04 LTS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-islandora-user-as-root" title="Create islandora user (as root)" class="md-nav__link">
     Create islandora user (as root)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-ubuntu-1604-lts" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on Ubuntu 16.04 LTS" class="md-nav__link">
-    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on Ubuntu 16.04 LTS
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7" class="md-nav__link">
+    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#clone-isle-repository" title="Clone ISLE repository" class="md-nav__link">
     Clone ISLE repository
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#next-steps" title="Next steps" class="md-nav__link">
     Next steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-next-steps-with-migration-guide" title="* Continue next steps with Migration Guide" class="md-nav__link">
+    * Continue next steps with Migration Guide
   </a>
   
 </li>
@@ -504,8 +469,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
-      1.4. -Testing - Host Server Build - MacOS
+    <a href="../host_local_setup_macos/" title="1.4. -Testing - Host Local Setup Guide - MacOS" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - MacOS
     </a>
   </li>
 
@@ -516,8 +481,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_ansible/" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Ansible
+    <a href="../host_local_setup_ubuntu/" title="1.4. -Testing - Host Local Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - Ubuntu
     </a>
   </li>
 
@@ -528,8 +493,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Linux
+    <a href="../host_remote_setup_ansible/" title="1.4. -Testing - Host Remote Setup Guide - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ansible
     </a>
   </li>
 
@@ -540,8 +505,116 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_build_guide_mac/" title="1.4. -Testing - Alpha Build Guide - Mac OSX" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Mac OSX
+    <a href="../host_remote_setup_centos/" title="1.4. -Testing - Host Remote Setup Guide - Centos" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Centos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_remote_setup_ubuntu/" title="1.4. -Testing - Host Remote Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev_build_guide_linux/" title="1.4. -Testing - Dev Build Guide - Linux" class="md-nav__link">
+      1.4. -Testing - Dev Build Guide - Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dev_build_guide_mac/" title="1.4. -Testing - Dev Build Guide - Mac OSX" class="md-nav__link">
+      1.4. -Testing - Dev Build Guide - Mac OSX
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_guide/" title="1.4. -Testing - Migration Guide" class="md-nav__link">
+      1.4. -Testing - Migration Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_export_checklist/" title="1.4. -Testing - Migration Export Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Export Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_merge_checklist/" title="1.4. -Testing - Migration Merge Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Merge Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../migration_docker_compose/" title="1.4. -Testing - Migration Docker Compose Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Docker Compose Checklist
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../newsite_guide/" title="1.4. -Testing - New site Guide" class="md-nav__link">
+      1.4. -Testing - New site Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../testsite_guide/" title="1.4. -Testing - Test site Guide" class="md-nav__link">
+      1.4. -Testing - Test site Guide
     </a>
   </li>
 
@@ -2147,57 +2220,70 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ubuntu-1604-lts-host-server-setup" title="Ubuntu 16.04 LTS Host Server Setup" class="md-nav__link">
-    Ubuntu 16.04 LTS Host Server Setup
+  <a href="#host-local-setup-guide-centos" title="Host Local Setup Guide - CentOS" class="md-nav__link">
+    Host Local Setup Guide - CentOS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-run-on-centos-7-server" title="Install / run on CentOS 7 server" class="md-nav__link">
+    Install / run on CentOS 7 server
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-run-on-ubuntu-1604-lts-server" title="Install / run on Ubuntu 16.04 LTS server" class="md-nav__link">
-    Install / run on Ubuntu 16.04 LTS server
+        
+          <li class="md-nav__item">
+  <a href="#docker-setup-for-centos-7" title="Docker setup for CentOS 7" class="md-nav__link">
+    Docker setup for CentOS 7
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-setup-for-ubuntu-1604-lts" title="Docker setup for Ubuntu 16.04 LTS" class="md-nav__link">
-    Docker setup for Ubuntu 16.04 LTS
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-on-centos-7-as-root-user" title="Install Docker on CentOS 7 (as root user)" class="md-nav__link">
+    Install Docker on CentOS 7 (as root user)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-docker-on-ubuntu-1604-lts" title="Install Docker on Ubuntu 16.04 LTS" class="md-nav__link">
-    Install Docker on Ubuntu 16.04 LTS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#create-islandora-user-as-root" title="Create islandora user (as root)" class="md-nav__link">
     Create islandora user (as root)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-ubuntu-1604-lts" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on Ubuntu 16.04 LTS" class="md-nav__link">
-    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on Ubuntu 16.04 LTS
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7" title="Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7" class="md-nav__link">
+    Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#clone-isle-repository" title="Clone ISLE repository" class="md-nav__link">
     Clone ISLE repository
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#next-steps" title="Next steps" class="md-nav__link">
     Next steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#continue-next-steps-with-migration-guide" title="* Continue next steps with Migration Guide" class="md-nav__link">
+    * Continue next steps with Migration Guide
   </a>
   
 </li>
@@ -2217,13 +2303,19 @@
               
                 
                 
-                  <h1>1.4. -Testing - Host Server Build - Ubuntu</h1>
+                  <h1>1.4. -Testing - Host Local Setup Guide - CentOS</h1>
                 
-                <h4 id="ubuntu-1604-lts-host-server-setup"><strong>Ubuntu 16.04 LTS</strong> Host Server Setup</h4>
+                <h3 id="host-local-setup-guide-centos">Host Local Setup Guide - CentOS</h3>
+<pre><code>TO DO
+
+Modify for Host Local Virtualbox settings Please
+
+</code></pre>
+
 <ul>
-<li>This alpha build uses <code>islandora-docker.com</code> as the test domain along with the Docker Compose service names e.g. <code>mysql, fedora, apache</code> etc.<ul>
+<li>This alpha build uses <code>isle.localdomain</code> as the test domain along with the Docker Compose service names e.g. <code>mysql, fedora, apache</code> etc.<ul>
 <li>If your institution's server uses real DNS, then skip the next step. If not, please proceed with the following:</li>
-<li>To ensure this domain resolves properly, one will need to edit the servers and/or their own local <code>/etc/hosts</code> file.</li>
+<li>To ensure this domain resolves properly, one will need to edit the servers and/or their own local <code>/etc/hosts</code> file.<ul>
 <li>
 <p>Open up a terminal and enter: <code>sudo vi /etc/hosts</code></p>
 <ul>
@@ -2232,62 +2324,37 @@
 </li>
 <li>
 <p>Ubuntu 16.04 LTS Host Server (or VM)<br />
-<code>127.0.0.1       localhost islandora-docker.com fedora apache fedora.islandora-docker.com apache.islandora-docker.com</code></p>
+<code>127.0.0.1       localhost isle.localdomain fedora apache fedora.isle.localdomain apache.isle.localdomain</code></p>
 </li>
 <li>
 <p>Enduser local laptop
  <code>127.0.0.1 localhost   
- 192.156.123.26       islandora-docker.com fedora apache fedora.islandora-docker.com apache.islandora-docker.com</code></p>
+ 192.156.123.26       isle.localdomain fedora apache fedora.isle.localdomain apache.isle.localdomain</code></p>
 </li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="install-run-on-ubuntu-1604-lts-server">Install / run on Ubuntu 16.04 LTS server</h4>
+</li>
+</ul>
+<h4 id="install-run-on-centos-7-server">Install / run on CentOS 7 server</h4>
 <ul>
 <li>Virtualbox Virtual Machine (VM)  </li>
-<li>a Vagrant image (recommend using <a href="https://app.vagrantup.com/bento/boxes/ubuntu-16.04">bento/ubuntu-16.04</a>)  </li>
+<li>a Vagrant image (recommend using <a href="https://app.vagrantup.com/bento/boxes/centos-7.2">bento/centos-7.2</a>)  </li>
 <li>Cloud based server e.g. Digital Ocean or Amazon Web Services  </li>
 <li>Post-installation, add the appropriate ssh keys to the root user's <code>.ssh/authorized_keys</code> file.  </li>
 </ul>
-<h4 id="docker-setup-for-ubuntu-1604-lts">Docker setup for Ubuntu 16.04 LTS</h4>
+<h4 id="docker-setup-for-centos-7">Docker setup for CentOS 7</h4>
 <ul>
-<li>
-<p>Open a terminal, ssh to the Ubuntu server as root and install the following:</p>
-<ul>
-<li>
-<p>If you are not root, <code>sudo -s</code></p>
-</li>
-<li>
-<p><code>apt-get update</code>  </p>
-</li>
-<li>
-<p><code>apt-get install openssl git htop ntp curl</code>  </p>
-</li>
+<li>Open a terminal, ssh to the CentOS server as root and install the following:  <ul>
+<li><code>yum install openssl git htop ntp wget curl</code></li>
 </ul>
 </li>
 </ul>
-<h4 id="install-docker-on-ubuntu-1604-lts">Install Docker on Ubuntu 16.04 LTS</h4>
+<h4 id="install-docker-on-centos-7-as-root-user">Install Docker on CentOS 7 (as root user)</h4>
 <ul>
-<li>
-<p><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code>  </p>
-</li>
-<li>
-<p><code>add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</code>  </p>
-</li>
-<li>
-<p><code>apt-get update</code>  </p>
-</li>
-<li>
-<p><code>apt-get install -y docker-ce</code>  </p>
-</li>
-<li>
-<p>Check if running <code>systemctl status docker</code>  </p>
-<ul>
-<li>You may need to PRESS Shift-Z twice to exit out.</li>
-</ul>
-</li>
+<li><code>wget -qO- https://get.docker.com/ | sh</code></li>
 </ul>
 <h4 id="create-islandora-user-as-root">Create islandora user (as root)</h4>
 <ul>
@@ -2308,6 +2375,9 @@
 </li>
 <li>
 <p>Add islandora user to docker group <code>usermod -aG docker islandora</code>  </p>
+</li>
+<li>
+<p>Add islandora user to wheel group <code>sudo usermod -aG wheel islandora</code></p>
 </li>
 <li>
 <p>Create a ssh key for the islandora user</p>
@@ -2346,23 +2416,58 @@
 </ul>
 </li>
 <li>
-<p>Exit out of the session as the root user.</p>
+<p>Exit out of the ssh session from the host server as the root user <code>exit</code></p>
+</li>
+<li>
+<p>ssh back in as <code>islandora</code></p>
+</li>
+<li>
+<p>Enable the Docker service to start on host server boot</p>
 <ul>
-<li><code>exit</code></li>
-<li><code>su islandora</code>  </li>
+<li><code>sudo systemctl enable docker.service</code></li>
+</ul>
+</li>
+<li>
+<p>Start the Docker service</p>
+<ul>
+<li><code>sudo systemctl start docker.service</code></li>
 </ul>
 </li>
 </ul>
-<h4 id="install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-ubuntu-1604-lts">Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on Ubuntu 16.04 LTS</h4>
+<h4 id="install-docker-compose-version-1171-as-of-11162017-as-islandora-user-on-centos-7">Install Docker-Compose (version 1.17.1 as of 11/16/2017) as islandora-user on CentOS 7</h4>
 <ul>
 <li>
-<p><code>cd /home/islandora</code></p>
+<p>Open a terminal and ssh back into the CentOS Host Server/VM as the <code>islandora</code> user and perform the following:</p>
 </li>
 <li>
-<p><code>sudo curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose</code></p>
+<p>Add the RHEL/CENTOS epel-release package repository</p>
+<ul>
+<li><code>sudo yum install epel-release</code></li>
+</ul>
 </li>
 <li>
-<p><code>sudo chmod +x /usr/local/bin/docker-compose</code>  </p>
+<p>Install Python Pip (package manager for Python Scripting Language)</p>
+<ul>
+<li><code>sudo yum install -y python-pip</code></li>
+</ul>
+</li>
+<li>
+<p>Upgrade Python to latest version</p>
+<ul>
+<li><code>sudo yum upgrade python*</code></li>
+</ul>
+</li>
+<li>
+<p>Upgrade Python Pip</p>
+<ul>
+<li><code>sudo pip install --upgrade pip</code></li>
+</ul>
+</li>
+<li>
+<p>Install Docker compose</p>
+<ul>
+<li><code>sudo pip install docker-compose</code></li>
+</ul>
 </li>
 </ul>
 <h4 id="clone-isle-repository">Clone ISLE repository</h4>
@@ -2402,14 +2507,9 @@
 <h4 id="next-steps">Next steps</h4>
 <p>Once this process has finished one chose to do one of the following:</p>
 <ul>
-<li>
-<p>Continue next steps with the <a href="../alpha_isle_localdomain_quickstart/">1.4. -Testing - isle.localdomain Quickstart Guide</a></p>
-</li>
-<li>
-<p>Continue next steps with <a href="../alpha_migration_guide/">1.4. -Testing - Migration Guide</a></p>
-</li>
+<li>Continue next steps with the <a href="../testsite_guide/">Test Site Guide - isle.localdomain</a></li>
 </ul>
-<hr />
+<h2 id="continue-next-steps-with-migration-guide">* Continue next steps with <a href="../migration_guide/">Migration Guide</a></h2>
                 
                   
                 
@@ -2428,7 +2528,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../host_local_setup_ansible/" title="1.4. -Testing - Host Local Setup Guide - Ansible" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2437,19 +2537,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1.4. -Testing - Host Server Build - Centos
+                1.4. -Testing - Host Local Setup Guide - Ansible
               </span>
             </div>
           </a>
         
         
-          <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../host_local_setup_macos/" title="1.4. -Testing - Host Local Setup Guide - MacOS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                1.4. -Testing - Host Server Build - MacOS
+                1.4. -Testing - Host Local Setup Guide - MacOS
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

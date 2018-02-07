@@ -18,7 +18,7 @@
     
     
       
-        <title>1.4. -Testing - Alpha Migration Guide - Islandora Enterprise (ISLE)</title>
+        <title>1.4. -Testing - Dev Build Guide - Linux - Islandora Enterprise (ISLE)</title>
       
     
     
@@ -88,7 +88,7 @@
                 </span>
               
             
-            1.4. -Testing - Alpha Migration Guide
+            1.4. -Testing - Dev Build Guide - Linux
           
         </span>
       </div>
@@ -351,8 +351,80 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_isle_localdomain_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-nav__link">
-      1.4. -Testing - Alpha Quickstart Guide
+    <a href="../host_local_setup_ansible/" title="1.4. -Testing - Host Local Setup Guide - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - Ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_local_setup_centos/" title="1.4. -Testing - Host Local Setup Guide - CentOS" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - CentOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_local_setup_macos/" title="1.4. -Testing - Host Local Setup Guide - MacOS" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_local_setup_ubuntu/" title="1.4. -Testing - Host Local Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Local Setup Guide - Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_remote_setup_ansible/" title="1.4. -Testing - Host Remote Setup Guide - Ansible" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ansible
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_remote_setup_centos/" title="1.4. -Testing - Host Remote Setup Guide - Centos" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Centos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../host_remote_setup_ubuntu/" title="1.4. -Testing - Host Remote Setup Guide - Ubuntu" class="md-nav__link">
+      1.4. -Testing - Host Remote Setup Guide - Ubuntu
     </a>
   </li>
 
@@ -370,11 +442,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="toc">
-        1.4. -Testing - Alpha Migration Guide
+        1.4. -Testing - Dev Build Guide - Linux
       </label>
     
-    <a href="./" title="1.4. -Testing - Alpha Migration Guide" class="md-nav__link md-nav__link--active">
-      1.4. -Testing - Alpha Migration Guide
+    <a href="./" title="1.4. -Testing - Dev Build Guide - Linux" class="md-nav__link md-nav__link--active">
+      1.4. -Testing - Dev Build Guide - Linux
     </a>
     
       
@@ -386,37 +458,65 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#isle-alpha-migration-guide-draft-0252018" title="ISLE Alpha Migration Guide (draft 02.5.2018)" class="md-nav__link">
-    ISLE Alpha Migration Guide (draft 02.5.2018)
+  <a href="#alpha-manual-build" title="Alpha Manual Build" class="md-nav__link">
+    Alpha Manual Build
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#assumptions-prerequisites" title="Assumptions / Prerequisites" class="md-nav__link">
-    Assumptions / Prerequisites
+  <a href="#alpha-manual-build-pre-requisites" title="Alpha Manual Build Pre-Requisites" class="md-nav__link">
+    Alpha Manual Build Pre-Requisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#migration-to-isle-process-overview" title="Migration to ISLE Process Overview" class="md-nav__link">
-    Migration to ISLE Process Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-appropriate-islandora-production-data-storage-structure-on-new-isle-host-server" title="Step 1: Create appropriate Islandora Production data storage structure on new ISLE host server" class="md-nav__link">
-    Step 1: Create appropriate Islandora Production data storage structure on new ISLE host server
+  <a href="#manual-build-process-same-for-ubuntu-1604-or-centos-7" title="Manual Build process (same for Ubuntu 16.04 or CentOS 7)" class="md-nav__link">
+    Manual Build process (same for Ubuntu 16.04 or CentOS 7)
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-2-create-appropriate-isle-production-data-storage-structure-on-new-isle-host-server" title="Step 2: Create appropriate ISLE Production data storage structure on new ISLE host server" class="md-nav__link">
-    Step 2: Create appropriate ISLE Production data storage structure on new ISLE host server
+  <a href="#1-mysql-image-build-container-launch-10-15-mins" title="1. MySQL image build &amp; container launch (10-15 mins)" class="md-nav__link">
+    1. MySQL image build &amp; container launch (10-15 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fedora-image-build-container-launch-20-30-mins" title="2. Fedora image build &amp; container launch (20 - 30 mins)" class="md-nav__link">
+    2. Fedora image build &amp; container launch (20 - 30 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-solr-image-build-container-launch-10-20-mins" title="3. Solr image build &amp; container launch (10 - 20 mins)" class="md-nav__link">
+    3. Solr image build &amp; container launch (10 - 20 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-apache-image-build-container-launch-30-45-mins" title="4. Apache image build &amp; container launch (30 - 45 mins)" class="md-nav__link">
+    4. Apache image build &amp; container launch (30 - 45 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-install-script-on-apache-container-20-40-mins" title="5. Install script on Apache container (20 - 40 mins)" class="md-nav__link">
+    5. Install script on Apache container (20 - 40 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-build-process-takes-15-25-hours-depending-on-system-and-internet-speeds" title="Total build process takes 1.5 -2.5 hours (depending on system and internet speeds)" class="md-nav__link">
+    Total build process takes 1.5 -2.5 hours (depending on system and internet speeds)
   </a>
   
 </li>
@@ -427,65 +527,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-copy-production-data-to-isle-host-server" title="Step 3: Copy Production Data to ISLE Host server" class="md-nav__link">
-    Step 3: Copy Production Data to ISLE Host server
+  <a href="#fast-facts" title="Fast Facts" class="md-nav__link">
+    Fast Facts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mysql-container" title="1. MySQL container" class="md-nav__link">
+    1. MySQL container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-setup-config-directory-within-isle-git-repo-for-institutional-docker-configuration" title="Step 4: Setup config directory within ISLE Git repo for institutional Docker configuration" class="md-nav__link">
-    Step 4: Setup config directory within ISLE Git repo for institutional Docker configuration
+        
+          <li class="md-nav__item">
+  <a href="#2-fedora-container" title="2. Fedora container" class="md-nav__link">
+    2. Fedora container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-edit-merge-or-copy-in-islandora-production-files-or-data-to-the-new-isle-production-config-or-data-directories" title="Step 5: Edit, merge or copy in Islandora production files or data to the new ISLE Production config or data directories" class="md-nav__link">
-    Step 5: Edit, merge or copy in Islandora production files or data to the new ISLE Production config or data directories
+        
+          <li class="md-nav__item">
+  <a href="#3-solr-container" title="3. Solr container" class="md-nav__link">
+    3. Solr container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-edit-the-docker-composeyml-file" title="Step 6: Edit the docker-compose.yml file" class="md-nav__link">
-    Step 6: Edit the docker-compose.yml file
+        
+          <li class="md-nav__item">
+  <a href="#4-apache-container" title="4. Apache container" class="md-nav__link">
+    4. Apache container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-review-or-pull-down-isle-docker-images" title="Step 7: Review or pull down ISLE Docker images" class="md-nav__link">
-    Step 7: Review or pull down ISLE Docker images
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-spin-up-mysql-container-and-import-production-databases" title="Step 8: Spin up mysql container and import production databases" class="md-nav__link">
-    Step 8: Spin up mysql container and import production databases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-9-spin-up-fedora-container-and-run-reindex-processes" title="Step 9: Spin up fedora container and run reindex processes" class="md-nav__link">
-    Step 9: Spin up fedora container and run reindex processes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-10-spin-up-solr-container-and-rerun-index-processes" title="Step 10: Spin up solr container and rerun index processes" class="md-nav__link">
-    Step 10: Spin up solr container and rerun index processes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-11-spin-up-apache-container-and-run-provision-script" title="Step 11: Spin up apache container and run provision script" class="md-nav__link">
-    Step 11: Spin up apache container and run provision script
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -504,8 +582,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_migration_export_checklist/" title="1.4. -Testing - Alpha Migration Export Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Export Checklist
+    <a href="../dev_build_guide_mac/" title="1.4. -Testing - Dev Build Guide - Mac OSX" class="md-nav__link">
+      1.4. -Testing - Dev Build Guide - Mac OSX
     </a>
   </li>
 
@@ -516,8 +594,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_migration_merge_checklist/" title="1.4. -Testing - Alpha Migration Merge Checklist" class="md-nav__link">
-      1.4. -Testing - Alpha Migration Merge Checklist
+    <a href="../migration_guide/" title="1.4. -Testing - Migration Guide" class="md-nav__link">
+      1.4. -Testing - Migration Guide
     </a>
   </li>
 
@@ -528,8 +606,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_centos/" title="1.4. -Testing - Host Server Build - Centos" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Centos
+    <a href="../migration_export_checklist/" title="1.4. -Testing - Migration Export Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Export Checklist
     </a>
   </li>
 
@@ -540,8 +618,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_ubuntu/" title="1.4. -Testing - Host Server Build - Ubuntu" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Ubuntu
+    <a href="../migration_merge_checklist/" title="1.4. -Testing - Migration Merge Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Merge Checklist
     </a>
   </li>
 
@@ -552,8 +630,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_macos/" title="1.4. -Testing - Host Server Build - MacOS" class="md-nav__link">
-      1.4. -Testing - Host Server Build - MacOS
+    <a href="../migration_docker_compose/" title="1.4. -Testing - Migration Docker Compose Checklist" class="md-nav__link">
+      1.4. -Testing - Migration Docker Compose Checklist
     </a>
   </li>
 
@@ -564,8 +642,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../host_server_setup_ansible/" title="1.4. -Testing - Host Server Build - Ansible" class="md-nav__link">
-      1.4. -Testing - Host Server Build - Ansible
+    <a href="../newsite_guide/" title="1.4. -Testing - New site Guide" class="md-nav__link">
+      1.4. -Testing - New site Guide
     </a>
   </li>
 
@@ -576,20 +654,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../alpha_build_guide_linux/" title="1.4. -Testing - Alpha Build Guide - Linux" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Linux
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../alpha_build_guide_mac/" title="1.4. -Testing - Alpha Build Guide - Mac OSX" class="md-nav__link">
-      1.4. -Testing - Alpha Build Guide - Mac OSX
+    <a href="../testsite_guide/" title="1.4. -Testing - Test site Guide" class="md-nav__link">
+      1.4. -Testing - Test site Guide
     </a>
   </li>
 
@@ -2195,37 +2261,65 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#isle-alpha-migration-guide-draft-0252018" title="ISLE Alpha Migration Guide (draft 02.5.2018)" class="md-nav__link">
-    ISLE Alpha Migration Guide (draft 02.5.2018)
+  <a href="#alpha-manual-build" title="Alpha Manual Build" class="md-nav__link">
+    Alpha Manual Build
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#assumptions-prerequisites" title="Assumptions / Prerequisites" class="md-nav__link">
-    Assumptions / Prerequisites
+  <a href="#alpha-manual-build-pre-requisites" title="Alpha Manual Build Pre-Requisites" class="md-nav__link">
+    Alpha Manual Build Pre-Requisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#migration-to-isle-process-overview" title="Migration to ISLE Process Overview" class="md-nav__link">
-    Migration to ISLE Process Overview
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-create-appropriate-islandora-production-data-storage-structure-on-new-isle-host-server" title="Step 1: Create appropriate Islandora Production data storage structure on new ISLE host server" class="md-nav__link">
-    Step 1: Create appropriate Islandora Production data storage structure on new ISLE host server
+  <a href="#manual-build-process-same-for-ubuntu-1604-or-centos-7" title="Manual Build process (same for Ubuntu 16.04 or CentOS 7)" class="md-nav__link">
+    Manual Build process (same for Ubuntu 16.04 or CentOS 7)
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-2-create-appropriate-isle-production-data-storage-structure-on-new-isle-host-server" title="Step 2: Create appropriate ISLE Production data storage structure on new ISLE host server" class="md-nav__link">
-    Step 2: Create appropriate ISLE Production data storage structure on new ISLE host server
+  <a href="#1-mysql-image-build-container-launch-10-15-mins" title="1. MySQL image build &amp; container launch (10-15 mins)" class="md-nav__link">
+    1. MySQL image build &amp; container launch (10-15 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fedora-image-build-container-launch-20-30-mins" title="2. Fedora image build &amp; container launch (20 - 30 mins)" class="md-nav__link">
+    2. Fedora image build &amp; container launch (20 - 30 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-solr-image-build-container-launch-10-20-mins" title="3. Solr image build &amp; container launch (10 - 20 mins)" class="md-nav__link">
+    3. Solr image build &amp; container launch (10 - 20 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-apache-image-build-container-launch-30-45-mins" title="4. Apache image build &amp; container launch (30 - 45 mins)" class="md-nav__link">
+    4. Apache image build &amp; container launch (30 - 45 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-install-script-on-apache-container-20-40-mins" title="5. Install script on Apache container (20 - 40 mins)" class="md-nav__link">
+    5. Install script on Apache container (20 - 40 mins)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#total-build-process-takes-15-25-hours-depending-on-system-and-internet-speeds" title="Total build process takes 1.5 -2.5 hours (depending on system and internet speeds)" class="md-nav__link">
+    Total build process takes 1.5 -2.5 hours (depending on system and internet speeds)
   </a>
   
 </li>
@@ -2236,65 +2330,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-copy-production-data-to-isle-host-server" title="Step 3: Copy Production Data to ISLE Host server" class="md-nav__link">
-    Step 3: Copy Production Data to ISLE Host server
+  <a href="#fast-facts" title="Fast Facts" class="md-nav__link">
+    Fast Facts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-mysql-container" title="1. MySQL container" class="md-nav__link">
+    1. MySQL container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-setup-config-directory-within-isle-git-repo-for-institutional-docker-configuration" title="Step 4: Setup config directory within ISLE Git repo for institutional Docker configuration" class="md-nav__link">
-    Step 4: Setup config directory within ISLE Git repo for institutional Docker configuration
+        
+          <li class="md-nav__item">
+  <a href="#2-fedora-container" title="2. Fedora container" class="md-nav__link">
+    2. Fedora container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-edit-merge-or-copy-in-islandora-production-files-or-data-to-the-new-isle-production-config-or-data-directories" title="Step 5: Edit, merge or copy in Islandora production files or data to the new ISLE Production config or data directories" class="md-nav__link">
-    Step 5: Edit, merge or copy in Islandora production files or data to the new ISLE Production config or data directories
+        
+          <li class="md-nav__item">
+  <a href="#3-solr-container" title="3. Solr container" class="md-nav__link">
+    3. Solr container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-edit-the-docker-composeyml-file" title="Step 6: Edit the docker-compose.yml file" class="md-nav__link">
-    Step 6: Edit the docker-compose.yml file
+        
+          <li class="md-nav__item">
+  <a href="#4-apache-container" title="4. Apache container" class="md-nav__link">
+    4. Apache container
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-review-or-pull-down-isle-docker-images" title="Step 7: Review or pull down ISLE Docker images" class="md-nav__link">
-    Step 7: Review or pull down ISLE Docker images
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-8-spin-up-mysql-container-and-import-production-databases" title="Step 8: Spin up mysql container and import production databases" class="md-nav__link">
-    Step 8: Spin up mysql container and import production databases
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-9-spin-up-fedora-container-and-run-reindex-processes" title="Step 9: Spin up fedora container and run reindex processes" class="md-nav__link">
-    Step 9: Spin up fedora container and run reindex processes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-10-spin-up-solr-container-and-rerun-index-processes" title="Step 10: Spin up solr container and rerun index processes" class="md-nav__link">
-    Step 10: Spin up solr container and rerun index processes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-11-spin-up-apache-container-and-run-provision-script" title="Step 11: Spin up apache container and run provision script" class="md-nav__link">
-    Step 11: Spin up apache container and run provision script
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2313,291 +2385,424 @@
               
                 
                 
-                  <h1>1.4. -Testing - Alpha Migration Guide</h1>
+                  <h1>1.4. -Testing - Dev Build Guide - Linux</h1>
                 
-                <h3 id="isle-alpha-migration-guide-draft-0252018">ISLE Alpha Migration Guide (draft 02.5.2018)</h3>
-<p>This Alpha Migration guide is the intended process for endusers to migrate their existing production Islandora environment to their respective ISLE Islandora containers and volumes.</p>
-<h3 id="assumptions-prerequisites">Assumptions / Prerequisites</h3>
+                <h3 id="alpha-manual-build">Alpha Manual Build</h3>
+<p>Please note this an alternative method of building the <code>isle.localdomain</code> Docker images and the slower of the two processes.</p>
+<p>Please refer to the <a href="../testsite_guide/">Test Site Guide - isle.localdomain</a> for the <strong>faster</strong> version.</p>
+<p>Or use the <a href="../migration_guide/">Migration Guide</a> after completing this process, if the enduser is going to edit the Dockerfile to make changes prior to the build.</p>
+<h3 id="alpha-manual-build-pre-requisites">Alpha Manual Build Pre-Requisites</h3>
 <ul>
 <li>
-<p>ISLE Host server setup has been completed.</p>
+<p>The Host Server has already been setup and is running. If one has not setup the Host server please follow one of the following links below and then return to this document please.</p>
+</li>
+<li>
+<p>Host Server setup for <a href="../host_remote_setup_centos/"><strong>CentOS 7</strong></a></p>
+</li>
+<li>
+<p>Host Server setup for <a href="../host_remote_setup_ubuntu/"><strong>Ubuntu 16.04 LTS</strong></a></p>
+</li>
+<li>
+<p>Host Server setup for <a href="../host_local_setup_macos/"><strong>Mac OS</strong></a></p>
+</li>
+<li>
+<p>By default the <code>Docker-Compose.yml</code> file is configured for Linux Host Servers.</p>
 <ul>
-<li>
-<p><em>If one has not setup the ISLE host server please refer to the appropriate resource below:</em></p>
-<ul>
-<li>
-<p>Manual Host Server setup for <a href="../host_server_setup_centos/"><strong>CentOS 7</strong></a> w/ ISLE repo clone steps</p>
-</li>
-<li>
-<p>Manual Host Server setup for <a href="../host_server_setup_ubuntu/"><strong>Ubuntu 16.04 LTS</strong></a> w/ ISLE repo clone steps   </p>
-</li>
-<li>
-<p><a href="../host_server_setup_ansible/">Ansible install</a> setup for (Ubuntu / Centos) includes ISLE repo clone steps</p>
-</li>
+<li>If one is using a <strong>Mac OS</strong> Host server, then edit the <code>docker-compose.yml</code> file to ensure the following lines look like this:   </li>
 </ul>
 </li>
 </ul>
-</li>
-<li>
-<p>The fully qualified domain name of their ISLE host server that will run all of the containers has been created and resolves properly in DNS.</p>
-</li>
-<li>
-<p>The enduser has the IP address of their ISLE host server documented</p>
-</li>
-<li>
-<p>The enduser has the expected fully qualified domain name (fqdn) of the new first Islandora / Drupal website documented and assigned to the appropriate IP in DNS.</p>
-</li>
-<li>
-<p>The enduser has ssh access to ISLE host server</p>
-</li>
-<li>
-<p>The enduser has the ability or access to create git repositories</p>
-</li>
-<li>
-<p>The enduser (or an appropriate IT resource) can <strong>COPY</strong> data, configuration files etc. safely from their Islandora Production server(s) to the new ISLE host server.</p>
-</li>
-<li>
-<p>Production data, configuration files etc. have been <strong>copied</strong> from the currently running Islandora production server to the new ISLE host server following the checklist below of required data, configuration files etc.</p>
-</li>
-</ul>
-<hr />
-<h3 id="migration-to-isle-process-overview">Migration to ISLE Process Overview</h3>
-<p>As this is a large guide, here's a quick not very detailed overview of what's going to happen in the next steps:</p>
+<pre><code>    # - ./customize/apache/site/linux_settings.php:/var/www/html/sites/default/settings.php  
+      - ./customize/apache/site/macosx_settings.php:/var/www/html/sites/default/settings.php  
+</code></pre>
+
+<h3 id="manual-build-process-same-for-ubuntu-1604-or-centos-7">Manual Build process (same for Ubuntu 16.04 or CentOS 7)</h3>
+<p><strong>Please note:</strong> <em>The first container (MySQL, isle-mysql, mysql) has to be built and running PRIOR to all others (including fedora &amp; apache) due to a race condition (fedora starts prior to mysql being ready to accept connections). This improper state will be fixed at a later point in the project.</em>  </p>
 <ul>
-<li>Ensure that the destination ISLE host server has the same (or more) amount of storage as the production server.</li>
-<li>Create appropriate Islandora Production data storage structure on new ISLE host server</li>
-<li>Copy current production data and config files as directed by the <a href="../alpha_migration_export_checklist/">export checklist</a> to an appropriate location on the new ISLE host Server.</li>
-<li>Create the required new config directory by copying the template <code>/opt/ISLE/config/isle-prod-project.institution</code> to a renamed directory within <code>/opt/ISLE/config</code></li>
-<li>Compare the template settings within the new renamed directory of <code>/opt/ISLE/config/enduser-renamed-directory.institution</code> to the current production config files. Merge or edit as necessary in the new isle config directory for use with ISLE.</li>
-<li>There may be some additional work to compare and merge in previous enduser customizations of the Solr <code>schema.xml</code> to the new ISLE config.</li>
-<li>There may be some additional work to compare and merge in previous enduser customizations of the Solr <code>solrconfig.xml</code> to the new ISLE config.</li>
-<li>There may be some additional work to compare and merge in previous enduser customizations of the Solr <code>stopwords</code> to the new ISLE config.</li>
-<li>There may be some additional work to compare and merge in previous enduser customizations of the Islandora Transform (XSLTs) files to the new ISLE versions.        </li>
-<li>Based on new paths, edit the <code>docker-compose.yml</code> file to</li>
-<li>Point to the new associated <code>islandora_production_data_storage</code> structure.</li>
-<li>Point to the new directories and config settings in <code>/opt/ISLE/config/enduser-renamed-directory.institution</code></li>
-<li>Spin up new containers one at a time with the new config settings</li>
-<li>Check that all services are running properly</li>
-<li>Repeat entire process (<em>if necessary</em>) for additional ISLE environments e.g. <em>production, staging and development</em></li>
+<li><strong>DO NOT RUN</strong> <code>docker-compose up -d</code> during the initial build process as this will build and run all containers at the same time which will trigger the above mentioned race condition and subsequent chain of service failures.</li>
 </ul>
-<hr />
-<h3 id="step-1-create-appropriate-islandora-production-data-storage-structure-on-new-isle-host-server">Step 1: Create appropriate Islandora Production data storage structure on new ISLE host server</h3>
-<p><em>Friendly note to endusers: While the following process may seem overly cautious or redundant, it saves time and establishes a safer conditions for endusers to work with valuable data.</em></p>
-<p>It is recommended that endusers use a large volume or network attached drive that can store a backup copy of the entire Islandora production storage, an merged copy of the ISLE production storage and associated config files as outlined in the <a href="../alpha_migration_export_checklist/">Migration Export Checklist</a> and additional datastores.</p>
+<h4 id="1-mysql-image-build-container-launch-10-15-mins">1. MySQL image build &amp; container launch (10-15 mins)</h4>
+<ul>
+<li><code>docker-compose build mysql</code>  </li>
+<li><code>docker-compose up -d mysql</code>  </li>
+</ul>
+<h4 id="2-fedora-image-build-container-launch-20-30-mins">2. Fedora image build &amp; container launch (20 - 30 mins)</h4>
+<ul>
+<li><code>docker-compose build fedora</code>  </li>
+<li><code>docker-compose up -d fedora</code>  </li>
+</ul>
+<h4 id="3-solr-image-build-container-launch-10-20-mins">3. Solr image build &amp; container launch (10 - 20 mins)</h4>
+<ul>
+<li><code>docker-compose build solr</code>  </li>
+<li><code>docker-compose up -d solr</code>  </li>
+</ul>
+<h4 id="4-apache-image-build-container-launch-30-45-mins">4. Apache image build &amp; container launch (30 - 45 mins)</h4>
 <ul>
 <li>
-<p>In an appropriate area / path on one's intended ISLE host server e.g. <code>/opt/</code> or <code>/mnt/</code>, create a directory e.g. <code>islandora_production_data_storage</code> with the following sub-directories:</p>
+<p><code>docker-compose build apache</code>  </p>
 </li>
 <li>
-<p><strong>Example directory structure</strong>:</p>
+<p>Edit the <code>docker-compose.yml</code> file to ensure the following lines look like this:   </p>
 </li>
 </ul>
-<pre><code>    islandora_production_data_storage/   
-    ├── apache  
-    ├── fedora   
-    │   ├── apache  
-    │   ├── fedora  
-    │   └── gsearch  
-    ├── mysql  
-    ├── solr  
-    └── tomcat  
+<pre><code>    - ./customize/apache/site/linux_settings.php:/var/www/html/sites/default/settings.php
+    # - ./customize/apache/site/macosx_settings.php:/var/www/html/sites/default/settings.php  
 </code></pre>
 
 <ul>
-<li>
-<p>It is recommended that original copies of data be first copied here to allow for faster workflow as well as for endusers to easily sort through production data.</p>
-</li>
-<li>
-<p>This directory will serve as the "backup" of all production data about to be migrated into ISLE</p>
-</li>
-<li>
-<p>Once the migration process is confirmed as completed and successful, the enduser can decide if this data is still worth keeping or backed up.</p>
+<li><code>docker-compose up -d apache</code>  <ul>
+<li><strong>Please note:</strong> <em>This container on occasion has failed to start initially for as of yet unlogged and unknown reasons.</em><ul>
+<li>One can check if the container is running: <code>docker ps</code> (shows only running containers)  </li>
+<li>One can check if the container stopped running or "exited": <code>docker ps -a</code> (shows all containers running or not)  </li>
+</ul>
 </li>
 </ul>
+</li>
+</ul>
+<h4 id="5-install-script-on-apache-container-20-40-mins">5. Install script on Apache container (20 - 40 mins)</h4>
+<ul>
+<li>
+<p>Run the following shell scripts manually on the apache container  </p>
+<ul>
+<li><code>docker exec -it isle-apache bash</code></li>
+<li><code>cd /tmp</code></li>
+<li><code>chmod 777 *.sh</code></li>
+<li><code>./make_site.sh</code></li>
+<li><code>./install_site.sh</code></li>
+</ul>
+</li>
+<li>
+<p>Once finished <code>cntrl-D</code> or type <code>exit</code> to get out of the apache container &amp; QC the resulting setup</p>
+</li>
+</ul>
+<p><strong>Please note:</strong> The cronjob setting in the <code>install_site.sh</code> script is commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly manually.</p>
+<h4 id="total-build-process-takes-15-25-hours-depending-on-system-and-internet-speeds">Total build process takes 1.5 -2.5 hours (depending on system and internet speeds)</h4>
 <hr />
-<h4 id="step-2-create-appropriate-isle-production-data-storage-structure-on-new-isle-host-server">Step 2: Create appropriate ISLE Production data storage structure on new ISLE host server</h4>
-<p><em>Friendly note to endusers: While the following process may seem overly cautious or redundant, it saves time and establishes a safer conditions for endusers to continue to work with valuable data.</em></p>
-<p>In the previous step the <code>islandora_production_data_storage</code> directory was setup as a source of materials to continue to <strong>COPY</strong> from i.e. <strong>Islandora Production Data</strong>.</p>
-<p>This step is to now create the working directory for <strong>ISLE Production Data</strong>.</p>
-<p>It is recommended that endusers again use a large volume or network attached drive that can store the entire ISLE production storage (which is the merged copy of the Islandora production storage and associated config files as outlined in the <a href="../alpha_migration_export_checklist/">Migration Export Checklist</a> and additional datastores.)</p>
-<ul>
-<li>
-<p>In an appropriate area / path on one's intended ISLE host server e.g. <code>/opt/</code> or <code>/mnt/</code>, create a parent directory e.g. <code>isle_production_data_storage</code> with the appropriate institutional ISLE environment as a sub-directory. Create as many as required. For this guide only the production environment will be created e.g. <code>enduser-renamed-directory-prod.institution</code></p>
-</li>
-<li>
-<p><strong>Example guide directory structure</strong>:</p>
-</li>
-</ul>
-<pre><code>    /path_to/isle_production_data_storage/
-             └── enduser-renamed-directory-prod.institution
-                 ├── apache  
-                 ├── fedora   
-                 ├── mysql  
-                 └── solr  
-</code></pre>
-
-<ul>
-<li>While the <code>/path_to/isle_production_data_storage/</code> directory will serve as the storage for all ISLE production data, it is highly important to further differentiate future ISLE production data by environment e.g. hence the use of <code>enduser-renamed-directory-prod.institution</code>.</li>
-</ul>
-<p>This structure ensures no accidental data overwrites between ISLE environments and proper functioning.</p>
-<ul>
-<li><strong>Example future directory structure</strong>:</li>
-</ul>
-<pre><code>  /path_to/isle_production_data_storage/
-           |
-           ├──enduser-renamed-directory-dev.institution
-           |  ├── apache  
-           |  ├── fedora   
-           |  ├── mysql  
-           |  └── solr  
-           |
-           ├──enduser-renamed-directory-prod.institution
-           |  ├── apache  
-           |  ├── fedora   
-           |  ├── mysql  
-           |  └── solr  
-           |
-           ├──enduser-renamed-directory-stage.institution
-           |  ├── apache  
-           |  ├── fedora   
-           |  ├── mysql  
-           |  └── solr     
-           |
-</code></pre>
-
-<ul>
-<li>
-<p>Later steps outlined in this guide will have the enduser copy data to these directories.</p>
-</li>
-<li>
-<p>The <code>docker-compose.yml</code> file found within <code>/opt/ISLE/config/enduser-renamed-directory-prod.institution</code> is ready for editing to "point" to these data directories. This process will be explained in further detail in Step 6 of this guide.</p>
-</li>
-<li>
-<p>Once the migration process is confirmed as completed and successful, the enduser will continue to backup up this data.</p>
-</li>
-</ul>
-<h3 id="step-3-copy-production-data-to-isle-host-server">Step 3: Copy Production Data to ISLE Host server</h3>
-<p>Please review and follow the <a href="../alpha_migration_export_checklist/">Migration Export Checklist</a> to ensure all production data detailed within has been <strong>COPIED</strong> over to the ISLE Host Server <strong>PRIOR</strong> to proceeding further with this Migration guide.</p>
-<p>Once all steps have been followed, continue on to Step 4.</p>
+<h3 id="fast-facts">Fast Facts</h3>
+<p><code>islandora</code> user on host server uses <code>isle2017</code> as password</p>
+<h4 id="1-mysql-container">1. MySQL container</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Compose Service Name</th>
+<th align="center">Container Name</th>
+<th>Software</th>
+<th>Ports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">mysql</td>
+<td align="center">isle-mysql</td>
+<td>MySQL 5.6</td>
+<td>3306</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Password</th>
+<th>Database</th>
+<th>Perms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>root</td>
+<td>islemysqlrootpw2017</td>
+<td><strong>ALL</strong></td>
+<td><strong>ALL</strong></td>
+</tr>
+<tr>
+<td>fedora_admin</td>
+<td>dockerfeddb2017</td>
+<td>fedora3</td>
+<td><strong>All</strong> except <code>Grant</code> option</td>
+</tr>
+<tr>
+<td>islandora_user</td>
+<td>islandoradockerdb2017</td>
+<td>islandora_docker</td>
+<td><strong>All</strong> except <code>Grant</code> option</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3 id="step-4-setup-config-directory-within-isle-git-repo-for-institutional-docker-configuration">Step 4: Setup config directory within ISLE Git repo for institutional Docker configuration</h3>
-<p>This process is necessary for running multiple versions of ISLE e.g. production, staging and development / sandbox. The config folder is the location for creating multiple versions of ISLE environments such as the example provided below.</p>
-<p>This example below displays, along with the baked in ISLE sample dev site, an institution running a development, staging and production environment all on one ISLE host server. This would be a recommended "typical" setup for long term usage.</p>
-<pre><code>ISLE/config/  
-├──enduser-renamed-directory-dev.institution      
-├──enduser-renamed-directory-prod.institution    (this guide uses this as an example only)
-├──enduser-renamed-directory-stage.institution
-├──isle_localdomain                              (ISLE sample site)   
-└──isle-prod-project.institution                 (only copy this template / never delete or modify)
-</code></pre>
-
-<p>For a more detailed explanation please refer to section <code>2.7 Managing Multiple Environments.</code></p>
-<p><strong>Please note:</strong> While one over time can maintain and update profiles in the <code>config</code> directory manually, it is highly recommended that this new directory be kept in a private git repository for ease of use in making and preserving changes. For more information on how to use git in an ISLE multi environment setup, please refer to section <a href="../../../2_enduser_guide/2_7_managing_multiple_environments/env-git-structure/">2.7 Environments Git Structure</a></p>
-<p><strong>Setup process</strong>  </p>
-<ul>
-<li>Create a private Git repository on their associated Git server (<code>private institutional Git repository</code>) or git hosting service (<code>Github.com, Bitbucket.com, Gitlab.com</code>)  </li>
-<li>
-<p>The enduser may need to add the <code>/home/islandora/.ssh/id_rsa.pub</code> to the appropriate git repository as a git ssh deploy key to be able to push pull from the server.</p>
-</li>
-<li>
-<p>Navigate to the ISLE directory `/opt/ISLE/config/``</p>
-</li>
-<li>
-<p>Create a directory on the ISLE server directory e.g. <code>/opt/ISLE/config/enduser-renamed-directory-prod.institution</code></p>
-</li>
-<li>
-<p>Copy the contents of the <code>/opt/ISLE/config/isle-prod-project.institution</code> to this new directory e.g. <code>/opt/ISLE/config/enduser-renamed-directory-prod.institution</code></p>
-</li>
-</ul>
+<h4 id="2-fedora-container">2. Fedora container</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Compose Service Name</th>
+<th align="center">Container Name</th>
+<th>Software</th>
+<th>Ports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">fedora</td>
+<td align="center">isle-fedora</td>
+<td>see below</td>
+<td>8080, 80 (on container) mapped to 8777 (on host)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fedora</td>
+<td>3.8.1</td>
+</tr>
+<tr>
+<td>Apache</td>
+<td>2.4.7</td>
+</tr>
+<tr>
+<td>Drupalfilter</td>
+<td>3.8.1</td>
+</tr>
+<tr>
+<td>Gsearch (w/remote SOLR plugin)</td>
+<td>2.8+ (DG patched)</td>
+</tr>
+<tr>
+<td>(DG) GSearch Extensions</td>
+<td>0.13</td>
+</tr>
+<tr>
+<td>(DG) Islandora Transforms (XSLTs)</td>
+<td>as of 11/2017</td>
+</tr>
+<tr>
+<td>Tomcat</td>
+<td>7.x</td>
+</tr>
+<tr>
+<td>Oracle JDK</td>
+<td>8.x</td>
+</tr>
+<tr>
+<td>Djatoka</td>
+<td>1.1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Password</th>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fedoraAdmin</td>
+<td>dockerFEDadmin2017</td>
+<td>Fedora</td>
+<td>http://127.0.0.1:8080/fedora/describe</td>
+</tr>
+<tr>
+<td>fedoraIntCallUser</td>
+<td>dockerfedoraIntCallUserpw2017</td>
+<td>Fedora</td>
+<td>http://127.0.0.1:8080/fedora/objects</td>
+</tr>
+<tr>
+<td>anonymous</td>
+<td>anonymous</td>
+<td>Fedora</td>
+<td>---</td>
+</tr>
+<tr>
+<td>fgsAdmin</td>
+<td>dockerfgsAdminpw2017</td>
+<td>Gsearch</td>
+<td>http://127.0.0.1:8080/fedoragsearch/rest?operation=updateIndex</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>dockertcadminpw2017</td>
+<td>Tomcat</td>
+<td>http://127.0.0.1:8080/manager/html</td>
+</tr>
+<tr>
+<td>manager</td>
+<td>dockertcmanpw2017</td>
+<td>Tomcat</td>
+<td>http://127.0.0.1:8080/manager/html</td>
+</tr>
+<tr>
+<td>--</td>
+<td>--</td>
+<td>Djatoka</td>
+<td>http://127.0.0.1:8080/adore-djatoka/</td>
+</tr>
+<tr>
+<td>--</td>
+<td>--</td>
+<td>Apache</td>
+<td>http://127.0.0.1:8777</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3 id="step-5-edit-merge-or-copy-in-islandora-production-files-or-data-to-the-new-isle-production-config-or-data-directories">Step 5: Edit, merge or copy in Islandora production files or data to the new ISLE Production config or data directories</h3>
-<ul>
-<li>Compare the data and settings of the files found within <code>islandora_production_data_storage</code>, and then merge, edit or copy as necessary with the templated settings found within the newly renamed directory of <code>/opt/ISLE/config/enduser-renamed-directory-prod.institution</code> as guided in the <a href="../alpha_migration_merge_checklist/">Migration Merge Checklist</a>.</li>
-</ul>
+<h4 id="3-solr-container">3. Solr container</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Compose Service Name</th>
+<th align="center">Container Name</th>
+<th>Software</th>
+<th>Ports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">solr</td>
+<td align="center">isle-solr</td>
+<td>see below</td>
+<td>8993, 8080 (on container) mapped to 8091 (on host)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Solr</td>
+<td>4.10.4</td>
+</tr>
+<tr>
+<td>Tomcat</td>
+<td>7.x</td>
+</tr>
+<tr>
+<td>Oracle JDK</td>
+<td>8.x</td>
+</tr>
+<tr>
+<td>(DG) Basic Solr Config</td>
+<td>4.10.x branch</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Password</th>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin</td>
+<td>dockertcadminpw2017</td>
+<td>Tomcat</td>
+<td>http://127.0.0.1:8091/manager/html</td>
+</tr>
+<tr>
+<td>manager</td>
+<td>dockertcmanpw2017</td>
+<td>Tomcat</td>
+<td>http://127.0.0.1:8091/manager/html</td>
+</tr>
+<tr>
+<td>--</td>
+<td>--</td>
+<td>Solr</td>
+<td>http://127.0.0.1:8091/solr/</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3 id="step-6-edit-the-docker-composeyml-file">Step 6: Edit the <code>docker-compose.yml</code> file</h3>
-<p>Edit the <code>docker-compose.yml</code> found within the <code>/opt/ISLE/config/enduser-renamed-directory-prod.institution</code> directory as suggested in the <a href="alpha_migration_docker_compose.md">Migration Docker Compose Edit Guidelines</a>.</p>
-<hr />
-<h3 id="step-7-review-or-pull-down-isle-docker-images">Step 7: Review or pull down ISLE Docker images</h3>
-<p><em>Please Note: You may have already done this in setting up the host server manually and / or with Ansible. However it is always a good idea to review and check using the first command below.</em></p>
-<ul>
-<li>Check if all ISLE images have been downloaded</li>
-<li><code>docker image ls</code></li>
-</ul>
-<pre><code>  * **TO DO:**  show sample output here
-</code></pre>
-
-<ul>
-<li>
-<p>If yes, then proceed to Step 7</p>
-</li>
-<li>
-<p>If no, the perform the following:</p>
-<ul>
-<li><code>docker pull islandoracollabgroup/isle-mysql:alpha2</code></li>
-<li><code>docker pull islandoracollabgroup/isle-fedora:alpha2</code></li>
-<li><code>docker pull islandoracollabgroup/isle-solr:alpha2</code></li>
-<li><code>docker pull islandoracollabgroup/isle-apache:alpha2</code></li>
-</ul>
-</li>
-</ul>
-<hr />
-<h3 id="step-8-spin-up-mysql-container-and-import-production-databases">Step 8: Spin up mysql container and import production databases</h3>
-<ul>
-<li><code>cd /opt/ISLE/config/enduser-renamed-directory-prod.institution</code></li>
-<li><code>docker-compose up -d mysql</code></li>
-</ul>
-<pre><code>**TO DO:**  steps and scripts for mysql cli import
-       use GUI and recommended clients e.g. Sequel pro, Navicat etc.
-       if encountering errors use _Alternative longer method_ from above
-
-       * _Alternative longer method_
-         * one can skip running the drush command on the production apache webserver
-         * export the databases as usual from the production mysql server
-         * import databases into the isle-mysql container (_with errors being ignored_)
-         * truncate all tables that start with `cache` on the isle-mysql container
-         * export this new database to the `mysql` directory on the isle host server
-         * delete all tables (_not the database itself_) on the isle-mysql container
-         * Reimport the new lighter database to the isle-mysql container
-
-
-</code></pre>
-
-<hr />
-<h3 id="step-9-spin-up-fedora-container-and-run-reindex-processes">Step 9: Spin up fedora container and run reindex processes</h3>
-<pre><code>**TO DO:**  refine this
-* Staying within `/opt/ISLE/config/enduser-renamed-directory-prod.institution`
-* `docker-compose up -d fedora`
-* check if fedora is running properly e.g. `http://isle-prod-project.institution:8080/manager/html`
-* `docker exec -it isle-fedora-institution bash`
-* turn off tomcat `service tomcat stop`
-* reindex Fedora RI `process steps here`
-* reindex SQL RI `process steps here`
-* confirm PID contents in SQL table `QC process here`
-</code></pre>
-
-<hr />
-<h3 id="step-10-spin-up-solr-container-and-rerun-index-processes">Step 10: Spin up solr container and rerun index processes</h3>
-<pre><code>**TO DO:**  refine this
-* Staying within `/opt/ISLE/config/enduser-renamed-directory-prod.institution`
-* `docker-compose up -d solr`
-* check if solr is running properly e.g. `http://isle-prod-project.institution:8777/manager/html`
-* `docker exec -it isle-fedora-institution bash` NOTE FEDORA NOT SOLR
-* reindex SOLR `process steps here` Use screen
-* TAKES HOURS DEPENDING ON DATA SIZE
-</code></pre>
-
-<hr />
-<h3 id="step-11-spin-up-apache-container-and-run-provision-script">Step 11: Spin up apache container and run provision script</h3>
-<pre><code>**TO DO:**  refine this
-* Staying within `/opt/ISLE/config/enduser-renamed-directory-prod.institution`
-* `docker-compose up -d apache`
-* check if apache is running properly e.g. `http://isle-prod-project.institution`
-* `docker exec -it isle-apache-institution bash`
-* cd /tmp location
-* `/tmp/isle-build-tools/apache-provision.sh` (check if this is appropriate)
-* Check site and outline QC process
-</code></pre>
+<h4 id="4-apache-container">4. Apache container</h4>
+<table>
+<thead>
+<tr>
+<th align="center">Compose Service Name</th>
+<th align="center">Container Name</th>
+<th>Software</th>
+<th>Ports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">apache</td>
+<td align="center">isle-apache</td>
+<td>see below</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Software</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apache</td>
+<td>2.4.7</td>
+</tr>
+<tr>
+<td>Oracle JDK</td>
+<td>8.x</td>
+</tr>
+<tr>
+<td>Djatoka</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>Drupal</td>
+<td>7.56</td>
+</tr>
+<tr>
+<td>PHP</td>
+<td>5.6</td>
+</tr>
+<tr>
+<td>Islandora</td>
+<td>7.x</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Password</th>
+<th>Service</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>islandora_docker_admin</td>
+<td>islandoradockeradminpw2017</td>
+<td>Drupal site admin</td>
+<td>http://isle.localdomain</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -2616,7 +2821,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../alpha_isle_localdomain_quickstart/" title="1.4. -Testing - Alpha Quickstart Guide" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../host_remote_setup_ubuntu/" title="1.4. -Testing - Host Remote Setup Guide - Ubuntu" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2625,19 +2830,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                1.4. -Testing - Alpha Quickstart Guide
+                1.4. -Testing - Host Remote Setup Guide - Ubuntu
               </span>
             </div>
           </a>
         
         
-          <a href="../alpha_migration_export_checklist/" title="1.4. -Testing - Alpha Migration Export Checklist" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../dev_build_guide_mac/" title="1.4. -Testing - Dev Build Guide - Mac OSX" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                1.4. -Testing - Alpha Migration Export Checklist
+                1.4. -Testing - Dev Build Guide - Mac OSX
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
