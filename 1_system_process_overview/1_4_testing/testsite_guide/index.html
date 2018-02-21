@@ -557,29 +557,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-0-docker-composeyml-file-edits-based-on-host-operating-system" title="Step 0. docker-compose.yml file edits based on Host Operating System" class="md-nav__link">
-    Step 0. docker-compose.yml file edits based on Host Operating System
+  <a href="#0-docker-composeyml-file-edits" title="0. docker-compose.yml file edits" class="md-nav__link">
+    0. docker-compose.yml file edits
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macos-host-users-only" title="MacOS Host users ONLY" class="md-nav__link">
-    MacOS Host users ONLY
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#centos-ubuntu-vm-users-only" title="CentOS / Ubuntu VM users ONLY" class="md-nav__link">
-    CentOS / Ubuntu VM users ONLY
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -632,8 +612,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fast-facts" title="Fast Facts" class="md-nav__link">
-    Fast Facts
+  <a href="#fast-facts-and-passwords" title="Fast Facts and Passwords" class="md-nav__link">
+    Fast Facts and Passwords
   </a>
   
     <nav class="md-nav">
@@ -2302,29 +2282,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-0-docker-composeyml-file-edits-based-on-host-operating-system" title="Step 0. docker-compose.yml file edits based on Host Operating System" class="md-nav__link">
-    Step 0. docker-compose.yml file edits based on Host Operating System
+  <a href="#0-docker-composeyml-file-edits" title="0. docker-compose.yml file edits" class="md-nav__link">
+    0. docker-compose.yml file edits
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#macos-host-users-only" title="MacOS Host users ONLY" class="md-nav__link">
-    MacOS Host users ONLY
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#centos-ubuntu-vm-users-only" title="CentOS / Ubuntu VM users ONLY" class="md-nav__link">
-    CentOS / Ubuntu VM users ONLY
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -2377,8 +2337,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fast-facts" title="Fast Facts" class="md-nav__link">
-    Fast Facts
+  <a href="#fast-facts-and-passwords" title="Fast Facts and Passwords" class="md-nav__link">
+    Fast Facts and Passwords
   </a>
   
     <nav class="md-nav">
@@ -2458,7 +2418,14 @@
 <p>Enduser has a local laptop / workstation that conforms to the specifications outlined in the <a href="../../mvpspecs/">ISLE MVP Host Specifications Guide</a></p>
 </li>
 <li>
-<p>Enduser has Docker installed and running as directed by one of the following guides:</p>
+<p>This testsite guide is designed for a local laptop / workstation running one of the following:</p>
+</li>
+<li>using the supplied Vagrant setup found in the <code>vagrant</code> directory at the root of the ISLE project (<em>Vagrant with Virtualbox</em>)</li>
+<li>
+<p>a manually setup CentOS Virtualbox VM (<em>no Vagrant</em>)</p>
+</li>
+<li>
+<p>Enduser has Docker installed and running on the CentOS VM as directed by one of the following guides:</p>
 </li>
 <li>
 <p><a href="../host_local_setup_ansible/">Host Local - Ansible Setup Guide</a></p>
@@ -2469,7 +2436,7 @@
 <p><a href="../host_local_setup_ubuntu/">Host Local - Ubuntu Setup Guide</a></p>
 </li>
 <li>
-<p>The four ISLE images that already been "built" and are stored in a cloud repository (Dockerhub) which save the enduser hours of build time are currently tagged with <code>alpha2</code>. Please only use these images at this time. This tag will change shortly and will be updated here accordingly.</p>
+<p>The four ISLE images that already been "built" and are stored in a cloud repository (Dockerhub) which save the enduser hours of build time are currently tagged with <code>latest</code>.</p>
 </li>
 <li>
 <p>isle-apache <a href="https://hub.docker.com/r/islandoracollabgroup/isle-apache/">https://hub.docker.com/r/islandoracollabgroup/isle-apache/</a>  </p>
@@ -2484,91 +2451,88 @@
 <p>isle-solr  <a href="https://hub.docker.com/r/islandoracollabgroup/isle-solr/">https://hub.docker.com/r/islandoracollabgroup/isle-solr/</a>  </p>
 </li>
 <li>
-<p>The enduser has sshed (shelled in) to their local Host VM or server using a terminal on their laptop or workstation. </p>
+<p>The enduser has sshed (shelled in) to their local Host VM or server using a terminal on their laptop or workstation.</p>
 </li>
 </ul>
 <hr />
-<h3 id="step-0-docker-composeyml-file-edits-based-on-host-operating-system">Step 0. docker-compose.yml file edits based on Host Operating System</h3>
-<h4 id="macos-host-users-only">MacOS Host users ONLY</h4>
-<p><strong>Edit 1</strong><br />
-By default the <code>docker-compose.yml</code> file used to manage and launch the test site <code>isle.localdomain</code> is configured for Hosts with Linux operating systems e.g. CentOS &amp; Ubuntu.</p>
-<p>Prior to launching ISLE containers on a <strong>Mac OS</strong> Host, please edit the <code>docker-compose.yml</code> file at the root of the ISLE project directory by removing the (#) character at the start of the line 66.</p>
-<p>The line should now look like this.</p>
-<pre><code>- ./config/isle_localdomain/apache/macosx_settings.php:/var/www/html/sites/default/settings.php  
-</code></pre>
-
-<p><strong>Edit 2</strong>
-* Comment out the <code>extra_hosts</code> sections on Lines 39 &amp; 68</p>
+<h3 id="0-docker-composeyml-file-edits">0. docker-compose.yml file edits</h3>
+<p>If the enduser is using Vagrant on their laptop move on to <strong>Edit 2</strong> in this section as this process is handled automatically.</p>
+<p>If and only if the enduser is <strong>NOT using Vagrant</strong> on their local laptop and is setting up Virtualbox manually, then please do the following below first on the local laptop.</p>
+<p><strong>Please note:</strong> By default the example tool given below of <code>nano</code> is not installed on CentOS. If the enduser hasn't installed it before on the CentOS VM, then please run <code>sudo yum install nano</code>.</p>
+<p><strong>Edit 1 (conditional)</strong></p>
+<p>If the enduser is not using Vagrant to create their CentOS VM, then during the manual process of installing CentOS (not given as a guide in ISLE documentation) they will need to figure out what the IP is of the VM in order to do the following:</p>
 <ul>
 <li>
-<p>Add the following value of <code>127.0.0.1 isle.localdomain</code> to the laptop / workstation's <code>/etc/hosts</code> file.   </p>
+<p>Add the values of <code>&lt;CentosVM IP here&gt; isle.localdomain apache solr mysql fedora</code> to the laptop / workstation's <code>/etc/hosts</code> file.   </p>
 </li>
 <li>
-<p>Open a terminal</p>
+<p>Open a terminal on the local laptop</p>
 </li>
 <li>
 <p>Enter: <code>sudo nano /etc/hosts</code></p>
 <ul>
-<li><em>For endusers familiar with this process, vim, emacs or alternative tools can be used in lieu of nano</em></li>
+<li><em>For endusers familiar with editing files on the command line, vim or alternative tools can be used in lieu of nano</em></li>
 </ul>
 </li>
 <li>
 <p>Enter the laptop enduser password</p>
 </li>
 <li>
-<p>Add <code>isle.localdomain</code> to the right of <code>127.0.0.1</code> or <code>127.0.0.1 localhost</code> (depending) with a space in between the entries.  </p>
+<p>Add the values below the <code>127.0.0.1</code> entry in the <code>/etc/hosts</code> file.</p>
+<ul>
+<li><code>&lt;CentosVM IP here&gt; isle.localdomain apache solr mysql fedora</code> with a space in between the entries.  </li>
+</ul>
 </li>
 </ul>
-<p><strong>Example</strong></p>
-<pre><code># Host Database
-#
-# localhost is used to configure the loopback interface
-# when the system is booting.  Do not change this entry.
-##
-127.0.0.1 localhost isle.localdomain
-255.255.255.255 broadcasthost
-
-::1             localhost
-fe80::1%lo0     localhost
+<p><strong>Example</strong> (<em>Please do not literally use the IP given below, it may be different after the manual CentOS VM creation</em>)</p>
+<pre><code>127.0.0.1 localhost
+192.168.10.10 isle.localdomain apache solr mysql fedora`
 </code></pre>
 
 <ul>
 <li>
-<p>Once finished, press the <code>Cntrl</code> and the letter <code>o</code> keys together.</p>
+<p>Enter <code>Cntrl</code> and the letter <code>o</code> together to write the changes to the file.</p>
 </li>
 <li>
-<p>The prompt at the bottom will read <code>File Name to Write: /etc/hosts</code>, press the <code>return</code> or <code>enter</code> key.</p>
-</li>
-<li>
-<p>The prompt will change and may give output like <code>[ Wrote 19 lines ]</code>, press the <code>Cntrl</code> and the letter <code>x</code> keys together to exit the file.</p>
+<p>Enter <code>Cntrl</code> and the letter <code>x</code> together to exit the file.</p>
 </li>
 </ul>
 <hr />
-<h4 id="centos-ubuntu-vm-users-only">CentOS / Ubuntu VM users ONLY</h4>
-<p><strong>Edit 1</strong><br />
-Add the ISLE Host IP to the <code>docker-compose.yml</code> file which will be the Virtual Machine IP as provided by Virtualbox, Vmware etc.</p>
+<p><strong>Edit 2</strong>  </p>
+<p>This edit should be made regardless of using Vagrant etc. (same for all operating systems)</p>
 <ul>
-<li>Lines 39 &amp; 68 both require the same value of the Host server IP address for the <code>extra_hosts</code> setting.</li>
+<li>
+<p>Open up a terminal and ssh into the running ISLE Host VM</p>
+</li>
+<li>
+<p><code>cd /opt/ISLE</code> <em>or wherever the enduser cloned the ISLE Project to on the ISLE Host VM</em></p>
+</li>
+<li>
+<p>Enter: <code>sudo nano /opt/ISLE/docker-compose.yml</code></p>
+<ul>
+<li><em>For endusers familiar with editing files on the command line, vim or alternative tools can be used in lieu of nano</em></li>
 </ul>
-<p><strong>Example:</strong></p>
+</li>
+<li>
+<p>Add the ISLE Host VM IP to the <code>extra_hosts</code> sections on Lines 39 &amp; 68 in the <code>docker-compose.yml</code> file at the root of the ISLE project directory.</p>
+</li>
+<li>
+<p>Lines 39 &amp; 68 both require the same value of the Host server IP address for the <code>extra_hosts</code> setting after the <code>isle.localdomain:</code> and before the double quotes.</p>
+</li>
+</ul>
+<p><strong>Example for Vagrant users:</strong></p>
 <pre><code>   extra_hosts:
-     - &quot;isle.localdomain:192.168.1.1&quot;
+     - &quot;isle.localdomain:10.10.10.130&quot;
 </code></pre>
 
-<ul>
-<li>
-<p>Open a text editor, add this same IP to both lines and save the file.</p>
-</li>
-<li>
-<p><strong>Please note:</strong></p>
-<ul>
-<li>This IP can be from a VM run on a local laptop or workstation.</li>
-<li>If using Docker for Mac, then comment out these <code>extra_hosts</code> sections and add the following value of <code>127.0.0.1 isle.localdomain</code> to the laptop / workstation's <code>/etc/hosts</code> file.   </li>
-</ul>
-</li>
-</ul>
+<p><strong>Example for Non-Vagrant users:</strong></p>
+<pre><code>   extra_hosts:
+     - &quot;isle.localdomain:&lt;CentosVM IP here&gt;&quot;
+</code></pre>
+
 <hr />
 <h3 id="test-site-install-process-same-for-all-operating-systems">Test site install process (same for all operating systems)</h3>
+<p>The steps below are for both Vagrant and non Vagrant users alike.</p>
 <ul>
 <li>
 <p><strong>Please note:</strong> <em>The first container (MySQL, isle-mysql, mysql) has to be running PRIOR to all others (including fedora &amp; apache) due to a race condition (fedora starts prior to mysql being ready to accept connections). This improper state will be fixed at a later point in the project.</em>  </p>
@@ -2582,45 +2546,57 @@ Add the ISLE Host IP to the <code>docker-compose.yml</code> file which will be t
 <li>
 <p>The install times stated below for each container are highly dependent on the enduser's available Internet bandwidth and could take more or less time accordingly.</p>
 </li>
+<li>
+<p>The steps below assume the enduser is still shelled in (sshed) into the ISLE Host VM via a terminal on their local laptop.</p>
+</li>
 </ul>
 <h4 id="1-mysql-image-pull-container-launch-10-20-mins">1. MySQL image pull &amp; container launch (10 - 20 mins)</h4>
 <ul>
-<li><code>docker pull islandoracollabgroup/isle-mysql:alpha2</code>  </li>
+<li><code>docker pull islandoracollabgroup/isle-mysql:latest</code>  </li>
 <li><code>docker-compose up -d mysql</code>  </li>
 </ul>
 <h4 id="2-fedora-image-pull-container-launch-10-30-mins">2. Fedora image pull &amp; container launch (10 - 30 mins)</h4>
 <ul>
-<li><code>docker pull islandoracollabgroup/isle-fedora:alpha2</code>  </li>
+<li><code>docker pull islandoracollabgroup/isle-fedora:latest</code>  </li>
 <li>
 <p><code>docker-compose up -d fedora</code>  </p>
 </li>
 <li>
 <p><strong>(Optional but recommended)</strong></p>
 </li>
+</ul>
+<p>Please note the Tomcat service requires about 1 -3 minutes to startup and as such if the enduser rushes to the URL supplied below, the service page maytime out or be reported as unreachable. Give it a little time.</p>
+<ul>
 <li>After spinning up fedora container, check if the Fedora service is running prior to advancing.</li>
 <li>Navigate to http://fedora:8080/manager/html a popup login prompt should appear.<ul>
-<li>Enter the supplied username and password found at the bottom of this page in the <strong>Fast Facts</strong> section.</li>
-<li>see <code>2. Fedora container - service Tomcat</code> user is <code>admin</code></li>
-<li>Upon login a large display of running Tomcat applications should display, scroll down to <code>fedora</code></li>
+<li>Enter the user name of <code>admin</code> and the password of <code>ild_tc_adm_2018</code></li>
+<li>Also found at the bottom of this page in the <strong>Fast Facts</strong> section, see <code>2. Fedora container - service Tomcat</code></li>
 </ul>
 </li>
+<li>Upon login a large display of running Tomcat applications should display, scroll down to <code>fedora</code></li>
 <li>The application state / status should be <code>true</code></li>
 <li>If <code>false</code> appears instead, attempt to restart the fedora service manually.<ul>
 <li>Select the <code>restart</code> button to the right of the status area.</li>
 </ul>
 </li>
-<li>If it still fails, review the mounted fedora logs. The <code>docker-compose.yml</code> file will indicate where the logs are located.</li>
-<li>Using terminal and then entering a command like <code>tail -n 300 - &lt;path to ISLE project/data/fedora/log/tomcat:/usr/local/tomcat/logs/fedora.log</code> should display enough information to troubleshoot.</li>
+<li>If it still fails, review the mounted fedora logs. The <code>docker-compose.yml</code> file will indicate where the logs are located.<ul>
+<li>Using terminal and then entering a command like <code>tail -n 300 - &lt;path to ISLE project/data/fedora/log/tomcat:/usr/local/tomcat/logs/fedora.log</code> should display enough information to troubleshoot or restart the entire startup process.</li>
+</ul>
+</li>
 </ul>
 <h4 id="3-solr-image-pull-container-launch-10-20-mins">3. Solr image pull &amp; container launch (10 - 20 mins)</h4>
 <ul>
-<li><code>docker pull islandoracollabgroup/isle-solr:alpha2</code>  </li>
-<li><code>docker-compose up -d solr</code>  </li>
+<li>
+<p><code>docker pull islandoracollabgroup/isle-solr:latest</code>  </p>
+</li>
+<li>
+<p><code>docker-compose up -d solr</code>  </p>
+</li>
 </ul>
 <h4 id="4-apache-image-pull-container-launch-10-30-mins">4. Apache image pull &amp; container launch (10 - 30 mins)</h4>
 <ul>
 <li>
-<p><code>docker pull islandoracollabgroup/isle-apache:alpha2</code>  </p>
+<p><code>docker pull islandoracollabgroup/isle-apache:latest</code>  </p>
 </li>
 <li>
 <p><code>docker-compose up -d apache</code>  </p>
@@ -2652,18 +2628,22 @@ Add the ISLE Host IP to the <code>docker-compose.yml</code> file which will be t
 <p><strong>Please note:</strong> The cronjob setting in the <code>apache_provision.sh</code> script is still commented out as this will need to be flowed into the Docker build process prior. Issue with default Docker root user vs using islandora user. Drupal cron can run properly.</p>
 <p><strong>Total build process</strong> takes 50 - 120 minutes (<em>depending on system and internet speeds</em>)</p>
 <hr />
-<h3 id="fast-facts">Fast Facts</h3>
-<p><code>islandora</code> user on host server uses <code>isle2017</code> as password</p>
+<h3 id="fast-facts-and-passwords">Fast Facts and Passwords</h3>
+<p><code>islandora</code> user on the ISLE host server uses <code>islandora</code> as the password.</p>
 <p><strong>Please note:</strong></p>
-<p>Whenever the value <code>http://hostip</code> used for accessing other ISLE services (not the main Islandora site) appears below, replace <code>hostip</code> with either:</p>
-<ul>
+<p>Whenever the value <code>http://hostip</code> used for accessing other ISLE services (not the main Islandora site) appears below, the enduser can replace <code>hostip</code> with one of the following:</p>
+<p>When in doubt use the first!</p>
+<ol>
 <li>
-<p><code>127.0.0.1</code> e.g <code>http://127.0.0.1</code> (usually for MacOS users)</p>
+<p><code>isle.localdomain</code> e.g <code>http://isle.localdomain.</code></p>
 </li>
 <li>
-<p>the IP of the Host VM (CentOS or Ubuntu) e.g. <code>http://192.168.1.1</code></p>
+<p>the IP of the Vagrant Host VM (CentOS) e.g. <code>http://10.10.10.130</code></p>
 </li>
-</ul>
+<li>
+<p>the IP of the Non-Vagrant Host VM (CentOS) e.g. <code>http://&lt;CentosVM IP here&gt;</code></p>
+</li>
+</ol>
 <hr />
 <h4 id="1-mysql-container">1. MySQL container</h4>
 <table>
