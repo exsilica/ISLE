@@ -2,40 +2,33 @@
 
 This section is to serve as a new checklist for the editing or merging of the copied Islandora Production server(s) data and config files to the appropriate config directory on the new ISLE Host Server.
 
-The suggested workflow is for endusers to review the Production file(s) first, make note of any settings and then make appropriate edits within `/config/enduser-renamed-directory.institution/` to change values, add passwords or usernames etc unless otherwise directed e.g. Apache `html` and Fedora `data`.
+The suggested workflow is for endusers to review the Production file(s) first, make note of any settings and then make appropriate edits within the `yourdomain-config` directory to change values, add passwords or usernames etc unless otherwise directed e.g. Apache `html` and Fedora `data`. (NOTE: as per the migration guide instructions the name of this directory shouldn't literally be "yourdomain-confg" but replace "yourdomain" with the name of your intended Islandora site's domain).
 
-While this checklist will attempt to point out most of the merge challenges or pitfalls, ISLE assumes no responsibility or liability in this matter should an enduser have customizations beyond what this guide outlines.
+While this checklist will attempt to point out most of the merge challenges or pitfalls, you may encounter unique situations depending on the edits and customizations made to your Islandora environment in the past. This is a good place to reach out to the Islandora community for assistance.
 
 **Please note:**
 
-* In most cases, many of the configuration files (copied from `isle-prod-project.institution` to `enduser-renamed-directory.institution`) will have comments (#) in them to help guide endusers to make the appropriate edits e.g. (# enduser edit here)
+* In most cases, many of the configuration files copied from your running production Islandora will have comments (#) in them to help guide endusers to make the appropriate edits e.g. (# enduser edit here)
 
-* In most cases, many of the configuration files (copied from `isle-prod-project.institution` to `enduser-renamed-directory.institution`) will have fake or empty settings in them. Please remove, edit or enter new values as advised.
-
-### Assumptions / Prerequisites
-* The enduser has completed Steps 1 -4 of the [Migration Guide](migration_guide.md).
-    * Includes the steps outlined within the [Migration Export Checklist](migration_export_checklist.md) to copy over production data and configuration files.
-
-* The enduser is currently on Step 5 of the [Migration Guide](migration_guide.md)
+* In most cases, many of the configuration files copied from ISLE repository to `yourdomain-config` will have fake or empty settings in them. Please remove, edit or enter new values as advised.
 
 ---
 #### Apache
 
-Compare, edit, merge or copy the following from the suggested directory `/path_to/islandora_production_data_storage/apache/` on the ISLE Host server to either:
+Compare, edit, merge or copy the following from the source directory `current-production-config/apache/` to:
 
-* `/opt/isle/config/enduser-renamed-directory-prod.institution/apache/`
+* `yourdomain-config/apache/`
 
-* `/path_to/isle_production_data_storage/enduser-renamed-directory-dev.institution`
 
 This data will be used in conjunction with an Apache container.
 
-| Data          | Description                 | Production Data Copy Location on ISLE Host Server  | Merge, Copy or Edit Location / Destination            | Notes         |
+| Data          | Description                 | Production Data Copy  | Merge, Copy or Edit Location / Destination            | Notes         |
 | ------------- | -------------               | -------------                                      | -------------                                         | ------------- |
-| html          | Islandora/Drupal Website    | /path_to/islandora_production_data_storage/apache/ | /path_to/isle_production_data_storage/enduser-renamed-directory-dev.institution/apache/ | _see below_   |
-| settings.php  | Drupal settings.php file    | /path_to/islandora_production_data_storage/apache/ | /config/enduser-renamed-directory.institution/apache/ | _see below_   |
-| site.conf     | Apache webserver vhost file | /path_to/islandora_production_data_storage/apache/ | /config/enduser-renamed-directory.institution/apache/ | _see below_   |
+| html          | Islandora/Drupal Website    | current-production-config/apache/ | yourdomain-config/apache/ | _see below_   |
+| settings.php  | Drupal settings.php file    | current-production-config/apache/ | yourdomain-config/apache/ | _see below_   |
+| site.conf     | Apache webserver vhost file | current-production-config/apache/ | yourdomain-config/apache/ | _see below_   |
 
-* `html` - endusers will **COPY** this entire directory **instead** to `/path_to/isle_production_data_storage/enduser-renamed-directory-dev.institution/apache/html`
+* `html` - endusers will **COPY** this entire directory **instead** to `yourdomain-config/apache/html`
 
 * `settings.php` - endusers will want to edit database and user names for Drupal sites to connect properly.
 
@@ -55,17 +48,17 @@ This data will be used in conjunction with an Apache container.
 
 #### Apache Optional Edits
 
-| Data          | Description                 | Production Data Copy Location on ISLE Host Server  | Merge, Copy or Edit Location / Destination            | Notes         |
+| Data          | Description                 | Production Data Copy  | Merge, Copy or Edit Location / Destination            | Notes         |
 | ------------- | -------------               | -------------                                      | -------------                                         | ------------- |
-| php.ini       | PHP configuration file      | /path_to/islandora_production_data_storage/apache/ | /config/enduser-renamed-directory.institution/apache/ | _see below_   |
+| php.ini       | PHP configuration file      | current-production-config/apache/ | yourdomain-config/apache/ | _see below_   |
 
-* `php.ini` - endusers can make appropriate edits within `/config/enduser-renamed-directory.institution/apache/php.ini` to increase the upload settings, memory etc. as needed. Otherwise leaving the default values should work.
+* `php.ini` - endusers can make appropriate edits within `yourdomain-config/apache/php.ini` to increase the upload settings, memory etc. as needed. Otherwise leaving the default values should work.
 
 * **Please note:** an additional line will have to be added to the associated `docker-compose.yml` in the Apache `volumes:` section for this edit to work e.g. `- ./apache/php.ini:/etc/php.ini`
 
-| Data          | Description                 | Production Data Copy Location on ISLE Host Server  | Merge, Copy or Edit Location / Destination            | Notes         |
+| Data          | Description                 | Production Data Copy  | Merge, Copy or Edit Location / Destination            | Notes         |
 | ------------- | -------------               | -------------                                      | -------------                                         | ------------- |
-| tmpreaper     | Cronjob for tmpreaper       | /path_to/islandora_production_data_storage/apache/ | /config/enduser-renamed-directory.institution/apache/ | _see below_   |
+| tmpreaper     | Cronjob for tmpreaper       | current-production-config/apache/ | yourdomain-config/apache/ | _see below_   |
 
 * `tmpreaper` - (optional) endusers may want to edit this tmpreaper cron job for different locations and/or times. The `docker-compose.yml` file will need an associated bind-mount for this change.
 
@@ -75,24 +68,22 @@ This data will be used in conjunction with an Apache container.
 #### Fedora
 
 
-Compare, edit, merge or copy the following from the suggested directory `/path_to/islandora_production_data_storage/fedora/` on the ISLE Host server to either:
+Compare, edit, merge or copy the following from the suggested directory `current-production-config/fedora/` to:
 
-* `/opt/isle/config/enduser-renamed-directory-prod.institution/fedora/`
-
-* `/path_to/isle_production_data_storage/enduser-renamed-directory-dev.institution/fedora/`
+* `yourdomain-config/fedora/`
 
 | Data              | Description                   | Possible Location                | Suggested Destination                      | Notes         |
 | -------------     | -------------                 | -------------                    | -------------                              | ------------- |
-| data              | Entire Fedora data directory  | /usr/local/fedora/             | /path_to/isle_production_data_storage/enduser-renamed-directory-dev.institution/fedora/ | _see below_ |
-| fedora.fcfg       | Fedora repository config file | /usr/local/fedora/server/config/ | /islandora_production_data_storage/fedora/ | _see below_   |
-| fedora-users.xml  | Fedora users config file      | /usr/local/fedora/server/config/ | /islandora_production_data_storage/fedora/ | _see below_   |
-| filter-drupal.xml | Fedora Drupal filter file     | /usr/local/fedora/server/config/ | /islandora_production_data_storage/fedora/ | _see below_   |
-| repository-policies | Fedora Drupal filter file     | /usr/local/fedora/server/config/ | /islandora_production_data_storage/fedora/ | _see below_   |
-| site.conf         | Apache webserver vhost file   | /etc/apache2/sites-available/    | /islandora_production_data_storage/fedora/ | _see below_   |
+| data              | Entire Fedora data directory  | /usr/local/fedora/             | yourdomain-config/fedora/ | _see below_ |
+| fedora.fcfg       | Fedora repository config file | /usr/local/fedora/server/config/ | /yourdomain-config/fedora/ | _see below_   |
+| fedora-users.xml  | Fedora users config file      | /usr/local/fedora/server/config/ | /yourdomain-config/fedora/ | _see below_   |
+| filter-drupal.xml | Fedora Drupal filter file     | /usr/local/fedora/server/config/ | /yourdomain-config/fedora/ | _see below_   |
+| repository-policies | Fedora Drupal filter file     | /usr/local/fedora/server/config/ | /yourdomain-config/fedora/ | _see below_   |
+| site.conf         | Apache webserver vhost file   | /etc/apache2/sites-available/    | /yourdomain-config/fedora/ | _see below_   |
 
 **Fedora Notes**:
 
-* `data` - endusers will **COPY** this entire directory **instead** to `/path_to/isle_production_data_storage/enduser-renamed-directory-dev.institution/fedora/data`
+* `data` - endusers will **COPY** this entire directory **instead** to `yourdomain-config/fedora/data`
 
 * `fedora.fcfg` - endusers will want to edit the following:
     * Line: 562 (optional) to change the `fedora_admin` username for the `fedora3` database
@@ -143,14 +134,14 @@ Compare, edit, merge or copy the following from the suggested directory `/path_t
 
 #### Solr
 
-       Copy the following below from the Islandora Production Server(s) to the suggested directory `/path_to/islandora_production_data_storage/solr/` on the ISLE Host server.
-       This data will be used in conjunction with an Solr container.
+       Copy the following below from the `current-production-config/solr/`
+       This data will be used in conjunction with a Solr container.
        | Data           | Description               | Possible Location        | Suggested ISLE Path Destination          | Notes         |
        | -------------  | -------------             | -------------            | -------------                            | ------------- |
-       | schema.xml     | Solr index config file    | ../solr/collection1/conf | /islandora_production_data_storage/solr/ | _see below_   |
-       | solrconfig.xml | Solr config file          | ../solr/collection1/conf | /islandora_production_data_storage/solr/ | _see below_   |
-       | solr.xml       | Solr config file file     | /opt/solr/               | /islandora_production_data_storage/solr/ | _see below_   |
-       | stopwords.txt  | solr webserver vhost file | ../solr/collection1/conf | /islandora_production_data_storage/solr/ | _see below_   |
+       | schema.xml     | Solr index config file    | ../solr/collection1/conf | /yourdomain-config/solr/ | _see below_   |
+       | solrconfig.xml | Solr config file          | ../solr/collection1/conf | /yourdomain-config/solr/ | _see below_   |
+       | solr.xml       | Solr config file file     | /opt/solr/               | /yourdomain-config/solr/ | _see below_   |
+       | stopwords.txt  | solr webserver vhost file | ../solr/collection1/conf | /yourdomain-config/solr/ | _see below_   |
 
 **Solr Notes**:
 

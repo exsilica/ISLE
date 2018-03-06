@@ -6,21 +6,22 @@ This section is a checklist of materials to **COPY** from the current running in
 **Caution**: While the ISLE Project recommends use of export methods or tools such as rsync, scp etc., it assumes that endusers are familiar with them and are aware of possible dangers of improperly exporting or copying production data.
 Ensure adequate backups of any production system(s) are made prior to any attempts. If you are not familiar or are uncomfortable with these processes, it is highly advisable to work with an appropriate IT resource.
 
+**Finally also please note:** Instructions below call for you to **COPY** data from your running Islandora environment into a folder: `current-production-config` located on your workstation. You will then work from this copy for future steps.
 
 ---
 
 #### Apache
 
-Copy the following below from the Islandora Production Server(s) to the suggested directory `/path_to/islandora_production_data_storage/apache/` on the ISLE directory.
+Copy the following below from the Islandora Production Server(s) to the suggested directory `/current-production-config/apache/` on the ISLE directory.
 
 This data will be used in conjunction with an Apache container.
 
 | Data          | Description                 | Possible Location             | Suggested ISLE Path Destination            | Notes         |
 | ------------- | -------------               | -------------                 | -------------                              | ------------- |
-| html          | Islandora/Drupal Website    | /var/www/                     | /islandora_production_data_storage/apache/ | _see below_   |
-| settings.php  | Drupal settings.php file    | /var/www/html/sites/default/  | /islandora_production_data_storage/apache/ | _see below_   |
-| php.ini       | PHP configuration file      | /etc/                         | /islandora_production_data_storage/apache/ | --            |
-| yoursite.conf | Apache webserver vhost file | /etc/apache2/sites-available/ | /islandora_production_data_storage/apache/ | _see below_   |
+| html          | Islandora/Drupal Website    | /var/www/                     | /current-production-config/apache/ | _see below_   |
+| settings.php  | Drupal settings.php file    | /var/www/html/sites/default/  | /current-production-config/apache/ | _see below_   |
+| php.ini       | PHP configuration file      | /etc/                         | /current-production-config/apache/ | --            |
+| yoursite.conf | Apache webserver vhost file | /etc/apache2/sites-available/ | /current-production-config/apache/ | _see below_   |
 
 
 **Apache Notes**:
@@ -43,17 +44,17 @@ This data will be used in conjunction with an Apache container.
 
 #### Fedora
 
-Copy the following below from the Islandora Production Server(s) to the suggested directory `/path_to/islandora_production_data_storage/fedora/` on the ISLE directory.
+Copy the following below from the Islandora Production Server(s) to the suggested directory `current-production-config/fedora/` on the ISLE directory.
 
 This data will be used in conjunction with a Fedora container.  
 
 | Data              | Description                   | Possible Location                | Suggested ISLE Path Destination            | Notes         |
 | -------------     | -------------                 | -------------                    | -------------                              | ------------- |
-| yoursite.conf     | Apache webserver vhost file   | /etc/apache2/sites-available/    | /islandora_production_data_storage/fedora/ | _see below_   |
-| data              | Entire Fedora data directory  | /usr/local/fedora/               | /islandora_production_data_storage/fedora/ | --            |
-| fedora.fcfg       | Fedora repository config file | /usr/local/fedora/server/config/ | /islandora_production_data_storage/fedora/ | --            |
-| fedora-users.xml  | Fedora users config file      | /usr/local/fedora/server/config/ | /islandora_production_data_storage/fedora/ | --            |
-| filter-drupal.xml | Fedora Drupal filter file     | /usr/local/fedora/server/config/ | /islandora_production_data_storage/fedora/ | --            |
+| yoursite.conf     | Apache webserver vhost file   | /etc/apache2/sites-available/    | /current-production-config/fedora/ | _see below_   |
+| data              | Entire Fedora data directory  | /usr/local/fedora/               | /current-production-config/fedora/ | --            |
+| fedora.fcfg       | Fedora repository config file | /usr/local/fedora/server/config/ | /current-production-config/fedora/ | --            |
+| fedora-users.xml  | Fedora users config file      | /usr/local/fedora/server/config/ | /current-production-config/fedora/ | --            |
+| filter-drupal.xml | Fedora Drupal filter file     | /usr/local/fedora/server/config/ | /current-production-config/fedora/ | --            |
 
 **Fedora Notes**:
 
@@ -63,30 +64,30 @@ This data will be used in conjunction with a Fedora container.
 
 #### Gsearch
 
-Copy the following below from the Islandora Production Server(s) to the suggested directory `/path_to/islandora_production_data_storage/gsearch/` on the ISLE directory.
+Copy the following below from the Islandora Production Server(s) to the suggested directory `current-production-config/gsearch/` on the ISLE directory.
 
 This data will be used in conjunction with a Fedora container.
 
 | Data                                          | Description         | Possible Location                                 | Suggested ISLE Path Destination             | Notes         |
 | -------------                                 | -------------       | -------------                                     | -------------                               | ------------- |
-| fedoragsearch.properties                      | Gsearch config file | /var/lib/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/ | /islandora_production_data_storage/gsearch/ | --  |
-| fgsconfig-basic-configForIslandora.properties | Gsearch config file | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/ | /islandora_production_data_storage/gsearch/| -- |
-| fgsconfigObjects.properties                   | Gsearch config file | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/ | /islandora_production_data_storage/gsearch/| -- |
-| repository.properties                         | Gsearch config file               | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/repository/FgsRepos/ | /islandora_production_data_storage/gsearch/ | -- |
-| islandora_transforms                          | Transformation XSLTs directory    | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/      | /islandora_production_data_storage/gsearch/ | -- |
-| foxmlToSolr.xslt                              | "top-level" transformational XSLT | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/      | /islandora_production_data_storage/gsearch/ | -- |
+| fedoragsearch.properties                      | Gsearch config file | /var/lib/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/ | /current-production-config/gsearch/ | --  |
+| fgsconfig-basic-configForIslandora.properties | Gsearch config file | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/ | /current-production-config/gsearch/| -- |
+| fgsconfigObjects.properties                   | Gsearch config file | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/ | /current-production-config/gsearch/| -- |
+| repository.properties                         | Gsearch config file               | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/repository/FgsRepos/ | /current-production-config/gsearch/ | -- |
+| islandora_transforms                          | Transformation XSLTs directory    | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/      | /current-production-config/gsearch/ | -- |
+| foxmlToSolr.xslt                              | "top-level" transformational XSLT | /var/lib/tomcat7/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/      | /current-production-config/gsearch/ | -- |
 
 
 #### MySQL
 
-Copy the following below from the Islandora Production Server(s) to the suggested directory `/path_to/islandora_production_data_storage/mysql/` on the ISLE directory.
+Copy the following below from the Islandora Production Server(s) to the suggested directory `current-production-config/mysql/` on the ISLE directory.
 
 This data will be used in conjunction with a MySQL container.
 
 | Data          | Description              | Possible Location  | Suggested COPY Method                   | Suggested ISLE Path Destination           | Notes         |
 | ------------- | -------------            | -------------      | -------------                           | -------------                             | ------------- |
-| Databases     | Drupal website databases |  /var/lib/mysql    | CLI, MySQL Workbench or Sequel Pro etc. | /islandora_production_data_storage/mysql/ | _see below_   |
-| my.cnf        | MySQL server config file |  /etc/mysql/my.cnf | rsync / scp                             | /islandora_production_data_storage/mysql/ | --            |
+| Databases     | Drupal website databases |  /var/lib/mysql    | CLI, MySQL Workbench or Sequel Pro etc. | /current-production-config/mysql/ | _see below_   |
+| my.cnf        | MySQL server config file |  /etc/mysql/my.cnf | rsync / scp                             | /current-production-config/mysql/ | --            |
 
 **MySQL Notes**:
 
@@ -113,24 +114,24 @@ This data will be used in conjunction with a MySQL container.
 
 **Tomcat**
 
-Copy the following below from the Islandora Production Server(s) to the suggested directory to the ISLE directory `/pathto/islandora_production_data_storage/tomcat`
+Copy the following below from the Islandora Production Server(s) to the suggested directory to the ISLE directory `current-production-config/tomcat`
 
 This data will be used in conjunction with the Tomcat service found on a Fedora or SOLR container.
 
 | Data             | Description               | Possible Location                      | Suggested ISLE Path Destination            | Notes         |
 | -------------    | -------------             | -------------                          | -------------                              | ------------- |
-| server.xml       | Tomcat server config file | /var/lib/tomcat7/conf/server.xml       | /islandora_production_data_storage/tomcat/ | --            |
-| tomcat-users.xml | Tomcat server config file | /var/lib/tomcat7/conf/tomcat-users.xml | /islandora_production_data_storage/tomcat/ | --            |
+| server.xml       | Tomcat server config file | /var/lib/tomcat7/conf/server.xml       | /current-production-config/tomcat/ | --            |
+| tomcat-users.xml | Tomcat server config file | /var/lib/tomcat7/conf/tomcat-users.xml | /current-production-config/tomcat/ | --            |
 
 
 **Solr**
 
-Copy the following below from the Islandora Production Server(s) to the suggested directory to the ISLE directory `/pathto/islandora_production_data_storage/solr`
+Copy the following below from the Islandora Production Server(s) to the suggested directory to the ISLE directory `current-production-config/solr`
 
 This data will be used in conjunction with a SOLR container.
 
 | Data           | Description                              | Possible Location                                             | Suggested ISLE Path Destination         | Notes         |
 | -------------  | -------------                            | -------------                                                 | -------------                           | ------------- |
-| schema.xml     | Solr schema file                         | /var/lib/tomcat7/webapps/solr/collection1/conf/schema.xml     | /islandora_production_data_storage/solr | _see below_   |  
-| solrconfig.xml | Solr config file                         | /var/lib/tomcat7/webapps/solr/collection1/conf/solrconfig.xml | /islandora_production_data_storage/solr | _see below_   |  
-| stopwords.txt  | Solr file for filtering out common words | /var/lib/tomcat7/webapps/solr/collection1/conf/stopwords.txt  | /islandora_production_data_storage/solr | _see below_   |  
+| schema.xml     | Solr schema file                         | /var/lib/tomcat7/webapps/solr/collection1/conf/schema.xml     | /current-production-config/solr | _see below_   |  
+| solrconfig.xml | Solr config file                         | /var/lib/tomcat7/webapps/solr/collection1/conf/solrconfig.xml | /current-production-config/solr | _see below_   |  
+| stopwords.txt  | Solr file for filtering out common words | /var/lib/tomcat7/webapps/solr/collection1/conf/stopwords.txt  | /current-production-config/solr | _see below_   |  

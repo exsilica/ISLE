@@ -71,7 +71,7 @@ Prerequisites:
 
 * Open a terminal - navigate to /opt/ISLE or where you put the ISLE directory on your local workstation.
 
-* Create a directory named yourdomainconfig (where "yourdomain" is your server domain name)
+* Create a directory named `yourdomain-config` (where "yourdomain" is your server domain name)
 
 example:  `digital-collectionsconfig`
 
@@ -88,213 +88,34 @@ example:  `digital-collectionsconfig`
 
 ## Migration Export checklist
 
-In this section you'll follow a checklist of materials to **COPY** from the current running institutional Islandora Production server(s) to your working directories on the local workstation.
+* following the checklist of materials, **COPY** from your current running institutional Islandora Production server(s) to your working directories on the local workstation.
 
 * in the same /opt/ISLE directory create a new sub-directory (you can call this `current-production-config`)
 
-* copy the files from your current live system into this directory as directed in the [Migration Export Checklist](/docs/01_Installation_Migration/migration_export_checklist.md) 
+* copy the files from your current live system into this directory as directed in the [Migration Export Checklist](migration_export_checklist.md)
+
+* These copied files will be the source for edits and merges - just to be very clear, please don't work directly on the files in your currently running production system!
+
+* To be even more clear, you should have two nearly identical `/config` directories, **A.** copied from the cloned ISLE repository and renamed with your domain, and **B.** copied from your currently running Islandora environment.
+
+* **The goal is to merge all site-specific data (domain names, variables, usernames, passwords, etc..) AND all site-specific customizations or settings from the files in directory B. into the matching files in directory A.**
 
 
+* Compare the data and settings of the files found within directory **B.** `current-production-config`, and then merge, edit or copy as necessary with the templated settings found within the directory **A.** `yourdomain-config` as guided in the [Migration Merge Checklist](migration_merge_checklist.md).
+
+* Customizations: Carefully compare the following most frequently customized files with the new, default versions found within your new ISLE config folder. Use a "Diff" tool (example: [Beyond Compare](https://www.scootersoftware.com/download.php) to merge any desired customizations from your production Islandora files to persist within the new ISLE config folder of files:
+
+   * Compare and merge the Solr files: `schema.xml`
+   * Compare and merge the Solr files: `solrconfig.xml`
+   * Compare and merge the Solr files: `stopwords`
+   * Compare and merge the Fedora GSearch Islandora Transform (XSLTs) folder of files: `islandora_transforms`
 
 
-
-
-
-##Edits
-
----------
-Now proceed to edits within the child directories, make appropriate edits to config files:
-
-a. to reflect **environment** (prod, stage, dev, etc...)
-
-b. to involve your **domain name** (digital-collections.example.edu)
-
-----------
-##Apache directory
-
-* Copy your SSL certificates for Apache into `apache/ssl/certs`
-
-* Within the `sites-available` directory, rename the files isle_localdomain_ssl.conf and isle_localdomain.conf to your domain names  example:
-
-    `digital-collections.example.edu_ssl.conf`
-    `digital-collections.example.edu.conf`
-
-* edit the  `yourdomain_ssl.conf` file change lines 12 and 13 to point to the location of your certs - example:
-
-        `SSLCertificateFile    /certs/ssl-cert-example.pem`
-        `SSLCertificateKeyFile /certs/ssl-cert-example.key`
-
-* edit the file: `settings.php`   lines 251-253 add your database name, database user, and database password    
-
-* edit the file: `settings.php`   line 288 to include a 45+ alpha-numeric characters drupal hash between the quotes after this text: `$drupal_hash_salt = '';`
-
-* review the file: `settings.php`  near line 311 to ensure `# $base_url = ` is commented out
-
-* edit the file: `apache_provision.sh`  line 47:
-
-`/usr/local/bin/drush site-install -y --account-name=isle_localdomain_admin --account-pass=isle_localdomain_adminpw2018 --account-mail=admin@isle.localdomain --site-name=“ISLE.localdomain”`
-
-Change the following in this line to the appropriate names and passwords for your site
-
-    account name
-    account-pass
-    account-mail
-    site-name
-
-----------
-##Fedora directory
-
-* Within the fedora/fedora directories, **change the passwords** in the following files:
-
-          fedora-users.xml  (change all applicable)
-          fedora.fsfg  (line numbers see below)
-          filter-drupal.xml  (change db name, db user, db psswd)
-
-* within the `gsearch` directory, edit the file: `fedoragsearch.properties` at line 7 add a space after the equal sign and add the fgsAdmin password
-
-` -  fedoragsearch.soapPass                =`
-
-* Edit the file: `fgsconfig-basic-configForIslandora.properties`  line 26: edit the gsearch password
-
-`gsearchPass=ild_fgs_admin_2018`
-
-* in the same file edit line 67 edit the fedora password
-
-`fedoraPass=ild_fed_admin_2018`
-
-* Edit the file: `fedora/gsearch/fgsconfigObjects.properties` line 15: edit the fedora admin password
-
-`fgsconfigObjects.fedoraPass            = ild_fed_admin_2018`
-
-* Edit the file: `fedora/gsearch/repository.properties` line 7: edit the fedora admin password
-
-`fgsrepository.fedoraPass        = ild_fed_admin_2018`
+   * Edit the `docker-compose.yml` file to:
+   * Point to the new directories and config settings in `yourdomain-config`
 
 ---------
-##Tomcat directory
 
-* Within the **tomcat** sub directories:
-
- Strongly recommend changing tomcat user passwords in file: `fedora/tomcat/tomcat-users.xml`
-
- ONLY CHANGE TOMCAT USERNAME/PASSWORD - looks like this:
-
-          <!-- user manager can access only manager section -->
-             <user username=“manager” password=“ild_tc_man_2018" roles=“manager-gui” />  <!--enduser please add passwords / users and remove this comment -->
-
-          <!-- user admin can access manager and admin section both -->
-             <user username=“admin” password=“ild_tc_adm_2018” roles=“manager-gui,admin-gui” /> <!--enduser please add passwords / users and remove this comment -->
-
-          </tomcat-users>
-
-----------
-
-##Repository policies
-
-Edit the contents of the repository-policies directory as necessary IF YOU NEED TO otherwise leave alone.
-
-------
-
-##Mysql directory
-
-* edit the contents of `create_drupal_user.sql` to create the drupal site db user
-
-* edit the contents of `create_fedora_user.sql` to create the fedora db user
-
-* edit the contents of `fedora3.sql` to create the fedora db
-
-* edit the contents of `site.sql` to create the drupal site db
-
-* make any appropriate edits as you see fit to `my.conf` IF NEEDED
-
- -------
-
-##Proxy directory
-
-* in the `config/sites-enabled` directory, rename the `conf` file to `yourdomain.conf` (where "yourdomain" is the domain name of your server)
-  * for example: `digital-collections.example.edu.conf`
-
-* Now edit the file...
-
-    * change line 6 `server_name` to `yourdomainname` (where "yourdomain" is the domain name of your server)
-    * change line 15 `server_name` to `yourdomainname` (where "yourdomain" is the domain name of your server)
-    * change lines 18 and 19 to the name of your ssl certs (should be same names as in apache edits above)
-    * edit lines 36 and 37 - uncomment: `ssl_stapling on;` and uncomment: `ssl_stapling_verify on;`
-    * uncomment line 40:  `add_header Strict-Transport-Security max-age=15768000;`
-
-    * append your environment type (prod, dev, stage, etc.) to the following lines proceeded by a hyphen i.e. `-dev`
-
-----------
-##SSL-certs directory
-Copy your SSL certs into the ssl-certs dir
-DO NOT OVERWRITE OR DELETE the dhparam.pem file that's in There
---------
-
-##upstreams.d directory
-
-* copy and rename: `sample-upstreams.conf.disabled` - replace "sample" in the file name w/ the environment name e.g. (dev, prod, stage, etc...)
-
-* lines 10 and 14 look like this:
-
-        upstream fedora-internal {
-          server fedora:8080 fail_timeout=0;
-        }
-
-        upstream apache-internal {
-          server apache:443 fail_timeout=0;
-        }
-
-* Append the environment name after  both instances of "internal" proceeded by a hyphen "-dev" in this example:
-
-          upstream fedora-internal-dev {
-          server fedora:8080 fail_timeout=0;
-        }
-
-        upstream apache-internal-dev {
-          server apache:443 fail_timeout=0;
-        }
-
------
-
-##Solr directory
-
-* Within the tomcat sub-directories
-
-Strongly rec you change tomcat user passwords in file: `fedora/tomcat/tomcat-users.xml`
-
-**ONLY CHANGE TOMCAT PASSWORD**
-
-looks like this:
-
-      <!-- user manager can access only manager section -->
-         <user username=“manager” password=“ild_tc_man_2018" roles=“manager-gui” />  <!--enduser please add passwords / users and remove this comment -->
-
-      <!-- user admin can access manager and admin section both -->
-         <user username=“admin” password=“ild_tc_adm_2018” roles=“manager-gui,admin-gui” /> <!--enduser please add passwords / users and remove this comment -->
-
-      </tomcat-users>
-
---------
-
-##Docker compose file:
-
-* Edit the file: **docker-compose.yml** accordingly:
-
-      * Change container names based on the environment (prod, stage, dev, etc)
-
-      * For example if you are building a dev server instance:
-
-  `container_name: isle-solr`
-
-  changes to:
-
-  `container_name: isle-solr-dev`
-
-and so on...
-
-
-
---------
 
 
 ##Final steps
@@ -344,22 +165,134 @@ and so on...
 
 * Back at your terminal command line, run `git clone URLpathtoyourremoteprivaterepo.git .` (replacing "URLpathtoyourremoteprivaterepo" with the URL to the repository provided by the website)
 
-* `cd` into the newly cloned directory
+* `cd` into the newly cloned directory - this is a good time to check that the ISLE directory contains your `yourdomain-config` directory and that it reflects all the edits and customizations.
 
-##Spin up ISLE containers!
-
-* run `docker-compose up -d`
-
-* run `docker exec yourApacheContainerNameHere bash` (replace 993845754398)
-use the name from the docker-composer.yml file here (typical: isle-apache-prod, or -stage, etc...)
-
-cd to   `cd /tmp/isle_drupal_build_tools`
-
-then run:
-`./apache_provision.sh`
-
-give this a few minutes and check the site - should be up now!
+## Spin up ISLE containers!
 
 
+### Review or pull down ISLE Docker images
 
---------------
+_Please Note: You may have already done this in setting up the host server manually and / or with Ansible. However it is always a good idea to review and check using the first command below._
+
+* Check if all ISLE images have been downloaded
+  * `docker image ls`
+
+
+  * If yes, then proceed to Step 7
+
+  * If no, the perform the following:
+    * `docker pull islandoracollabgroup/isle-mysql:latest`
+    * `docker pull islandoracollabgroup/isle-fedora:latest`
+    * `docker pull islandoracollabgroup/isle-solr:latest`
+    * `docker pull islandoracollabgroup/isle-apache:latest`
+    * `docker pull islandoracollabgroup/isle-proxy:latest`
+
+---
+### Spin up the proxy container
+
+* `cd /opt/ISLE/yourdomain-config`
+* `docker-compose up -d proxy`
+
+
+
+### Spin up mysql container and import production databases
+
+* `cd /opt/ISLE/yourdomain-config`
+* `docker-compose up -d mysql`
+
+Two methods for connecting to the MySQL Database (GUI / CLI) pick one.
+
+1. One may use SQL GUI clients e.g. Sequel Pro, Navicat, PHPMyAdmin etc.
+
+2. If above not practical, one may connect to the MySQL container and run the following.
+
+    * `docker exec -it isle-mysql-institution bash` to connect to the container
+    * appropriate mysql commands here: consult MySQL documentation - https://dev.mysql.com/doc/refman/5.7/en/
+
+The following are STEPS, not literal commands to prepare your db for ISLE (_doing this because we've found there are errors using exported db from production because of caches - causes problems - steps below help you remove this problem_)
+
+* import the production databases into the isle-mysql-institution container (_with errors being ignored_)
+* truncate all tables that start with `cache` on the isle-mysql-institution container
+* export this new database to the `mysql` directory on the isle host server
+* delete all tables (_not the database itself_) on the isle-mysql-institution container
+* Reimport the new lighter database to the isle-mysql container
+
+
+
+
+---
+
+### Spin up fedora container and run reindex processes
+
+Staying within `/opt/ISLE/yourdomain-config`
+
+* `docker-compose up -d fedora`
+   * _optional_ check if fedora is running properly e.g. `http://isle-prod-project.institution:8080/manager/html`
+* `docker exec -it isle-fedora-institution bash`
+
+### Reindex Fedora RI (1/3)
+* `cd /usr/local/tomcat/conf/bin/`
+* `./shutdown.sh`
+* Wait 7 - 10 seconds for the service to stop properly
+* Navigate to the fedora installation directory and run the following command for the first Fedora reindex
+`cd /usr/local/fedora/server/bin /bin/sh fedora-rebuild.sh -r org.fcrepo.server.resourceIndex.ResourceIndexRebuilder > /home/islandora/fedora_ri.log 2>&1`
+* This process may take upwards of 5-10 minutes depending on the number of objects in Fedora repository. If you want to follow the process, you can enter `tail -f /home/islandora/fedora_ri.log` it will tell you when complete.
+
+### Reindex SQL RI (2/3)
+
+* Truncate all existing tables within the Fedora (fedora3 or fedora) database on the MySQL server. (If necessary, see MySQL documentation on how to truncate tables).
+
+   * Option 1: Truncate by GUI Application
+     * Using a GUI based application e.g. Sequel Pro, access the fedora database and right click on the table information on the right hand side, the option to Truncate will appear, click on it to perform the action
+
+   * Option 2: Truncate by Command Line - see MySQL documentation - be sure to use `mysql` or `127.0.0.1` as the database host if connected to the mysql container on the CLI.
+
+* Navigate to the fedora installation directory and run the following command for the second MySQL reindex
+  * `cd /usr/local/fedora/server/bin`
+  * `/bin/bash fedora-rebuild.sh -r org.fcrepo.server.utilities.rebuild.SQLRebuilder > /home/islandora/sql_ri.log 2>&1`
+
+* This process may take upwards of 5-10 minutes depending on the number of objects in Fedora repository. If you want to follow the process, you can enter `tail -f /home/islandora/sql_ri.log` it will tell you when complete.
+
+* Restart Tomcat service
+  * `cd /usr/local/tomcat/conf/bin/`
+  * `./startup.sh`
+  * Wait 7 - 10 seconds for the service to start properly
+
+-----
+
+### Spin up solr container
+
+* Staying within `/opt/ISLE/yourdomain-config`
+* `docker-compose up -d solr`
+  * (_optional_) check if solr is running properly e.g. `http://isle-prod-project.institution:8777/manager/html`
+
+### Reindex Solr from Fedora container (3/3)
+
+* `docker exec -it isle-fedora-institution bash` **NOTE FEDORA NOT SOLR!**
+
+* As this third process can take hours, recommend using the screen program to be able to detach from the command line and server without terminating the process.
+* Exit any active containers. one should now be ssh'ed in only as the islandora user.
+* Enter “screen” at the prompt. (this should start a new screen session)
+* `docker exec -it isle-fedora-institution bash`
+* `cd /usr/local/tomcat/webapps/fedoragsearch/client`
+* `/bin/sh runRESTClient.sh localhost:8080 updateIndex fromFoxmlFiles`
+* This process will now ask you for the appropriate fgsAdmin username & password
+* Once entered, a small amount of output will print out but nothing more to indicate the process is running
+* At this point, type “Ctrl-A” and then “d” to detach the screen. This will return one to the original prompt. It is now safe to exit the server without killing the process.
+* One can check progress via `htop` or `ps aux`
+* To reattach, `sudo su` and then type:  `screen -r`
+* You can now see the process has finished.
+* To exit the screen session, type exit.
+* Check the results on the site using Islandora simple search or the appropriate search method.
+
+---
+
+### Spin up apache container
+
+* Staying within `/opt/ISLE/yourdomain-config`
+* `docker-compose up -d apache`
+    * (_optional_) check if apache is running properly e.g. `https://isle-prod-project.institution`
+    * (_optional_) You may find that you need to re-run the `fix-permissions.sh` script
+        * `docker exec -it isle-apache-institution bash`
+        * `/bin/bash /tmp/isle_drupal_build_tools/fix-permissions.sh --drupal_path=/var/www/html --drupal_user=islandora --httpd_group=www-data`
+* Check site and outline QC process
