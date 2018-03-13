@@ -9,7 +9,7 @@ version: '2'
 ## What you're watching: Docker is orchestrating our images, and running them for us!
 ## 
 ## The last step is to instantiate your Islandora ISLE.LOCALDOMAIN site.  Please copy and paste this into terminal:
-## docker exec -it isle-apache-ld bash /tmp/isle_drupal_build_tools/apache_provision.sh 
+## `docker exec -it isle-apache-ld bash /tmp/isle_drupal_build_tools/install_isle_ld_site.sh` 
 ##
 ## Visit http://localhost
 
