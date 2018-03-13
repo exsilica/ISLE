@@ -81,7 +81,8 @@ services:
     networks:
       isle-internal:
         aliases:
-          - isle.localdomain
+          - archives1.yourdomain.edu            # Vhost 1
+          - specialarchives.yourdomain.edu      # Vhost 2...n
     tty: true
     depends_on:
       - mysql
