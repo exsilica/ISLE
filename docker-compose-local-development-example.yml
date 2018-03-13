@@ -1,0 +1,128 @@
+version: '2'
+
+## Full Configuration Example
+
+# Change mounts to point to your data stores, and locations of your data. To understand bind mounts please see: https://docs.docker.com/storage/bind-mounts/
+# NB: This needs to be edited.  You should be looking through all of these files in the config folder, and variables set here in docker-compose.
+# This is your {production,staging,development} server, so take care.
+# MySQL root password is a good example of something you should change. 
+
+services:
+  mysql:
+    image: islandoracollabgroup/isle-mysql:latest
+    container_name: isle-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=ild_mysqlrt_2018
+    networks:
+      - isle-internal
+    ports:
+      - "3306:3306"
+    volumes:
+      # - ./config/mysql/my.cnf:/etc/alternatives/my.cnf  # End user MySQL alternative configuration
+      ### DATA MOUNTS ###
+      - ./data/mysql:/var/lib/mysql
+      - ./data/logs/isle-mysql:/var/log/mysql
+
+  fedora:
+    build:
+      context: ./fedora
+    image: islandoracollabgroup/isle-fedora:latest
+    container_name: isle-fedora
+    networks:
+      - isle-internal
+    ports:
+      - "8080:8080"
+    tty: true
+    depends_on:
+      - mysql
+      - solr
+    volumes:
+      ## Tomcat Users
+      - ./config/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+      ## Fedora Config
+      - ./config/fedora/fedora.fcfg:/usr/local/fedora/server/config/fedora.fcfg
+      - ./config/fedora/fedora-users.xml:/usr/local/fedora/server/config/fedora-users.xml
+      - ./config/fedora/filter-drupal.xml:/usr/local/fedora/server/config/filter-drupal.xml
+      ## FedoraGSearch Config
+      - ./config/fedoragsearch/fgsconfigFinal/fedoragsearch.properties:/usr/local/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/fedoragsearch.properties
+      - ./config/fedoragsearch/fgsconfigFinal/fgsconfigObjects.properties:/usr/local/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/fgsconfigObjects.properties
+      - ./config/fedoragsearch/fgsconfigFinal/index.properties:/usr/local/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/index.properties
+      - ./config/fedoragsearch/fgsconfigFinal/repository.properties:/usr/local/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/index.properties
+      ### ADVANCED FedoraGSearch Config
+      - ./config/fedoragsearch/fgsconfigFinal/transformations/foxmlToSolr.xslt:/usr/local/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/foxmlToSolr.xslt
+      - ./config/fedoragsearch/fgsconfigFinal/transformations/islandora_transforms:/usr/local/tomcat/webapps/fedoragsearch/WEB-INF/classes/fgsconfigFinal/index/FgsIndex/islandora_transforms
+      ### DATA MOUNTS ###
+      - ./data/fedora:/usr/local/fedora/data
+      - ./data/logs/isle-fedora/fedora:/usr/local/fedora/server/logs
+      - ./data/logs/isle-fedora/tomcat:/usr/local/tomcat/logs
+
+  solr:
+    image: islandoracollabgroup/isle-solr:latest
+    container_name: isle-solr
+    networks:
+      - isle-internal
+    ports:
+      - "8091:8080"
+    tty: true
+    depends_on:
+      - mysql
+    volumes:
+      ## Tomcat Users
+      - ./config/tomcat/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+      ## SOLR Configs
+      - ./config/solr/cores/collection1:/usr/local/solr/collection1/conf # Solr core configuration
+      ### DATA MOUNTS ###
+      - ./data/solr/cores/collection1:/usr/local/solr/collection1/data
+      - ./data/logs/isle-solr:/usr/local/tomcat/logs
+
+  apache:
+    image: islandoracollabgroup/isle-apache:latest
+    container_name: isle-apache
+    networks:
+      isle-internal:
+        aliases:
+          - isle.localdomain
+    tty: true
+    depends_on:
+      - mysql
+      - fedora
+      - solr
+    volumes:
+      ## Apache
+      # - ./config/apache/sites-available:/etc/apache2/sites-available (are we going to ask they a2ensite? or just can we use site-enabled?)
+      - ./config/apache/sites-enabled:/etc/apache2/sites-enabled  # Sites enabled (vhosts)
+      ### DATA MOUNTS ###
+      - ./data/apache:/var/www/html
+      - ./data/logs/isle-apache:/var/log/apache2
+
+  proxy:
+    image: islandoracollabgroup/isle-proxy:latest
+    container_name: isle-proxy
+    networks:
+      isle-internal:
+      isle-external:
+    volumes:
+      - ./config/proxy/sites-enabled:/etc/nginx/sites-enabled # End user Proxy configuration folder.
+      - ./config/proxy/certs:/certs                           # End user SSL certificates folder.
+      - ./config/proxy/upstreams.d:/etc/nginx/upstreams.d     # End user configuration folder.  The question is do we need this for the end user?
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - mysql
+      - fedora
+      - solr
+      - apache
+    command: [nginx-debug, '-g', 'daemon off;']
+
+
+# Defined networks
+networks:
+  isle-internal:
+  isle-external:
+
+volumes:
+  db-data-prod:
+  fedora-data-prod:
+  solr-core1-data-prod:
+  apache-data-prod:

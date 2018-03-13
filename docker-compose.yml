@@ -1,13 +1,19 @@
 version: '2'
 
-## ISLE Test Site: isle.localdomain ##
-## Run order: `docker-compose up -d
-## BUILD ISLE.LOCALDOMAIN SITE:
-## `docker exec -it isle-apache bash`
-## `cd /tmp/isle_drupal_build_tools`
-## `chmod 755 install_isle_ld_site.sh`
-## `./install_isle_ld_site.sh`
+## ISLE Localdomain Docker-compose.  
+## 
+## This is generic docker-compose that when will load a complete Islandora Stack ready to test.
+## You do not need to anything here!
+##
+## How to run:  `docker-compose up -d` 
+## What you're watching: Docker is orchestrating our images, and running them for us!
+## 
+## The last step is to instantiate your Islandora ISLE.LOCALDOMAIN site.  Please copy and paste this into terminal:
+## docker exec -it isle-apache-ld bash /tmp/isle_drupal_build_tools/apache_provision.sh 
+##
+## Visit http://localhost
 
+### Stop editing here if you want to try the Islandora ISLE default installation. You are not required to edit anything below.
 services:
   mysql:
     image: islandoracollabgroup/isle-mysql:latest
@@ -82,7 +88,6 @@ services:
       - fedora
       - solr
       - apache
-    command: [nginx-debug, '-g', 'daemon off;']
 
 
 # Defined networks
