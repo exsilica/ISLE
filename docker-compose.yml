@@ -3,15 +3,29 @@ version: '2'
 ## ISLE Localdomain Docker-compose.  
 ## 
 ## This is generic docker-compose that when will load a complete Islandora Stack ready to test.
-## You do not need to anything here!
+## You do NOT need to edit anything here!
 ##
-## How to run:  `docker-compose up -d` 
-## What you're watching: Docker is orchestrating our images, and running them for us!
+## Quick Guide Instruction - How to Run:  
+## 1) Place this docker-compose.yml in an EMPTY directory. 
+## 2) In a terminal navigate to the directory that contains our docker-compose.yml.
+## 3) `docker-compose up -d` 
+##
+## What you're watching: Docker is orchestrating all necessary components of Islandora and running them for us.
+## The process includes download of large files, and may take some time.
 ## 
-## The last step is to instantiate your Islandora ISLE.LOCALDOMAIN site.  Please copy and paste this into terminal:
-## `docker exec -it isle-apache-ld bash /tmp/isle_drupal_build_tools/install_isle_ld_site.sh` 
+## When docker has completed the job it will tell us that things are "done" 
+## example output:
+## ```
+## Creating isle-mysql-ld ... done
+## Creating isle-solr-ld ... done
+## Creating isle-fedora-ld ... done
+## Creating isle-apache-ld ... done
+## Creating isle-proxy ... done
+## ```
+## 4) The final step is to initalize the current version of Islandora!  To do so
+## type: `docker exec -it isle-apache-ld bash /tmp/isle_drupal_build_tools/install_isle_ld_site.sh` 
 ##
-## Visit http://localhost
+## 5) Visit http://localhost and login with: 
 
 ### Stop editing here if you want to try the Islandora ISLE default installation. You are not required to edit anything below.
 services:
