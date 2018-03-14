@@ -16,7 +16,7 @@ echo "Remove basic ubuntu index.html page"
 rm -f /var/www/html/index.html
 
 echo "Copy /tmp/drupal_install contents to /var/www/html"
-cp -rv /tmp/drupal_install/. /var/www/html/
+cp -rv /tmp/drupal_install/* /var/www/html/
 
 echo "Copy /tmp/settings.php to /var/www/html/sites/default/settings.php"
 cp -v /tmp/settings.php /var/www/html/sites/default/
